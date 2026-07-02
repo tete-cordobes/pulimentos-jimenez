@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { actions } from "astro:actions";
+import { site, surfaces, telHref, whatsappHref } from "../config/site";
+
+// Página con formulario → necesita SSR (no prerender).
+const result = Astro.getActionResult(actions.presupuesto);
+const success = result && !result.error;
+---
+
+<Layout
+  title="Contacto y presupuesto — Pulimentos Jiménez"
+  description="Pide presupuesto sin compromiso para el pulido o tratamiento de tu suelo. Te respondemos rápido. Córdoba, Málaga, Sevilla y Jaén."
+  canonical="/contacto"
+>
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-4xl px-6 py-16">
+      <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        Pide presupuesto sin compromiso
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-brand-100">
+        Cuéntanos qué suelo quieres tratar y te damos presupuesto y
+        asesoramiento. Para naves industriales, prueba gratuita in situ.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-3">
+    <!-- Formulario -->
+    <div class="lg:col-span-2">
+      {
+        success ? (
+          <div class="rounded-xl border border-green-200 bg-green-50 p-6">
+            <h2 class="text-lg font-semibold text-green-800">
+              ¡Gracias! Hemos recibido tu solicitud.
+            </h2>
+            <p class="mt-2 text-sm text-green-700">
+              Te contactaremos lo antes posible. Si es urgente, llámanos al{" "}
+              <a href={telHref} class="font-semibold underline">{site.phone}</a>.
+            </p>
+          </div>
+        ) : (
+          <form method="POST" action={actions.presupuesto} class="space-y-5">
+            {result?.error && (
+              <p class="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+                Hubo un problema al enviar. Revisa los datos o llámanos al {site.phone}.
+              </p>
+            )}
+
+            {/* Honeypot anti-spam (oculto) */}
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="nombre" class="block text-sm font-medium text-slate-700">Nombre *</label>
+                <input id="nombre" name="nombre" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
+              </div>
+              <div>
+                <label for="telefono" class="block text-sm font-medium text-slate-700">Teléfono *</label>
+                <input id="telefono" name="telefono" type="tel" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+                <input id="email" name="email" type="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
+              </div>
+              <div>
+                <label for="ciudad" class="block text-sm font-medium text-slate-700">Ciudad</label>
+                <select id="ciudad" name="ciudad" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
+                  <option value="">Selecciona…</option>
+                  {site.cities.map((c) => <option value={c.name}>{c.name}</option>)}
+                  <option value="Otra">Otra</option>
+                </select>
+              </div>
+              <div>
+                <label for="tipoSuelo" class="block text-sm font-medium text-slate-700">Tipo de suelo</label>
+                <select id="tipoSuelo" name="tipoSuelo" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
+                  <option value="">Selecciona…</option>
+                  {surfaces.map((s) => <option value={s}>{s}</option>)}
+                  <option value="No lo sé">No lo sé</option>
+                </select>
+              </div>
+              <div>
+                <label for="metros" class="block text-sm font-medium text-slate-700">Metros aprox. (m²)</label>
+                <input id="metros" name="metros" type="number" min="0" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
+              </div>
+            </div>
+
+            <div>
+              <label for="mensaje" class="block text-sm font-medium text-slate-700">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" placeholder="Cuéntanos el estado del suelo, fotos, plazos…"></textarea>
+            </div>
+
+            <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-800">
+              Enviar solicitud
+            </button>
+            <p class="text-xs text-slate-500">* Campos obligatorios. Te responderemos lo antes posible.</p>
+          </form>
+        )
+      }
+    </div>
+
+    <!-- Contacto directo -->
+    <aside class="space-y-6">
+      <div class="rounded-xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="font-semibold text-slate-900">Contacto directo</h2>
+        <div class="mt-4 flex flex-col gap-3 text-sm">
+          <a href={telHref} class="font-semibold text-brand-700 hover:text-brand-900">📞 {site.phone}</a>
+          <a href={`mailto:${site.email}`} class="text-slate-700 hover:text-brand-700">✉️ {site.email}</a>
+          <a href={whatsappHref} target="_blank" rel="noopener" class="text-slate-700 hover:text-brand-700">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600">
+        <p class="font-semibold text-slate-900">Zonas de trabajo</p>
+        <p class="mt-2">Córdoba · Málaga · Sevilla · Jaén y alrededores.</p>
+      </div>
+    </aside>
+  </section>
+</Layout>

@@ -1,0 +1,39 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  short: string;
+  /** Foto real del servicio (opcional; sin foto la tarjeta es solo texto) */
+  image?: string;
+  imageAlt?: string;
+}
+
+const { slug, name, short, image, imageAlt } = Astro.props;
+---
+
+<a
+  href={`/servicios/${slug}`}
+  class="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-brand-300 hover:shadow-md"
+>
+  {
+    image && (
+      <div class="aspect-[16/10] overflow-hidden">
+        <img
+          src={image}
+          alt={imageAlt ?? `Trabajo real de ${name} — Pulimentos Jiménez`}
+          loading="lazy"
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+        />
+      </div>
+    )
+  }
+  <div class="flex flex-1 flex-col p-6">
+    <h3 class="text-lg font-semibold text-slate-900 group-hover:text-brand-700">
+      {name}
+    </h3>
+    <p class="mt-2 flex-1 text-sm text-slate-600">{short}</p>
+    <span class="mt-4 text-sm font-semibold text-brand-700">
+      Ver servicio →
+    </span>
+  </div>
+</a>

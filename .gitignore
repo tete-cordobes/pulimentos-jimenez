@@ -1,0 +1,30 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# media inbox (fotos/videos sin procesar — temporal, no va al repo)
+_media-inbox/
+
+# capturas del QA con navegador
+.playwright-mcp/
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/

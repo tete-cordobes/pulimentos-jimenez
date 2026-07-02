@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CTASection from "../../components/CTASection.astro";
+
+export const prerender = true;
+
+// Placeholder del blog. En la Fase 4 se conecta a Storyblok:
+// el listado leerá los posts (content type "post") y /blog/[slug] los renderizará.
+---
+
+<Layout
+  title="Blog — consejos sobre suelos y pavimentos | Pulimentos Jiménez"
+  description="Consejos y guías sobre pulido, cristalizado y tratamiento de suelos: hormigón, mármol, terrazo y más."
+  canonical="/blog"
+>
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-4xl px-6 py-16 text-center">
+      <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">Blog</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-100">
+        Consejos y guías sobre el cuidado y tratamiento de tus suelos.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-20 text-center">
+    <p class="rounded-xl bg-slate-100 px-6 py-10 text-slate-600">
+      🚧 El blog estará disponible muy pronto. Estamos preparando contenido útil
+      sobre pulido de hormigón, cristalizado de mármol, precios por m² y más.
+    </p>
+  </section>
+
+  <CTASection />
+</Layout>

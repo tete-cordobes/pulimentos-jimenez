@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../config/site";
+
+export const prerender = true;
+---
+
+<Layout title="Política de privacidad — Pulimentos Jiménez" description="Política de privacidad de Pulimentos Jiménez." canonical="/privacidad">
+  <article class="mx-auto max-w-3xl px-6 py-16">
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900">Política de privacidad</h1>
+    <div class="mt-6 space-y-4 text-slate-600">
+      <p class="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800">
+        ⚠️ Texto de muestra. Sustituir por la política de privacidad real (RGPD/LOPDGDD)
+        adaptada a Pulimentos Jiménez y al tratamiento de datos del formulario.
+      </p>
+      <p>
+        Los datos que nos facilites a través del formulario de contacto se usan
+        únicamente para gestionar tu solicitud de presupuesto y ponernos en
+        contacto contigo. No se cederán a terceros salvo obligación legal.
+      </p>
+      <p>
+        Puedes ejercer tus derechos de acceso, rectificación y supresión
+        escribiendo a <a href={`mailto:${site.email}`} class="text-brand-700 underline">{site.email}</a>.
+      </p>
+    </div>
+  </article>
+</Layout>

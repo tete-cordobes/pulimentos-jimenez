@@ -1,0 +1,113 @@
+---
+import type { Project } from "../data/projects";
+
+interface Props {
+  project: Project;
+  /** true cuando es un proyecto de ejemplo, no un trabajo real del cliente */
+  isExample?: boolean;
+}
+
+const { project, isExample = false } = Astro.props;
+const { title, city, surface, before, after, videoUrl, description } = project;
+const hasPhotos = Boolean(after);
+const hasBeforeAfter = Boolean(before && after);
+---
+
+<article
+  class="group relative overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-xl hover:ring-brand-200"
+  data-surface={surface}
+>
+  <!-- Media: foto DESPUÉS por defecto; al hover muestra el ANTES -->
+  <div class="relative aspect-[4/3] overflow-hidden">
+    {
+      hasPhotos ? (
+        <>
+          <img
+            src={after}
+            alt={`Después — ${title}`}
+            loading="lazy"
+            class="h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0"
+          />
+          {hasBeforeAfter && (
+            <img
+              src={before}
+              alt={`Antes — ${title}`}
+              loading="lazy"
+              class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            />
+          )}
+        </>
+      ) : (
+        <!-- Placeholder de marca (hasta tener foto real) -->
+        <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-brand-700 to-brand-900">
+          <svg
+            class="h-16 w-16 text-white/15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.2"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 8.5 L7 3.5 H17 L21 8.5 L12 21 Z" fill="currentColor" fill-opacity="0.18" />
+            <path d="M3 8.5 H21 M7 3.5 L9.5 8.5 L12 21 M17 3.5 L14.5 8.5 L12 21 M9.5 8.5 H14.5" />
+          </svg>
+        </div>
+      )
+    }
+
+    <!-- Badge tipo de suelo -->
+    <span
+      class="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-800 backdrop-blur"
+    >
+      {surface}
+    </span>
+
+    <!-- Badge de ejemplo (proyecto ilustrativo, no un trabajo real todavía) -->
+    {
+      isExample && (
+        <span class="absolute right-3 top-3 rounded-full bg-amber-400/90 px-3 py-1 text-xs font-semibold text-amber-950 backdrop-blur">
+          Ejemplo
+        </span>
+      )
+    }
+
+    <!-- Indicador antes/después -->
+    {
+      hasBeforeAfter && (
+        <span class="absolute bottom-3 right-3 rounded-full bg-brand-900/80 px-3 py-1 text-xs font-medium text-white backdrop-blur transition group-hover:opacity-0">
+          Ver el antes →
+        </span>
+      )
+    }
+
+    <!-- Icono vídeo -->
+    {
+      videoUrl && (
+        <span class="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-800 backdrop-blur">
+          <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+          Vídeo
+        </span>
+      )
+    }
+  </div>
+
+  <!-- Texto -->
+  <div class="p-5">
+    <h3 class="text-base font-bold text-slate-900">{title}</h3>
+    {description && <p class="mt-2 text-sm text-slate-600">{description}</p>}
+    {
+      city && (
+        <p class="mt-1 flex items-center gap-1.5 text-sm text-slate-500">
+          <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.5 7-11a7 7 0 10-14 0c0 4.5 7 11 7 11z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+          {city}
+        </p>
+      )
+    }
+  </div>
+</article>

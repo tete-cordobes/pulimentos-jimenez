@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import FAQ from "../components/FAQ.astro";
+import CTASection from "../components/CTASection.astro";
+import { citiesContent, type CityContent } from "../data/cities";
+import { servicesContent } from "../data/services";
+import { site, whatsappHref } from "../config/site";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return citiesContent.map((city) => ({
+    params: { ciudad: city.slug },
+    props: { city },
+  }));
+}
+
+interface Props {
+  city: CityContent;
+}
+
+const { city } = Astro.props;
+const canonical = `/pulido-de-suelos-en-${city.slug}`;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: `${site.name} — Pulido de suelos en ${city.name}`,
+  description: city.metaDescription,
+  url: new URL(canonical, site.url).href,
+  telephone: site.phone,
+  email: site.email,
+  areaServed: [
+    { "@type": "City", name: city.name },
+    ...city.nearby.map((n) => ({ "@type": "Place", name: n })),
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: site.url },
+    { "@type": "ListItem", position: 2, name: city.h1, item: new URL(canonical, site.url).href },
+  ],
+};
+---
+
+<Layout title={city.metaTitle} description={city.metaDescription} canonical={canonical}>
+  <!-- HERO -->
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-4xl px-6 py-20">
+      <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        {city.h1}
+      </h1>
+      <div class="mt-6 space-y-4 text-lg text-brand-100">
+        {city.intro.map((p) => <p>{p}</p>)}
+      </div>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <Button href="/contacto" variant="secondary">Pide presupuesto</Button>
+        <Button href={whatsappHref} variant="ghost" class="text-white hover:bg-brand-800">
+          💬 WhatsApp
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS EN LA CIUDAD -->
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <h2 class="text-2xl font-bold tracking-tight text-slate-900">
+      Servicios de pulido en {city.name}
+    </h2>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        servicesContent.map((s) => (
+          <ServiceCard slug={s.slug} name={s.name} short={s.short} />
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- ZONAS -->
+  <section class="border-y border-slate-200 bg-slate-50 py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900">
+        Zonas donde trabajamos cerca de {city.name}
+      </h2>
+      <div class="mt-6 flex flex-wrap gap-3">
+        {
+          city.nearby.map((n) => (
+            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 ring-1 ring-slate-200">
+              {n}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <FAQ faqs={city.faqs} title={`Preguntas frecuentes — ${city.name}`} />
+
+  <CTASection title={`¿Necesitas pulir un suelo en ${city.name}?`} />
+
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>

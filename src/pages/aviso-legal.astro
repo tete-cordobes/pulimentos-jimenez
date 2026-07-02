@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../config/site";
+
+export const prerender = true;
+---
+
+<Layout title="Aviso legal — Pulimentos Jiménez" description="Aviso legal de Pulimentos Jiménez." canonical="/aviso-legal">
+  <article class="mx-auto max-w-3xl px-6 py-16 prose-slate">
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900">Aviso legal</h1>
+    <div class="mt-6 space-y-4 text-slate-600">
+      <p class="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800">
+        ⚠️ Texto de muestra. Sustituir por el aviso legal real con los datos
+        fiscales de Pulimentos Jiménez (denominación, NIF, domicilio, registro).
+      </p>
+      <p>
+        En cumplimiento de la Ley 34/2002 (LSSI-CE), se informa de que este sitio
+        web es titularidad de {site.name}.
+      </p>
+      <ul class="list-disc pl-6">
+        <li><strong>Titular:</strong> {site.name} (pendiente de completar)</li>
+        <li><strong>NIF:</strong> pendiente</li>
+        <li><strong>Domicilio:</strong> pendiente</li>
+        <li><strong>Email:</strong> {site.email}</li>
+      </ul>
+    </div>
+  </article>
+</Layout>

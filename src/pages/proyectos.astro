@@ -1,0 +1,117 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTASection from "../components/CTASection.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { useStoryblokApi } from "@storyblok/astro";
+import {
+  projects as fallbackProjects,
+  surfaceFilters,
+  type Project,
+} from "../data/projects";
+
+export const prerender = true;
+
+// Galería de proyectos: lee el content-type "proyecto" de Storyblok (editable
+// por el cliente). Si aún no hay proyectos publicados, usa los de ejemplo.
+let projects: Project[] = fallbackProjects;
+try {
+  const sbApi = useStoryblokApi();
+  const { data } = await sbApi.get("cdn/stories", {
+    content_type: "proyecto",
+    version: "draft",
+  });
+  const stories = data?.stories ?? [];
+  if (stories.length > 0) {
+    projects = stories.map((story: any): Project => ({
+      slug: story.slug,
+      title: story.content?.title || story.name,
+      city: story.content?.city ?? "",
+      surface: story.content?.surface ?? "Otros",
+      before: story.content?.before?.filename || undefined,
+      after: story.content?.after?.filename || undefined,
+      videoUrl: story.content?.video_url || undefined,
+      description: story.content?.description ?? "",
+    }));
+  }
+} catch (err) {
+  // Sin token o sin conexión a Storyblok → se muestra el fallback estático
+  // (trabajos reales de Pulimentos Jiménez, ver src/data/projects.ts).
+  console.warn("[proyectos] Storyblok no disponible, usando fallback:", err);
+}
+---
+
+<Layout
+  title="Proyectos y trabajos realizados — Pulimentos Jiménez"
+  description="Galería de trabajos de pulido y tratamiento de pavimentos: hormigón, mármol, terrazo y epoxi. Antes y después de nuestros suelos."
+  canonical="/proyectos"
+>
+  <!-- HERO -->
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-4xl px-6 py-16 text-center">
+      <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        Nuestros proyectos
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-100">
+        El antes y el después de nuestros trabajos de pulido y tratamiento de
+        suelos. El resultado habla por nosotros.
+      </p>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <!-- Filtros por tipo de suelo -->
+    <div class="mb-10 flex flex-wrap justify-center gap-2" id="project-filters">
+      {
+        surfaceFilters.map((f, i) => (
+          <button
+            type="button"
+            class:list={[
+              "rounded-full px-4 py-2 text-sm font-medium transition",
+              i === 0
+                ? "bg-brand-700 text-white"
+                : "bg-slate-100 text-slate-600 hover:bg-brand-50 hover:text-brand-700",
+            ]}
+            data-filter={f}
+          >
+            {f}
+          </button>
+        ))
+      }
+    </div>
+
+    <!-- Tarjetas -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="project-grid">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+
+  <CTASection />
+</Layout>
+
+<script>
+  // Filtro por tipo de suelo (chips)
+  const buttons = document.querySelectorAll<HTMLButtonElement>("[data-filter]");
+  const cards = document.querySelectorAll<HTMLElement>("[data-surface]");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter;
+
+      // Estado visual de los chips
+      buttons.forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle("bg-brand-700", active);
+        b.classList.toggle("text-white", active);
+        b.classList.toggle("bg-slate-100", !active);
+        b.classList.toggle("text-slate-600", !active);
+      });
+
+      // Mostrar/ocultar tarjetas
+      cards.forEach((card) => {
+        const show = filter === "Todos" || card.dataset.surface === filter;
+        card.classList.toggle("hidden", !show);
+      });
+    });
+  });
+</script>

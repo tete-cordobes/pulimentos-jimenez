@@ -1,0 +1,40 @@
+---
+import { storyblokEditable } from "@storyblok/astro";
+
+const { blok } = Astro.props;
+---
+
+<section
+  {...storyblokEditable(blok)}
+  class="relative isolate overflow-hidden bg-brand-900 px-6 py-24 text-white sm:py-32"
+>
+  <div class="mx-auto max-w-3xl text-center">
+    {
+      blok.eyebrow && (
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-brand-200">
+          {blok.eyebrow}
+        </p>
+      )
+    }
+    <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+      {blok.title}
+    </h1>
+    {
+      blok.subtitle && (
+        <p class="mx-auto mt-6 max-w-2xl text-pretty text-lg text-brand-100">
+          {blok.subtitle}
+        </p>
+      )
+    }
+    {
+      blok.cta_label && (
+        <a
+          href={blok.cta_href || "#contacto"}
+          class="mt-10 inline-block rounded-lg bg-white px-6 py-3 font-semibold text-brand-900 transition hover:bg-brand-50"
+        >
+          {blok.cta_label}
+        </a>
+      )
+    }
+  </div>
+</section>

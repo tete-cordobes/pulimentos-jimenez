@@ -1,0 +1,80 @@
+---
+import { site, services, surfaces, telHref, whatsappHref } from "../config/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-200 bg-slate-900 text-slate-300">
+  <div class="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
+    <!-- Marca + contacto -->
+    <div>
+      <p class="flex flex-col leading-none">
+        <span class="text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-brand-300">
+          Pulimentos y Aplicaciones
+        </span>
+        <span class="text-xl font-extrabold tracking-tight text-white">JIMÉNEZ</span>
+      </p>
+      <p class="mt-3 text-sm text-slate-400">
+        Especialistas en pulidos y tratamientos de suelos. Innovación en cada
+        acabado, un brillo para siempre.
+      </p>
+      <div class="mt-4 flex flex-col gap-1 text-sm">
+        <a href={telHref} class="hover:text-white">📞 {site.phone}</a>
+        <a href={`mailto:${site.email}`} class="hover:text-white">✉️ {site.email}</a>
+        <a href={whatsappHref} class="hover:text-white" target="_blank" rel="noopener">
+          💬 WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Servicios -->
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wide text-white">Servicios</p>
+      <ul class="mt-4 space-y-2 text-sm">
+        {
+          services.map((s) => (
+            <li>
+              <a href={`/servicios/${s.slug}`} class="hover:text-white">
+                {s.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Zonas -->
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wide text-white">Zonas de trabajo</p>
+      <ul class="mt-4 space-y-2 text-sm">
+        {
+          site.cities.map((c) => (
+            <li>
+              <a href={`/pulido-de-suelos-en-${c.slug}`} class="hover:text-white">
+                Pulido de suelos en {c.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Superficies -->
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wide text-white">Tratamos</p>
+      <ul class="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+        {surfaces.map((s) => <li>{s}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-slate-800">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-slate-500 sm:flex-row">
+      <p>© {year} {site.name}. Todos los derechos reservados.</p>
+      <div class="flex gap-4">
+        <a href="/aviso-legal" class="hover:text-slate-300">Aviso legal</a>
+        <a href="/privacidad" class="hover:text-slate-300">Privacidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
