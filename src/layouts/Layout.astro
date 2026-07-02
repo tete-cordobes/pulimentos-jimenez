@@ -55,6 +55,9 @@ const orgSchema = {
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL.href} />
 
+    {/* Mientras site.indexable sea false, la web NO se indexa en buscadores */}
+    {!site.indexable && <meta name="robots" content="noindex, nofollow" />}
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />

@@ -7,6 +7,9 @@
 export const site = {
   name: "Pulimentos y Aplicaciones Jiménez",
   legalName: "Pulimentos y Aplicaciones Jiménez",
+  // ⚠️ INDEXACIÓN: false = la web NO sale en Google (meta noindex en todas las
+  // páginas). Mientras se prepara el contenido. Cambiar a TRUE para lanzar.
+  indexable: false,
   // TODO: confirmar dominio real con el cliente
   url: "https://www.pulimentosjimenez.es",
   description:
