@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { actions } from "astro:actions";
 import { site, surfaces, telHref, whatsappHref } from "../config/site";
 
-// Página con formulario → necesita SSR (no prerender).
-const result = Astro.getActionResult(actions.presupuesto);
-const success = result && !result.error;
+// Página estática. El formulario se envía a un script PHP del hosting
+// (public/enviar-presupuesto.php), que redirige de vuelta con ?enviado=1
+// (éxito) o ?error=1 (fallo). El estado se muestra en cliente.
+export const prerender = true;
 ---
 
 <Layout
@@ -28,75 +28,75 @@ const success = result && !result.error;
   <section class="mx-auto grid max-w-6xl gap-12 px-6 py-16 lg:grid-cols-3">
     <!-- Formulario -->
     <div class="lg:col-span-2">
-      {
-        success ? (
-          <div class="rounded-xl border border-green-200 bg-green-50 p-6">
-            <h2 class="text-lg font-semibold text-green-800">
-              ¡Gracias! Hemos recibido tu solicitud.
-            </h2>
-            <p class="mt-2 text-sm text-green-700">
-              Te contactaremos lo antes posible. Si es urgente, llámanos al{" "}
-              <a href={telHref} class="font-semibold underline">{site.phone}</a>.
-            </p>
+      <!-- Mensaje de éxito (se muestra por JS si la URL trae ?enviado=1) -->
+      <div id="form-success" class="hidden rounded-xl border border-green-200 bg-green-50 p-6">
+        <h2 class="text-lg font-semibold text-green-800">
+          ¡Gracias! Hemos recibido tu solicitud.
+        </h2>
+        <p class="mt-2 text-sm text-green-700">
+          Te contactaremos lo antes posible. Si es urgente, llámanos al{" "}
+          <a href={telHref} class="font-semibold underline">{site.phone}</a>.
+        </p>
+      </div>
+
+      <form
+        id="presupuesto-form"
+        method="POST"
+        action="/enviar-presupuesto.php"
+        class="space-y-5"
+      >
+        <p id="form-error" class="hidden rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+          Hubo un problema al enviar. Revisa los datos o llámanos al {site.phone}.
+        </p>
+
+        {/* Honeypot anti-spam (oculto) */}
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-slate-700">Nombre *</label>
+            <input id="nombre" name="nombre" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
           </div>
-        ) : (
-          <form method="POST" action={actions.presupuesto} class="space-y-5">
-            {result?.error && (
-              <p class="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
-                Hubo un problema al enviar. Revisa los datos o llámanos al {site.phone}.
-              </p>
-            )}
+          <div>
+            <label for="telefono" class="block text-sm font-medium text-slate-700">Teléfono *</label>
+            <input id="telefono" name="telefono" type="tel" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
+            <input id="email" name="email" type="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
+          </div>
+          <div>
+            <label for="ciudad" class="block text-sm font-medium text-slate-700">Ciudad</label>
+            <select id="ciudad" name="ciudad" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
+              <option value="">Selecciona…</option>
+              {site.cities.map((c) => <option value={c.name}>{c.name}</option>)}
+              <option value="Otra">Otra</option>
+            </select>
+          </div>
+          <div>
+            <label for="tipoSuelo" class="block text-sm font-medium text-slate-700">Tipo de suelo</label>
+            <select id="tipoSuelo" name="tipoSuelo" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
+              <option value="">Selecciona…</option>
+              {surfaces.map((s) => <option value={s}>{s}</option>)}
+              <option value="No lo sé">No lo sé</option>
+            </select>
+          </div>
+          <div>
+            <label for="metros" class="block text-sm font-medium text-slate-700">Metros aprox. (m²)</label>
+            <input id="metros" name="metros" type="number" min="0" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
+          </div>
+        </div>
 
-            {/* Honeypot anti-spam (oculto) */}
-            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+        <div>
+          <label for="mensaje" class="block text-sm font-medium text-slate-700">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="4" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" placeholder="Cuéntanos el estado del suelo, fotos, plazos…"></textarea>
+        </div>
 
-            <div class="grid gap-5 sm:grid-cols-2">
-              <div>
-                <label for="nombre" class="block text-sm font-medium text-slate-700">Nombre *</label>
-                <input id="nombre" name="nombre" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
-              </div>
-              <div>
-                <label for="telefono" class="block text-sm font-medium text-slate-700">Teléfono *</label>
-                <input id="telefono" name="telefono" type="tel" required class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
-              </div>
-              <div>
-                <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
-                <input id="email" name="email" type="email" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
-              </div>
-              <div>
-                <label for="ciudad" class="block text-sm font-medium text-slate-700">Ciudad</label>
-                <select id="ciudad" name="ciudad" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
-                  <option value="">Selecciona…</option>
-                  {site.cities.map((c) => <option value={c.name}>{c.name}</option>)}
-                  <option value="Otra">Otra</option>
-                </select>
-              </div>
-              <div>
-                <label for="tipoSuelo" class="block text-sm font-medium text-slate-700">Tipo de suelo</label>
-                <select id="tipoSuelo" name="tipoSuelo" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
-                  <option value="">Selecciona…</option>
-                  {surfaces.map((s) => <option value={s}>{s}</option>)}
-                  <option value="No lo sé">No lo sé</option>
-                </select>
-              </div>
-              <div>
-                <label for="metros" class="block text-sm font-medium text-slate-700">Metros aprox. (m²)</label>
-                <input id="metros" name="metros" type="number" min="0" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
-              </div>
-            </div>
-
-            <div>
-              <label for="mensaje" class="block text-sm font-medium text-slate-700">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows="4" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" placeholder="Cuéntanos el estado del suelo, fotos, plazos…"></textarea>
-            </div>
-
-            <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-800">
-              Enviar solicitud
-            </button>
-            <p class="text-xs text-slate-500">* Campos obligatorios. Te responderemos lo antes posible.</p>
-          </form>
-        )
-      }
+        <button type="submit" class="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-800">
+          Enviar solicitud
+        </button>
+        <p class="text-xs text-slate-500">* Campos obligatorios. Te responderemos lo antes posible.</p>
+      </form>
     </div>
 
     <!-- Contacto directo -->
@@ -116,3 +116,20 @@ const success = result && !result.error;
     </aside>
   </section>
 </Layout>
+
+<script>
+  // El PHP redirige de vuelta con ?enviado=1 (éxito) o ?error=1 (fallo).
+  const params = new URLSearchParams(window.location.search);
+  const form = document.getElementById("presupuesto-form");
+  const ok = document.getElementById("form-success");
+  const err = document.getElementById("form-error");
+
+  if (params.get("enviado") === "1") {
+    form?.classList.add("hidden");
+    ok?.classList.remove("hidden");
+    ok?.scrollIntoView({ behavior: "smooth", block: "center" });
+  } else if (params.get("error") === "1") {
+    err?.classList.remove("hidden");
+    err?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+</script>

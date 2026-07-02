@@ -3,19 +3,18 @@ import { defineConfig } from 'astro/config';
 import { storyblok } from '@storyblok/astro';
 import { loadEnv } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
-import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 
 const env = loadEnv(process.env.NODE_ENV ?? 'development', process.cwd(), '');
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: confirmar dominio real con el cliente
+  // Dominio real confirmado con el cliente.
   site: 'https://www.pulimentosjimenez.es',
-  // SSR para que el Visual Editor de Storyblok (livePreview) funcione en vivo.
-  // Las páginas públicas se marcan con `export const prerender = true` para servir estático.
-  output: 'server',
-  adapter: vercel(),
+  // Sitio 100% estático: se sirve desde hosting cPanel propio (LucusHost).
+  // El contenido de Storyblok se congela en cada build; el formulario de
+  // presupuesto se envía con un script PHP (public/enviar-presupuesto.php).
+  output: 'static',
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_DELIVERY_API_TOKEN,

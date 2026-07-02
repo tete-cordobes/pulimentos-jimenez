@@ -1,0 +1,47 @@
+name: Deploy a cPanel (LucusHost)
+
+# Construye la web estática y la sube por FTPS al hosting en cada push a main.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Build estático
+        run: npm run build
+        env:
+          STORYBLOK_DELIVERY_API_TOKEN: ${{ secrets.STORYBLOK_DELIVERY_API_TOKEN }}
+
+      - name: Subir por FTPS al hosting
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./dist/
+          server-dir: ./
+          # No borra estos del servidor (por si hay ficheros ajenos al build)
+          exclude: |
+            **/.git*
+            **/.git*/**
