@@ -18,8 +18,8 @@ export default defineConfig({
   integrations: [
     storyblok({
       accessToken: env.STORYBLOK_DELIVERY_API_TOKEN,
-      // Preview en tiempo real dentro del Visual Editor.
-      livePreview: true,
+      // Sitio estático: sin livePreview (requiere SSR). El contenido se lee
+      // en build; para refrescar tras publicar en Storyblok, se relanza el build.
       // Región EU (empresa española → dato en la UE).
       apiOptions: { region: 'eu' },
       // Mapa de bloques: nombre en Storyblok -> ruta del componente .astro.
