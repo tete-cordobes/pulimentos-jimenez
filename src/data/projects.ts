@@ -88,4 +88,68 @@ export const projects: Project[] = [
     description:
       "Aplicación de pavimento continuo de resina en vivienda: superficie uniforme, impermeable y fácil de limpiar.",
   },
+  {
+    slug: "hormigon-pulido-nave-espejo",
+    title: "Hormigón pulido en nave con acabado espejo",
+    surface: "Hormigón",
+    after: "/proyectos/hormigon-espejo.webp",
+    description:
+      "Solera de hormigón pulida hasta el brillo espejo: la superficie refleja el entorno como un cristal.",
+  },
+  {
+    slug: "hormigon-pulido-garaje-particular",
+    title: "Hormigón pulido en garaje particular",
+    surface: "Hormigón",
+    after: "/proyectos/garaje-moto.webp",
+    description:
+      "Garaje de vivienda con hormigón pulido y sellado. Acabado brillante, resistente y muy fácil de limpiar.",
+  },
+  {
+    slug: "cristalizado-marmol-dormitorio",
+    title: "Cristalizado de mármol blanco en dormitorio",
+    surface: "Mármol",
+    after: "/proyectos/marmol-dormitorio.webp",
+    description:
+      "Mármol blanco pulido y cristalizado en un dormitorio: recupera el brillo y refleja la luz del balcón.",
+  },
+  {
+    slug: "pulido-marmol-salon-vivienda",
+    title: "Pulido de mármol en salón de vivienda",
+    surface: "Mármol",
+    after: "/proyectos/marmol-salon2.webp",
+    description:
+      "Suelo de mármol de un salón devuelto a su estado original con pulido y cristalizado, con acabado espejo.",
+  },
+  {
+    slug: "cristalizado-terrazo-blanco",
+    title: "Cristalizado de terrazo blanco",
+    surface: "Terrazo",
+    after: "/proyectos/terrazo-blanco.webp",
+    description:
+      "Terrazo blanco cristalizado hasta reflejar las ventanas como un espejo. Aspecto como recién puesto.",
+  },
+  {
+    slug: "pulido-terrazo-chinitas",
+    title: "Pulido de terrazo de chinitas",
+    surface: "Terrazo",
+    after: "/proyectos/terrazo-chinitas.webp",
+    description:
+      "Terrazo de chinitas multicolor pulido y cristalizado, recuperando el color y el brillo del pavimento.",
+  },
+  {
+    slug: "tratamiento-barro-dormitorio",
+    title: "Tratamiento de barro cocido en dormitorio",
+    surface: "Otros",
+    after: "/proyectos/barro-dormitorio.webp",
+    description:
+      "Suelo de barro cocido tratado con acabado satinado: protegido, uniforme y fácil de mantener.",
+  },
+  {
+    slug: "abrillantado-suelo-hospital",
+    title: "Abrillantado de suelo en hospital",
+    surface: "Epoxi",
+    after: "/proyectos/epoxi-hospital.webp",
+    description:
+      "Abrillantado del pavimento del hall de un hospital: acabado brillante, higiénico y antideslizante.",
+  },
 ];
