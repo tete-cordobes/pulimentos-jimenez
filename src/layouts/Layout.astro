@@ -12,6 +12,10 @@ interface Props {
   canonical?: string;
   /** Oculta header/footer (útil para previews aislados) */
   bare?: boolean;
+  /** Oculta el botón flotante de WhatsApp (páginas con formulario en móvil) */
+  whatsappFloat?: boolean;
+  /** noindex para esta página concreta (ej. blog placeholder) */
+  noindex?: boolean;
 }
 
 const {
@@ -19,9 +23,12 @@ const {
   description = site.description,
   canonical,
   bare = false,
+  whatsappFloat = true,
+  noindex = false,
 } = Astro.props;
 
 const canonicalURL = new URL(canonical ?? Astro.url.pathname, site.url);
+const ogImage = new URL("/og.jpg", site.url);
 
 const orgSchema = {
   "@context": "https://schema.org",
@@ -31,6 +38,15 @@ const orgSchema = {
   url: site.url,
   telephone: site.phone,
   email: site.email,
+  image: ogImage.href,
+  priceRange: "€€",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: site.baseCity,
+    addressRegion: "Córdoba",
+    addressCountry: "ES",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 37.6736, longitude: -4.9296 },
   areaServed: site.cities.map((c) => ({ "@type": "City", name: c.name })),
 };
 ---
@@ -56,7 +72,7 @@ const orgSchema = {
     <link rel="canonical" href={canonicalURL.href} />
 
     {/* Mientras site.indexable sea false, la web NO se indexa en buscadores */}
-    {!site.indexable && <meta name="robots" content="noindex, nofollow" />}
+    {(!site.indexable || noindex) && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -65,7 +81,9 @@ const orgSchema = {
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content={ogImage.href} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage.href} />
 
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
   </head>
@@ -75,6 +93,6 @@ const orgSchema = {
       <slot />
     </main>
     {!bare && <Footer />}
-    {!bare && <WhatsAppFloat />}
+    {!bare && whatsappFloat && <WhatsAppFloat />}
   </body>
 </html>

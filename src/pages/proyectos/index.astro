@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import CTASection from "../components/CTASection.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import CTASection from "../../components/CTASection.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
 import { useStoryblokApi } from "@storyblok/astro";
 import {
   projects as fallbackProjects,
   surfaceFilters,
   type Project,
-} from "../data/projects";
+} from "../../data/projects";
 
 export const prerender = true;
 
@@ -18,7 +18,7 @@ try {
   const sbApi = useStoryblokApi();
   const { data } = await sbApi.get("cdn/stories", {
     content_type: "proyecto",
-    version: "draft",
+    version: "published",
   });
   const stories = data?.stories ?? [];
   if (stories.length > 0) {

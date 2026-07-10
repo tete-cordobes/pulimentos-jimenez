@@ -1,0 +1,108 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.astro";
+import CTASection from "../../components/CTASection.astro";
+import { projects, type Project } from "../../data/projects";
+import { site, whatsappHref } from "../../config/site";
+
+export const prerender = true;
+
+// Solo tienen página propia los trabajos con historia (los "gordos").
+export function getStaticPaths() {
+  return projects
+    .filter((p) => p.story && p.story.length > 0)
+    .map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const canonical = `/proyectos/${project.slug}`;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: site.url },
+    { "@type": "ListItem", position: 2, name: "Proyectos", item: new URL("/proyectos", site.url).href },
+    { "@type": "ListItem", position: 3, name: project.title, item: new URL(canonical, site.url).href },
+  ],
+};
+---
+
+<Layout
+  title={`${project.title} — Pulimentos Jiménez`}
+  description={project.description}
+  canonical={canonical}
+>
+  <!-- HERO -->
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-4xl px-6 py-16">
+      <nav class="mb-4 text-sm text-brand-200">
+        <a href="/" class="hover:text-white">Inicio</a> ·
+        <a href="/proyectos" class="hover:text-white">Proyectos</a> · {project.title}
+      </nav>
+      <p class="text-xs font-semibold uppercase tracking-widest text-brand-300">
+        Trabajo real · {project.surface}
+      </p>
+      <h1 class="mt-2 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        {project.title}
+      </h1>
+    </div>
+  </section>
+
+  <!-- FOTO PRINCIPAL -->
+  {
+    project.after && (
+      <div class="mx-auto max-w-5xl px-6">
+        <img
+          src={project.after}
+          alt={`${project.title} — trabajo real de Pulimentos Jiménez`}
+          loading="eager"
+          class="-mt-8 aspect-[16/9] w-full rounded-3xl object-cover shadow-2xl ring-1 ring-slate-200"
+        />
+      </div>
+    )
+  }
+
+  <!-- HISTORIA -->
+  <article class="mx-auto max-w-3xl px-6 py-14">
+    <div class="space-y-5 text-lg leading-relaxed text-slate-700">
+      {project.story?.map((p) => <p>{p}</p>)}
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-3">
+      <Button href="/contacto">¿Tienes un suelo parecido? Pide presupuesto</Button>
+      <Button href={whatsappHref} variant="ghost">💬 WhatsApp</Button>
+    </div>
+  </article>
+
+  <!-- GALERÍA DEL TRABAJO -->
+  {
+    project.gallery && project.gallery.length > 0 && (
+      <section class="border-t border-slate-200 bg-slate-50 py-14">
+        <div class="mx-auto max-w-5xl px-6">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">
+            Más fotos de este trabajo
+          </h2>
+          <div class="mt-8 grid gap-6 sm:grid-cols-2">
+            {project.gallery.map((g) => (
+              <img
+                src={g.src}
+                alt={g.alt}
+                loading="lazy"
+                class="aspect-[4/3] w-full rounded-2xl object-cover shadow-md ring-1 ring-slate-200"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <CTASection />
+
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>
