@@ -1,10 +1,17 @@
 name: Deploy a cPanel (LucusHost)
 
-# Construye la web estática y la sube por FTPS al hosting en cada push a main.
+# Construye la web estática y la sube por FTPS al hosting:
+# - en cada push a main
+# - cada noche a las 02:30 UTC (recoge lo publicado en Storyblok durante el día)
+# - a mano (workflow_dispatch) o por API (repository_dispatch)
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "30 2 * * *"
   workflow_dispatch: {}
+  repository_dispatch:
+    types: [storyblok-publish]
 
 concurrency:
   group: deploy-cpanel
