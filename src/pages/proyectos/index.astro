@@ -11,28 +11,33 @@ import {
 
 export const prerender = true;
 
-// Galería de proyectos: lee el content-type "proyecto" de Storyblok (editable
-// por el cliente). Si aún no hay proyectos publicados, usa los de ejemplo.
+// Galería de proyectos: los publicados por el cliente en Storyblok se
+// FUSIONAN con los estáticos de src/data/projects.ts (los de Storyblok
+// primero). Si un slug coincide, gana la versión de Storyblok.
 let projects: Project[] = fallbackProjects;
 try {
   const sbApi = useStoryblokApi();
   const { data } = await sbApi.get("cdn/stories", {
     content_type: "proyecto",
     version: "published",
+    per_page: 100,
   });
   const stories = data?.stories ?? [];
-  if (stories.length > 0) {
-    projects = stories.map((story: any): Project => ({
-      slug: story.slug,
-      title: story.content?.title || story.name,
-      city: story.content?.city ?? "",
-      surface: story.content?.surface ?? "Otros",
-      before: story.content?.before?.filename || undefined,
-      after: story.content?.after?.filename || undefined,
-      videoUrl: story.content?.video_url || undefined,
-      description: story.content?.description ?? "",
-    }));
-  }
+  const sbProjects = stories.map((story: any): Project => ({
+    slug: story.slug,
+    title: story.content?.title || story.name,
+    city: story.content?.city || undefined,
+    surface: story.content?.surface ?? "Otros",
+    before: story.content?.before?.filename || undefined,
+    after: story.content?.after?.filename || undefined,
+    videoUrl: story.content?.video_url || undefined,
+    description: story.content?.description ?? "",
+  }));
+  const sbSlugs = new Set(sbProjects.map((p: Project) => p.slug));
+  projects = [
+    ...sbProjects,
+    ...fallbackProjects.filter((p) => !sbSlugs.has(p.slug)),
+  ];
 } catch (err) {
   // Sin token o sin conexión a Storyblok → se muestra el fallback estático
   // (trabajos reales de Pulimentos Jiménez, ver src/data/projects.ts).
