@@ -1,0 +1,97 @@
+---
+/**
+ * Carrusel infinito de logos de clientes ("Confían en nosotros").
+ * - Todos los logos en cajas del mismo tamaño (object-contain).
+ * - Marquesina CSS pura (sin JS), pausa al pasar el ratón.
+ * - Si un cliente no tiene logo, se muestra su nombre en texto.
+ * - Con prefers-reduced-motion se desactiva la animación (rejilla estática).
+ */
+import { clients } from "../config/site";
+
+// Duplicamos la lista para el bucle infinito sin salto.
+const loop = [...clients, ...clients];
+---
+
+{
+  clients.length > 0 && (
+    <section class="overflow-hidden border-y border-slate-200 bg-white py-14">
+      <p class="text-center text-sm font-semibold uppercase tracking-wide text-slate-500">
+        Empresas que ya confían en nosotros
+      </p>
+      <div class="marquee mt-10">
+        <div class="marquee-track">
+          {loop.map((c) => (
+            <div class="marquee-item">
+              {"logo" in c && c.logo ? (
+                <img
+                  src={c.logo}
+                  alt={`Logo de ${c.name}`}
+                  loading="lazy"
+                  width="180"
+                  height="64"
+                  class="logo-img"
+                />
+              ) : (
+                <span class="whitespace-nowrap text-lg font-semibold text-slate-400">{c.name}</span>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .marquee {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: logos-scroll 45s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-item {
+    display: flex;
+    height: 4rem;
+    width: 11.25rem; /* 180px: TODAS las cajas iguales */
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3.5rem;
+  }
+  .logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.65;
+    transition: filter 0.3s, opacity 0.3s;
+  }
+  .marquee-item:hover .logo-img {
+    filter: none;
+    opacity: 1;
+  }
+  @keyframes logos-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      width: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 1.5rem;
+    }
+  }
+</style>

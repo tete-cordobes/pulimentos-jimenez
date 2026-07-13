@@ -2,8 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ServiceCard from "../components/ServiceCard.astro";
-import { clients, telHref, whatsappHref } from "../config/site";
+import { telHref, whatsappHref } from "../config/site";
 import { servicesContent } from "../data/services";
+import LogoCarousel from "../components/LogoCarousel.astro";
 
 // Home estática provisional (design system). En la Fase 4/5 puede pasar a Storyblok.
 export const prerender = true;
@@ -138,23 +139,8 @@ export const prerender = true;
     </div>
   </section>
 
-  <!-- CLIENTES (solo se muestra cuando hay clientes reales confirmados) -->
-  {
-    clients.length > 0 && (
-      <section class="border-y border-slate-200 bg-slate-50 py-16">
-        <div class="mx-auto max-w-7xl px-6 text-center">
-          <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">
-            Empresas que ya confían en nosotros
-          </p>
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-            {clients.map((c) => (
-              <span class="text-base font-semibold text-slate-400">{c}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
+  <!-- CLIENTES: carrusel de logos (lista confirmada por el cliente) -->
+  <LogoCarousel />
 
   <!-- CTA FINAL -->
   <section class="bg-brand-900 text-white">

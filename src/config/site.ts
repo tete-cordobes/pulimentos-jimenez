@@ -93,15 +93,32 @@ export const surfaces = [
 ] as const;
 
 /**
- * Clientes reales de Pulimentos y Aplicaciones Jiménez (sección de confianza).
- * VACÍO a propósito: los anteriores eran placeholders y NO se pueden publicar
- * sin confirmar (poner clientes falsos es un problema legal/de credibilidad).
- * TODO: pedir al cliente la lista REAL. Antiguos placeholders (verificar si
- * alguno es real): Ilunion, Talasur, Eventos San Cristóbal, Tonelería del Sur,
- * Innoauto, Revestimientos Ruiz, Hospes Hotels, Probisa, Servimar,
- * Junta de Andalucía, Cruz Roja.
+ * Clientes reales de Pulimentos y Aplicaciones Jiménez (carrusel de confianza).
+ * Lista CONFIRMADA por el cliente (2026-07-13): son empresas con las que se
+ * ha trabajado de verdad. Los logos viven en public/clientes/ (mismo tamaño,
+ * normalizados). Si un cliente no tiene logo, el carrusel muestra su nombre.
  */
-export const clients = [] as const;
+export interface ClientRef {
+  name: string;
+  logo?: string;
+}
+
+export const clients: ClientRef[] = [
+  { name: "Ilunion", logo: "/clientes/ilunion.png" },
+  { name: "Talasur", logo: "/clientes/talasur.png" },
+  { name: "Eventos San Cristóbal", logo: "/clientes/eventos-san-cristobal.png" },
+  // Tonelería del Sur opera como "Casknolia" (su marca comercial actual)
+  { name: "Tonelería del Sur", logo: "/clientes/toneleria-del-sur.png" },
+  { name: "Innoauto", logo: "/clientes/innoauto.png" },
+  { name: "Revestimientos Ruiz", logo: "/clientes/revestimientos-ruiz.png" },
+  { name: "Hospes Hotels", logo: "/clientes/hospes-hotels.png" },
+  { name: "Probisa", logo: "/clientes/probisa.png" },
+  // TODO: confirmar con Carlos que es Servimar Pintura y Limpieza (Córdoba)
+  { name: "Servimar", logo: "/clientes/servimar.png" },
+  { name: "Junta de Andalucía", logo: "/clientes/junta-de-andalucia.png" },
+  { name: "Cruz Roja", logo: "/clientes/cruz-roja.png" },
+  { name: "Sumyrec", logo: "/clientes/sumyrec.png" },
+];
 
 /** Mensaje prerellenado del botón de WhatsApp. */
 export const whatsappMessage =
