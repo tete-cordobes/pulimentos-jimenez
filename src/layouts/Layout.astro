@@ -27,7 +27,13 @@ const {
   noindex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(canonical ?? Astro.url.pathname, site.url);
+// Canonical SIEMPRE con barra final (coincide con el sitemap y la URL real
+// que sirve el hosting: así el canonical no apunta a una URL que redirige).
+const canonicalPath = canonical ?? Astro.url.pathname;
+const canonicalURL = new URL(
+  canonicalPath.endsWith("/") ? canonicalPath : `${canonicalPath}/`,
+  site.url,
+);
 const ogImage = new URL("/og.jpg", site.url);
 
 const orgSchema = {
@@ -83,6 +89,8 @@ const orgSchema = {
     <meta property="og:locale" content="es_ES" />
     <meta property="og:image" content={ogImage.href} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage.href} />
 
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />

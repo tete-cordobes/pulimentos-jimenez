@@ -9,8 +9,11 @@ const env = loadEnv(process.env.NODE_ENV ?? 'development', process.cwd(), '');
 
 // https://astro.build/config
 export default defineConfig({
-  // Dominio real confirmado con el cliente.
-  site: 'https://www.pulimentosjimenez.es',
+  // Dominio canónico: NO-WWW (es donde resuelve el DNS; www está muerto).
+  site: 'https://pulimentosjimenez.es',
+  // Las URLs llevan barra final (coincide con el output de directorios y el
+  // sitemap), para que canonical = sitemap = URL real sin redirecciones 301.
+  trailingSlash: 'always',
   // Sitio 100% estático: se sirve desde hosting cPanel propio (LucusHost).
   // El contenido de Storyblok se congela en cada build; el formulario de
   // presupuesto se envía con un script PHP (public/enviar-presupuesto.php).
@@ -34,6 +37,9 @@ export default defineConfig({
     // los proyectos o las páginas legales.
     sitemap({
       changefreq: 'monthly',
+      // El blog es un placeholder (noindex): fuera del sitemap hasta que tenga
+      // contenido real.
+      filter: (page) => !page.includes('/blog'),
       serialize(item) {
         const path = new URL(item.url).pathname;
         let priority = 0.7;

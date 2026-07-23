@@ -4,7 +4,7 @@ import { site } from "../config/site";
 
 export const prerender = true;
 
-const domicilio = `${site.addressStreet}, ${site.addressPostal} ${site.addressRegion}, ${site.addressCountry}`;
+const domicilio = `${site.addressStreet}, ${site.addressPostal} ${site.addressLocality} (${site.addressRegion}), ${site.addressCountry}`;
 const dominio = site.url.replace(/^https?:\/\//, "");
 ---
 

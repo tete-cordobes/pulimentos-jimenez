@@ -10,8 +10,9 @@ export const site = {
   // ⚠️ INDEXACIÓN: false = la web NO sale en Google (meta noindex en todas las
   // páginas). Mientras se prepara el contenido. Cambiar a TRUE para lanzar.
   indexable: false,
-  // TODO: confirmar dominio real con el cliente
-  url: "https://www.pulimentosjimenez.es",
+  // Dominio canónico: la web se sirve en NO-WWW (www no tiene DNS). Todo
+  // (canonical, og, sitemap, JSON-LD) sale de aquí, así que debe resolver.
+  url: "https://pulimentosjimenez.es",
   description:
     "Especialistas en pulido, cristalizado y tratamiento de suelos. Pida presupuesto sin compromiso.",
   // Contacto. Carlos pidió (WhatsApp 6-jul) su número PRIMERO y el de su
