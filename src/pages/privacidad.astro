@@ -3,25 +3,92 @@ import Layout from "../layouts/Layout.astro";
 import { site } from "../config/site";
 
 export const prerender = true;
+
+const domicilio = `${site.addressStreet}, ${site.addressPostal} ${site.addressRegion}, ${site.addressCountry}`;
 ---
 
-<Layout title="Política de privacidad — Pulimentos Jiménez" description="Política de privacidad de Pulimentos Jiménez." canonical="/privacidad">
+<Layout title="Política de privacidad — Pulimentos Jiménez" description="Política de privacidad y protección de datos (RGPD) de Pulimentos y Aplicaciones Jiménez." canonical="/privacidad">
   <article class="mx-auto max-w-3xl px-6 py-16">
     <h1 class="text-3xl font-bold tracking-tight text-slate-900">Política de privacidad</h1>
-    <div class="mt-6 space-y-4 text-slate-600">
-      <p class="rounded-lg bg-amber-50 px-4 py-3 text-sm text-amber-800">
-        ⚠️ Texto de muestra. Sustituir por la política de privacidad real (RGPD/LOPDGDD)
-        adaptada a Pulimentos Jiménez y al tratamiento de datos del formulario.
-      </p>
-      <p>
-        Los datos que nos facilites a través del formulario de contacto se usan
-        únicamente para gestionar tu solicitud de presupuesto y ponernos en
-        contacto contigo. No se cederán a terceros salvo obligación legal.
-      </p>
-      <p>
-        Puedes ejercer tus derechos de acceso, rectificación y supresión
-        escribiendo a <a href={`mailto:${site.email}`} class="text-brand-700 underline">{site.email}</a>.
-      </p>
+
+    <div class="mt-8 space-y-8 text-slate-600">
+      <section>
+        <h2 class="text-xl font-semibold text-slate-900">1. Responsable del tratamiento</h2>
+        <p class="mt-3">
+          De conformidad con el Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica
+          3/2018 (LOPDGDD), le informamos de que el responsable del tratamiento de
+          sus datos es:
+        </p>
+        <ul class="mt-4 space-y-1">
+          <li><strong>Responsable:</strong> {site.legalOwner} ({site.legalName})</li>
+          <li><strong>NIF:</strong> {site.nif}</li>
+          <li><strong>Domicilio:</strong> {domicilio}</li>
+          <li><strong>Correo electrónico:</strong> <a href={`mailto:${site.email}`} class="text-brand-700 hover:underline">{site.email}</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-900">2. Datos que recogemos</h2>
+        <p class="mt-3">
+          A través del formulario de contacto recogemos los datos que usted nos
+          facilita voluntariamente: nombre, teléfono, correo electrónico, ciudad,
+          tipo de suelo, metros aproximados y el contenido de su mensaje. No
+          recogemos categorías especiales de datos.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-900">3. Finalidad del tratamiento</h2>
+        <p class="mt-3">
+          Sus datos se utilizan únicamente para atender su solicitud de
+          presupuesto o información, ponernos en contacto con usted y prestarle el
+          servicio solicitado. No se utilizan para elaboración de perfiles ni para
+          decisiones automatizadas.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-900">4. Legitimación</h2>
+        <p class="mt-3">
+          La base jurídica del tratamiento es el consentimiento del interesado,
+          que se otorga al enviar el formulario, y la aplicación de medidas
+          precontractuales a petición del interesado (elaboración del
+          presupuesto).
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-900">5. Conservación</h2>
+        <p class="mt-3">
+          Conservaremos sus datos durante el tiempo necesario para atender su
+          solicitud y, en su caso, durante los plazos legalmente exigibles. Cuando
+          dejen de ser necesarios, se suprimirán con las medidas de seguridad
+          adecuadas.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-900">6. Destinatarios</h2>
+        <p class="mt-3">
+          Sus datos no se cederán a terceros, salvo obligación legal. Podrán tener
+          acceso a ellos los proveedores de servicios necesarios para el
+          funcionamiento del sitio (por ejemplo, el alojamiento web), que actúan
+          como encargados del tratamiento conforme a la normativa vigente.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold text-slate-900">7. Sus derechos</h2>
+        <p class="mt-3">
+          Puede ejercer sus derechos de acceso, rectificación, supresión,
+          oposición, limitación del tratamiento y portabilidad de los datos
+          escribiendo a <a href={`mailto:${site.email}`} class="text-brand-700 hover:underline">{site.email}</a>,
+          indicando el derecho que desea ejercer. Asimismo, si considera que el
+          tratamiento no se ajusta a la normativa, tiene derecho a presentar una
+          reclamación ante la Agencia Española de Protección de Datos
+          (<a href="https://www.aepd.es" target="_blank" rel="noopener" class="text-brand-700 hover:underline">www.aepd.es</a>).
+        </p>
+      </section>
     </div>
   </article>
 </Layout>

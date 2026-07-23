@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { site, surfaces, telHref, whatsappHref } from "../config/site";
+import { site, surfaces, telHref, telHrefSecondary, whatsappHref } from "../config/site";
 
 // Página estática. El formulario se envía a un script PHP del hosting
 // (public/enviar-presupuesto.php), que redirige de vuelta con ?enviado=1
@@ -11,7 +11,7 @@ export const prerender = true;
 <Layout
   whatsappFloat={false}
   title="Contacto y presupuesto — Pulimentos Jiménez"
-  description="Pide presupuesto sin compromiso para el pulido o tratamiento de tu suelo. Te respondemos rápido. Córdoba, Málaga, Sevilla y Jaén."
+  description="Pide presupuesto sin compromiso para el pulido o tratamiento de tu suelo. Te respondemos rápido. Córdoba, Málaga, Sevilla, Jaén y Granada."
   canonical="/contacto"
 >
   <section class="bg-brand-900 text-white">
@@ -93,6 +93,14 @@ export const prerender = true;
           <textarea id="mensaje" name="mensaje" rows="4" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500" placeholder="Cuéntanos el estado del suelo, fotos, plazos…"></textarea>
         </div>
 
+        <label class="flex items-start gap-2 text-xs text-slate-600">
+          <input type="checkbox" name="privacidad" required class="mt-0.5 shrink-0 rounded border-slate-300 text-brand focus:ring-brand-500" />
+          <span>
+            He leído y acepto la
+            <a href="/privacidad" class="font-semibold text-brand-700 underline underline-offset-2">política de privacidad</a>. *
+          </span>
+        </label>
+
         <button type="submit" class="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-800">
           Enviar solicitud
         </button>
@@ -106,13 +114,14 @@ export const prerender = true;
         <h2 class="font-semibold text-slate-900">Contacto directo</h2>
         <div class="mt-4 flex flex-col gap-3 text-sm">
           <a href={telHref} class="font-semibold text-brand-700 hover:text-brand-900">📞 {site.phone}</a>
+          <a href={telHrefSecondary} class="font-semibold text-brand-700 hover:text-brand-900">📞 {site.phoneSecondary}</a>
           <a href={`mailto:${site.email}`} class="text-slate-700 hover:text-brand-700">✉️ {site.email}</a>
           <a href={whatsappHref} target="_blank" rel="noopener" class="text-slate-700 hover:text-brand-700">💬 WhatsApp</a>
         </div>
       </div>
       <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600">
         <p class="font-semibold text-slate-900">Zonas de trabajo</p>
-        <p class="mt-2">Córdoba · Málaga · Sevilla · Jaén y alrededores.</p>
+        <p class="mt-2">Córdoba · Málaga · Sevilla · Jaén · Granada y alrededores.</p>
       </div>
     </aside>
   </section>

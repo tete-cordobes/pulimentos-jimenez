@@ -4,16 +4,19 @@ import { telHref } from "../config/site";
 
 export const prerender = true;
 
-// Rangos orientativos €/m² por servicio (estimación, NO vinculante).
-// Ajustar con datos reales de Pulimentos Jiménez.
+// Rangos orientativos €/m² por servicio, facilitados por Pulimentos Jiménez.
+// NO vinculante: el precio final depende de la dificultad, el tamaño y el
+// tipo de suelo. Algunos servicios se valoran siempre a medida (quote).
 const rates = [
-  { id: "hormigon", label: "Pulido de hormigón", min: 15, max: 30 },
-  { id: "epoxi", label: "Pavimento de resina epoxi", min: 20, max: 40 },
-  { id: "marmol", label: "Pulido / cristalizado de mármol", min: 12, max: 25 },
-  { id: "terrazo", label: "Pulido de terrazo", min: 12, max: 22 },
-  { id: "abrillantado", label: "Abrillantado de suelos", min: 8, max: 15 },
-  { id: "vitrificado", label: "Vitrificado", min: 10, max: 20 },
-  { id: "abujardado", label: "Abujardado de hormigón", min: 15, max: 30 },
+  { id: "marmol", label: "Pulido / cristalizado de mármol", min: 10, max: 15 },
+  { id: "terrazo", label: "Pulido de terrazo", min: 10, max: 15 },
+  { id: "hormigon", label: "Pulido de hormigón", min: 10, max: 16 },
+  { id: "preparacion", label: "Preparación de soporte", min: 3, max: 6 },
+  { id: "vinilico", label: "Suelos vinílicos y termoplásticos", min: 5, max: 7 },
+  { id: "barro", label: "Barro cocido y terracota", min: 12, max: 16 },
+  { id: "epoxi", label: "Aplicación de resina epoxi", quote: true },
+  { id: "escaleras", label: "Pulido de escaleras", quote: true },
+  { id: "abujardado", label: "Abujardado de suelos", quote: true },
 ];
 ---
 
@@ -41,7 +44,7 @@ const rates = [
         <div>
           <label for="calc-servicio" class="block text-sm font-medium text-slate-700">Tipo de tratamiento</label>
           <select id="calc-servicio" class="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500">
-            {rates.map((r) => <option value={r.id} data-min={r.min} data-max={r.max}>{r.label}</option>)}
+            {rates.map((r) => <option value={r.id} data-min={r.min} data-max={r.max} data-quote={r.quote ? "1" : undefined}>{r.label}</option>)}
           </select>
         </div>
         <div>
@@ -53,9 +56,9 @@ const rates = [
       <div id="calc-resultado" class="mt-8 rounded-xl bg-brand-50 p-6 text-center">
         <p class="text-sm text-brand-700">Estimación orientativa</p>
         <p id="calc-precio" class="mt-1 text-3xl font-bold text-brand-900">—</p>
-        <p class="mt-1 text-xs text-slate-500">
-          Precio no vinculante. El presupuesto final depende del estado del suelo
-          y el acabado.
+        <p id="calc-nota" class="mt-1 text-xs text-slate-500">
+          Precio no vinculante. Depende de la dificultad del trabajo, el tamaño
+          y el tipo de suelo.
         </p>
       </div>
 
@@ -69,6 +72,13 @@ const rates = [
         o llámanos al <a href={telHref} class="font-semibold text-brand-700">teléfono</a>
       </p>
     </div>
+
+    <p class="mt-6 text-center text-sm text-slate-500">
+      ¿Quieres entender de qué depende el precio?{" "}
+      <a href="/precio-pulido-hormigon" class="font-semibold text-brand-700 underline underline-offset-2">
+        Lee nuestra guía del precio del pulido de hormigón por m²
+      </a>
+    </p>
   </section>
 </Layout>
 
@@ -76,6 +86,12 @@ const rates = [
   const servicio = document.getElementById("calc-servicio") as HTMLSelectElement | null;
   const metros = document.getElementById("calc-metros") as HTMLInputElement | null;
   const precio = document.getElementById("calc-precio");
+  const nota = document.getElementById("calc-nota");
+
+  const NOTA_DEFECTO =
+    "Precio no vinculante. Depende de la dificultad del trabajo, el tamaño y el tipo de suelo.";
+  const NOTA_CONSULTAR =
+    "Este servicio lo valoramos siempre a medida. Pídenos presupuesto sin compromiso.";
 
   const fmt = new Intl.NumberFormat("es-ES", {
     style: "currency",
@@ -86,6 +102,15 @@ const rates = [
   function calcular() {
     if (!servicio || !metros || !precio) return;
     const opt = servicio.selectedOptions[0];
+
+    // Servicios "a consultar": no hay tarifa €/m².
+    if (opt.dataset.quote === "1") {
+      precio.textContent = "A consultar";
+      if (nota) nota.textContent = NOTA_CONSULTAR;
+      return;
+    }
+
+    if (nota) nota.textContent = NOTA_DEFECTO;
     const min = Number(opt.dataset.min);
     const max = Number(opt.dataset.max);
     const m = Math.max(0, Number(metros.value) || 0);

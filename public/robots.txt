@@ -1,4 +1,10 @@
+# PRE-LANZAMIENTO: la web aún no debe indexarse (site.indexable = false).
+# Al lanzar, restaurar el bloque de abajo (Allow + Sitemap) y quitar el Disallow.
 User-agent: *
-Allow: /
+Disallow: /
 
-Sitemap: https://www.pulimentosjimenez.es/sitemap-index.xml
+# --- AL LANZAR, usar esto en su lugar: ---
+# User-agent: *
+# Allow: /
+#
+# Sitemap: https://www.pulimentosjimenez.es/sitemap-index.xml

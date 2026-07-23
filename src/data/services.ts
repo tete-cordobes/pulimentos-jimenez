@@ -43,8 +43,8 @@ export const servicesContent: ServiceContent[] = [
     volume: 6600,
     short:
       "Suelos de resina epoxi resistentes para naves, garajes e industria.",
-    image: "/proyectos/resina-suelo.webp",
-    imageAlt: "Pavimento continuo de resina aplicado en vivienda — trabajo real de Pulimentos Jiménez",
+    image: "/proyectos/epoxi-pasillo.webp",
+    imageAlt: "Pavimento continuo de resina epoxi en el pasillo de un edificio, con acabado brillante y sin juntas — trabajo real de Pulimentos Jiménez",
     intro: [
       "Los pavimentos de resina epoxi son la solución ideal para naves industriales, locales comerciales, garajes y zonas de alto tránsito. Crean una superficie continua, sin juntas, impermeable y de altísima resistencia mecánica y química.",
       "En Pulimentos Jiménez aplicamos sistemas epoxi adaptados a cada uso: desde acabados autonivelantes decorativos hasta multicapa antideslizante para zonas húmedas o de paso de maquinaria.",
@@ -92,9 +92,9 @@ export const servicesContent: ServiceContent[] = [
     slug: "pulido-de-hormigon",
     name: "Pulido de hormigón",
     h1: "Pulido de hormigón",
-    metaTitle: "Pulido de hormigón con nano-litio | Suelos industriales — Pulimentos Jiménez",
+    metaTitle: "Hormigón pulido: precio y acabado con nano-litio — Pulimentos Jiménez",
     metaDescription:
-      "Pulido de hormigón con nano-litio: más resistencia, brillo y cero polvo. Para naves, garajes y locales. Acabado satinado o alto brillo. Pida presupuesto.",
+      "Hormigón pulido para naves, garajes, locales y exterior. Tratamiento con nano-litio: más resistencia, brillo y cero polvo. Pide presupuesto sin compromiso.",
     keyword: "hormigón pulido",
     volume: 1900,
     short:
@@ -102,8 +102,9 @@ export const servicesContent: ServiceContent[] = [
     image: "/proyectos/hormigon-nave.webp",
     imageAlt: "Hormigón pulido con acabado espejo en nave industrial — trabajo real de Pulimentos Jiménez",
     intro: [
-      "El hormigón pulido es la solución más demandada para naves industriales, locales, garajes y viviendas: económico, de alta resistencia, personalizable y de fácil limpieza.",
-      "Con el pulido endurecemos y densificamos el poro del hormigón mediante nano-partículas de litio, aumentando su resistencia al desgaste, la abrasión y el impacto, y eliminando por completo la generación de polvo.",
+      "El hormigón pulido se ha convertido en el pavimento más demandado para naves industriales, garajes, locales comerciales y viviendas, y hay una razón de peso: es de los acabados más resistentes y rentables del mercado. Partimos del propio hormigón de tu suelo, así que te ahorras material nuevo y obtienes un pavimento continuo, sin juntas donde se acumule la suciedad, que aguanta el paso constante de carretillas, coches y maquinaria durante años.",
+      "El secreto está en el tratamiento con nano-partículas de litio. Con el pulido diamantado abrimos el poro del hormigón y lo densificamos con litio: la superficie se endurece por dentro, gana resistencia al desgaste, la abrasión y el impacto, y deja de soltar polvo por completo. El resultado es un suelo de hormigón pulido más limpio, más luminoso (la superficie refleja la luz y reduce el gasto en iluminación) y con un mantenimiento mínimo: agua y poco más.",
+      "Trabajamos tanto hormigón pulido en interior como en exterior, y adaptamos el nivel de brillo a lo que necesites, desde un acabado satinado y discreto hasta el alto brillo tipo espejo. Antes de darte precio vamos a ver tu suelo: valoramos el estado del soporte, los metros y el uso que le vas a dar para pasarte un presupuesto real, sin sorpresas. Y si es una nave industrial, te hacemos una prueba gratuita in situ para que veas el acabado antes de decidir.",
     ],
     benefits: [
       {
@@ -131,16 +132,28 @@ export const servicesContent: ServiceContent[] = [
     ],
     faqs: [
       {
+        q: "¿Cuánto cuesta el hormigón pulido por metro cuadrado?",
+        a: "El precio del hormigón pulido depende del estado del soporte, los metros totales, el nivel de brillo y el uso que le vayas a dar (no es lo mismo un garaje que una nave con tránsito de maquinaria). Por eso no damos una tarifa cerrada por teléfono: vamos a ver el suelo, lo medimos y te pasamos un presupuesto cerrado y sin compromiso. A más superficie, mejor precio por metro.",
+      },
+      {
+        q: "¿Se puede hacer hormigón pulido en exterior?",
+        a: "Sí. El hormigón pulido en exterior es una opción muy resistente para patios, entradas, porches y zonas de paso. En exterior ajustamos el acabado para que sea antideslizante y aguante la intemperie y los cambios de temperatura. Lo valoramos en la visita según la ubicación y el uso.",
+      },
+      {
+        q: "¿Es bueno el hormigón pulido para naves industriales?",
+        a: "Es la mejor opción para naves. El densificado con litio prepara el suelo para soportar carretillas elevadoras, transpaletas y carga pesada sin agrietarse ni levantar polvo, algo clave en almacenes y zonas de producción. Para naves hacemos una prueba gratuita in situ antes de que decidas.",
+      },
+      {
+        q: "¿Sirve el hormigón pulido para el suelo de un garaje?",
+        a: "Perfecto para garajes, tanto de vivienda como de comunidad. Aguanta el peso y el giro de los coches, no suelta polvo, no se mancha con facilidad y se limpia en un momento. Además gana luminosidad, que en un garaje siempre se agradece.",
+      },
+      {
         q: "¿Se puede pulir un hormigón ya existente?",
         a: "Sí. Tanto pavimentos nuevos como antiguos se pueden pulir; valoramos el estado del soporte en una visita y reparamos coqueras y juntas si es necesario.",
       },
       {
         q: "¿Cuánto dura el hormigón pulido?",
         a: "Es un acabado de larga duración. Con el sellado de litio aumenta su resistencia y solo requiere un mantenimiento mínimo de limpieza.",
-      },
-      {
-        q: "¿Ofrecéis prueba gratuita?",
-        a: "Sí, para naves industriales realizamos una prueba gratuita in situ para que veas el resultado antes de decidir.",
       },
     ],
   },
@@ -230,8 +243,8 @@ export const servicesContent: ServiceContent[] = [
     keyword: "abrillantado de suelos",
     volume: 480,
     short: "Acabado brillante y antideslizante de larga duración.",
-    image: "/proyectos/equipo-hospital.webp",
-    imageAlt: "Abrillantando el suelo de un hospital con máquina rotativa — equipo de Pulimentos Jiménez",
+    image: "/proyectos/hospital-brillo.webp",
+    imageAlt: "Suelo de un hospital abrillantado, con acabado brillante y uniforme — trabajo real de Pulimentos Jiménez",
     intro: [
       "El abrillantado devuelve el brillo a tus suelos y facilita su mantenimiento, prolongando la vida del pavimento.",
       "Usamos los mejores productos para conseguir acabados de calidad, de larga duración y antideslizantes.",
@@ -264,8 +277,8 @@ export const servicesContent: ServiceContent[] = [
     keyword: "vitrificado de suelos",
     volume: 0,
     short: "Sellado vitrificado para máxima protección y durabilidad.",
-    image: "/proyectos/hero-chalet.webp",
-    imageAlt: "Suelo sellado con acabado brillo espejo en el salón de un chalet — trabajo real de Pulimentos Jiménez",
+    image: "/proyectos/vitrificado-marmol-hotel.webp",
+    imageAlt: "Cristalizado y vitrificado de un suelo de mármol blanco con cenefa negra en el hall de un hotel, con acabado brillo espejo — trabajo real de Pulimentos Jiménez",
     intro: [
       "El vitrificado crea una capa protectora de alta resistencia sobre el suelo, ideal para pavimentos sometidos a un uso intenso.",
       "Es un tratamiento que aporta durabilidad, protege frente al desgaste y mantiene el aspecto del pavimento durante más tiempo.",
@@ -280,33 +293,231 @@ export const servicesContent: ServiceContent[] = [
       { title: "Vitrificado", desc: "Aplicación del sellado vitrificado." },
       { title: "Acabado", desc: "Protección uniforme y resistente." },
     ],
-    faqs: [],
+    faqs: [
+      {
+        q: "¿En qué se diferencia el vitrificado del cristalizado?",
+        a: "El cristalizado actúa sobre todo en mármol y terrazo, creando una capa de brillo mediante reacción química. El vitrificado sella la superficie con una capa protectora de alta resistencia, pensada para pavimentos sometidos a un uso intenso. Valoramos tu suelo para recomendar el tratamiento adecuado.",
+      },
+      {
+        q: "¿Cuánto dura el vitrificado de un suelo?",
+        a: "Es un tratamiento de larga duración. La capa protectora resiste el desgaste diario y mantiene el aspecto del pavimento durante años, con un mantenimiento sencillo de limpieza.",
+      },
+    ],
   },
   {
-    slug: "abujardado-hormigon",
-    name: "Abujardado de hormigón",
-    h1: "Abujardado de hormigón",
-    metaTitle: "Abujardado de hormigón: suelos antideslizantes — Pulimentos Jiménez",
+    slug: "abujardado-de-suelos",
+    name: "Abujardado de suelos",
+    h1: "Abujardado de suelos",
+    metaTitle: "Abujardado de suelos: mármol y piedra antideslizante — Pulimentos Jiménez",
     metaDescription:
-      "Abujardado de hormigón para superficies antideslizantes en exteriores, rampas y zonas húmedas. Tratamiento seguro y duradero. Pida presupuesto.",
-    keyword: "abujardado hormigón",
+      "Abujardado de suelos de mármol y piedra para un acabado antideslizante y rústico. Ideal para exteriores, escaleras y zonas húmedas. Pida presupuesto.",
+    keyword: "abujardado de suelos",
     volume: 0,
-    short: "Tratamiento antideslizante para exteriores y rampas.",
+    short: "Acabado antideslizante y rústico para mármol y piedra.",
     intro: [
-      "El abujardado aporta textura al hormigón para conseguir una superficie antideslizante, ideal para exteriores, rampas y zonas húmedas.",
-      "Es un tratamiento mecánico que mejora la seguridad sin renunciar a la resistencia del pavimento.",
+      "El abujardado es un tratamiento mecánico que aporta textura a la superficie del suelo para conseguir un acabado antideslizante y de aspecto rústico o envejecido. Trabajamos principalmente mármol y piedra natural.",
+      "Es la solución ideal para escaleras, exteriores, porches y zonas húmedas donde la seguridad frente a resbalones es prioritaria, sin renunciar a la belleza de la piedra.",
     ],
     benefits: [
-      { title: "Antideslizante", desc: "Textura segura para zonas de paso y agua." },
-      { title: "Resistente", desc: "Mantiene la dureza del hormigón." },
-      { title: "Exteriores", desc: "Perfecto para rampas, accesos y patios." },
+      { title: "Antideslizante", desc: "Textura segura para escaleras, exteriores y zonas de agua." },
+      { title: "Acabado rústico", desc: "Aspecto envejecido y natural que realza la piedra." },
+      { title: "Sobre mármol y piedra", desc: "Especialistas en abujardar mármol y piedra natural." },
+      { title: "Duradero", desc: "Un acabado mecánico que se mantiene con el tiempo." },
     ],
     process: [
-      { title: "Valoración", desc: "Analizamos la superficie y el grado de textura necesario." },
+      { title: "Valoración", desc: "Analizamos la piedra y el grado de textura necesario." },
       { title: "Abujardado", desc: "Tratamiento mecánico para crear la textura antideslizante." },
-      { title: "Acabado", desc: "Superficie segura y duradera." },
+      { title: "Acabado", desc: "Superficie segura, rústica y duradera." },
     ],
-    faqs: [],
+    surfaces: ["Mármol", "Granito", "Piedra natural"],
+    faqs: [
+      {
+        q: "¿Sobre qué suelos hacéis el abujardado?",
+        a: "Trabajamos sobre todo mármol y piedra natural, ideales para conseguir un acabado antideslizante en escaleras y exteriores. Valoramos cada caso en una visita.",
+      },
+    ],
+  },
+  {
+    slug: "pintado-parkings-naves",
+    name: "Pintado de parkings y naves",
+    h1: "Pintado y señalización de parkings y naves industriales",
+    metaTitle: "Pintado de parkings y naves industriales — Pulimentos Jiménez",
+    metaDescription:
+      "Pintado y señalización de aparcamientos y naves industriales: marcado de plazas, líneas, sentidos y suelos. Acabados resistentes al tránsito. Pida presupuesto.",
+    keyword: "pintado de parkings",
+    volume: 0,
+    short: "Marcado y pintado de plazas, líneas y suelos de parkings y naves.",
+    image: "/proyectos/parking-marcado.webp",
+    imageAlt: "Parking pintado en gris con plazas y líneas blancas recién marcadas — trabajo real de Pulimentos Jiménez",
+    intro: [
+      "Pintamos y señalizamos aparcamientos y naves industriales: marcado de plazas, líneas de circulación, sentidos, pasos de peatones, numeración y señalización de seguridad, con pinturas específicas de alta resistencia al tránsito.",
+      "Además del marcado, aplicamos y renovamos el pintado de suelos de naves y garajes para conseguir espacios más limpios, ordenados y seguros.",
+    ],
+    benefits: [
+      { title: "Espacios ordenados", desc: "Plazas, sentidos y zonas bien delimitadas y visibles." },
+      { title: "Alta resistencia", desc: "Pinturas que aguantan el paso de coches y maquinaria." },
+      { title: "Más seguridad", desc: "Señalización de pasos, sentidos y zonas de riesgo." },
+      { title: "Naves y garajes", desc: "Marcado y pintado de suelos industriales y comunitarios." },
+    ],
+    process: [
+      { title: "Planificación", desc: "Definimos el marcado de plazas, sentidos y señalización." },
+      { title: "Preparación", desc: "Limpieza y preparación del soporte para que la pintura agarre." },
+      { title: "Pintado y marcado", desc: "Aplicación de pinturas de alta resistencia al tránsito." },
+      { title: "Acabado", desc: "Espacio señalizado, ordenado y seguro." },
+    ],
+    faqs: [
+      {
+        q: "¿Podéis repintar un parking que ya está marcado?",
+        a: "Sí. Renovamos el marcado de plazas y la señalización de parkings y naves que ya están en uso, adaptándonos a los horarios para no interrumpir la actividad.",
+      },
+    ],
+  },
+  {
+    slug: "pavimentos-deportivos",
+    name: "Pavimentos deportivos",
+    h1: "Pavimentos y pistas deportivas",
+    metaTitle: "Pavimentos deportivos y pistas — Pulimentos Jiménez",
+    metaDescription:
+      "Ejecución y tratamiento de pavimentos deportivos: pistas polideportivas, colegios y clubes. Superficies resistentes, seguras y de larga duración. Pida presupuesto.",
+    keyword: "pavimentos deportivos",
+    volume: 0,
+    short: "Pistas y pavimentos deportivos resistentes para colegios y clubes.",
+    image: "/proyectos/pista-deportiva.webp",
+    imageAlt: "Pista deportiva azul con líneas blancas recién pintada al aire libre — trabajo real de Pulimentos Jiménez",
+    intro: [
+      "Ejecutamos y tratamos pavimentos deportivos para pistas polideportivas, colegios, clubes y comunidades. Superficies pensadas para el juego: resistentes al desgaste, seguras y de larga duración.",
+      "Trabajamos pistas de gran superficie, adaptando el acabado al deporte y al uso, con materiales preparados para aguantar el tránsito intenso y la intemperie.",
+    ],
+    benefits: [
+      { title: "Alta resistencia", desc: "Pavimentos que aguantan el uso deportivo intenso y la intemperie." },
+      { title: "Seguros", desc: "Acabados pensados para el juego y para evitar resbalones." },
+      { title: "Gran superficie", desc: "Ejecutamos pistas completas de cientos o miles de m²." },
+      { title: "Larga duración", desc: "Materiales y acabados preparados para durar años." },
+    ],
+    process: [
+      { title: "Valoración", desc: "Analizamos la pista, el deporte y el uso previsto." },
+      { title: "Preparación", desc: "Acondicionamos el soporte para garantizar el resultado." },
+      { title: "Ejecución", desc: "Aplicamos el pavimento deportivo adecuado a cada caso." },
+      { title: "Acabado", desc: "Marcado y líneas de juego según el deporte." },
+    ],
+    faqs: [
+      {
+        q: "¿Qué tipo de pistas y superficies deportivas hacéis?",
+        a: "Ejecutamos y tratamos pavimentos deportivos para pistas polideportivas, de pádel y de tenis, en colegios, clubes y comunidades. Adaptamos el acabado y el marcado al deporte y al uso previsto.",
+      },
+      {
+        q: "¿Trabajáis pistas deportivas en exterior?",
+        a: "Sí. Preparamos el pavimento para que aguante la intemperie y el uso intensivo al aire libre, con acabados resistentes, seguros y antideslizantes. Valoramos cada pista en una visita.",
+      },
+    ],
+  },
+  {
+    slug: "pulido-de-escaleras",
+    name: "Pulido de escaleras",
+    h1: "Pulido de escaleras",
+    metaTitle: "Pulido de escaleras: mármol, terrazo y granito — Pulimentos Jiménez",
+    metaDescription:
+      "Pulido y cristalizado de escaleras de mármol, terrazo y granito. Recuperamos el brillo de peldaños, mesetas y zócalos. Pida presupuesto sin compromiso.",
+    keyword: "pulido de escaleras",
+    volume: 0,
+    short: "Recuperamos el brillo de escaleras de mármol, terrazo y granito.",
+    image: "/proyectos/escalera-pulida.webp",
+    imageAlt: "Escalera de terrazo claro pulida con brillo espejo, reflejando la luz en los peldaños — trabajo real de Pulimentos Jiménez",
+    intro: [
+      "Las escaleras son una de las zonas de más tránsito de cualquier edificio, y por eso son las primeras en perder brillo y mostrar desgaste en peldaños y mesetas. Con nuestro servicio de pulido de escaleras recuperamos su aspecto original.",
+      "Trabajamos peldaños, tabicas, mesetas y zócalos de mármol, terrazo y granito con herramienta diamantada específica para escaleras, consiguiendo un acabado uniforme, brillante y antideslizante.",
+    ],
+    benefits: [
+      { title: "Brillo recuperado", desc: "Devolvemos a la escalera el color y el brillo originales." },
+      { title: "Acabado seguro", desc: "Pulido antideslizante para evitar resbalones en los peldaños." },
+      { title: "Trabajo cuidado", desc: "Tratamos peldaños, mesetas y zócalos con herramienta específica." },
+      { title: "Fácil mantenimiento", desc: "Una escalera pulida se limpia mucho mejor y aguanta más." },
+    ],
+    process: [
+      { title: "Diagnóstico", desc: "Valoramos el material y el estado de peldaños y mesetas." },
+      { title: "Pulido diamantado", desc: "Eliminamos desgaste y rayas con grano progresivo." },
+      { title: "Cristalizado", desc: "Realzamos y protegemos el brillo del peldaño." },
+      { title: "Acabado antideslizante", desc: "Resultado brillante y seguro para el tránsito." },
+    ],
+    surfaces: ["Mármol", "Terrazo", "Granito"],
+    faqs: [
+      {
+        q: "¿Podéis pulir escaleras sin cerrar la comunidad?",
+        a: "Sí. Trabajamos por tramos y señalizamos las zonas para que los vecinos puedan seguir usando la escalera durante el trabajo.",
+      },
+    ],
+  },
+  {
+    slug: "suelos-vinilicos-termoplasticos",
+    name: "Suelos vinílicos y termoplásticos",
+    h1: "Limpieza y tratamiento de suelos vinílicos y termoplásticos",
+    metaTitle: "Limpieza y tratamiento de suelos vinílicos y termoplásticos — Pulimentos Jiménez",
+    metaDescription:
+      "Limpieza a fondo y tratamiento de suelos vinílicos y termoplásticos (PVC, linóleo). Decapado, sellado y abrillantado. Ideal para locales y colegios. Pida presupuesto.",
+    keyword: "tratamiento suelos vinílicos",
+    volume: 0,
+    short: "Decapado, sellado y abrillantado de suelos vinílicos y termoplásticos.",
+    image: "/proyectos/vinilico-hospital.webp",
+    imageAlt: "Suelo vinílico de un hospital abrillantado, con acabado brillante y uniforme en el pasillo — trabajo real de Pulimentos Jiménez",
+    intro: [
+      "Los suelos vinílicos y termoplásticos (PVC, linóleo) son muy habituales en colegios, clínicas, locales comerciales y oficinas. Con el uso pierden brillo, se manchan y acumulan capas de cera vieja que los apagan.",
+      "Realizamos una limpieza a fondo con decapado de restos antiguos y aplicamos un tratamiento de sellado y abrillantado que protege el suelo, le devuelve el brillo y facilita enormemente su mantenimiento diario.",
+    ],
+    benefits: [
+      { title: "Limpieza profunda", desc: "Decapamos la cera vieja y la suciedad incrustada." },
+      { title: "Brillo protegido", desc: "Sellamos y abrillantamos para un acabado uniforme y duradero." },
+      { title: "Más higiénico", desc: "Una superficie sellada se limpia mejor: ideal para colegios y clínicas." },
+      { title: "Antideslizante", desc: "Acabado seguro adaptado a zonas de paso." },
+    ],
+    process: [
+      { title: "Decapado", desc: "Retiramos tratamientos antiguos y suciedad incrustada." },
+      { title: "Limpieza a fondo", desc: "Dejamos el suelo limpio y preparado." },
+      { title: "Sellado", desc: "Aplicamos el tratamiento protector adaptado al material." },
+      { title: "Abrillantado", desc: "Acabado brillante, uniforme y fácil de mantener." },
+    ],
+    surfaces: ["Vinílico / PVC", "Linóleo", "Termoplástico", "Goma"],
+    faqs: [
+      {
+        q: "¿Qué diferencia hay entre un suelo vinílico y uno termoplástico?",
+        a: "Son familias de pavimentos sintéticos (PVC, linóleo y similares) muy usados en zonas de mucho tránsito. Ambos se tratan con decapado, sellado y abrillantado para recuperarlos y protegerlos.",
+      },
+    ],
+  },
+  {
+    slug: "barro-cocido-terracota",
+    name: "Barro cocido y terracota",
+    h1: "Limpieza y tratamiento de barro cocido y terracota",
+    metaTitle: "Tratamiento de barro cocido y terracota — Pulimentos Jiménez",
+    metaDescription:
+      "Decapado, limpieza y tratamiento de suelos de barro cocido y terracota. Recuperamos el color y aplicamos un acabado protector satinado. Pida presupuesto.",
+    keyword: "tratamiento barro cocido",
+    volume: 0,
+    short: "Recuperamos el color del barro cocido y la terracota con acabado protector.",
+    image: "/proyectos/barro-hotel-tratado.webp",
+    imageAlt: "Suelo de barro cocido tratado con el color recuperado y acabado protector satinado — trabajo real de Pulimentos Jiménez",
+    intro: [
+      "El barro cocido y la terracota son suelos con mucho encanto, pero también muy porosos: absorben la suciedad, pierden el color y se quedan mate y apagados con el paso del tiempo.",
+      "Realizamos un decapado a fondo para retirar la suciedad y los tratamientos antiguos, y aplicamos a mano un tratamiento que hidrata el barro, recupera su color y crea una capa protectora satinada, uniforme y fácil de mantener.",
+    ],
+    benefits: [
+      { title: "Color recuperado", desc: "Devolvemos al barro su tono cálido original." },
+      { title: "Protección duradera", desc: "Sellamos el poro para que no vuelva a absorber suciedad." },
+      { title: "Aplicación a mano", desc: "Metro a metro, para que el producto penetre de forma uniforme." },
+      { title: "Fácil mantenimiento", desc: "Un barro tratado se limpia mejor y aguanta años." },
+    ],
+    process: [
+      { title: "Decapado", desc: "Retiramos suciedad incrustada y tratamientos viejos." },
+      { title: "Limpieza a fondo", desc: "Dejamos el barro limpio y con el poro abierto." },
+      { title: "Tratamiento a mano", desc: "Aplicamos el producto protector metro a metro." },
+      { title: "Acabado satinado", desc: "Color recuperado y superficie protegida y uniforme." },
+    ],
+    surfaces: ["Barro cocido", "Terracota"],
+    faqs: [
+      {
+        q: "¿Se puede recuperar un barro muy viejo y manchado?",
+        a: "En la mayoría de casos sí. El decapado retira años de suciedad y tratamientos antiguos, y el tratamiento posterior devuelve el color y protege el suelo. Lo valoramos in situ.",
+      },
+    ],
   },
 ];
 

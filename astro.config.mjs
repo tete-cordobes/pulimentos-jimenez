@@ -29,7 +29,26 @@ export default defineConfig({
         hero: 'storyblok/Hero',
       },
     }),
-    sitemap(),
+    // Sitemap con prioridades orientadas al SEO: la home y las páginas de
+    // captación (location pages + servicios + guía de precios) pesan más que
+    // los proyectos o las páginas legales.
+    sitemap({
+      changefreq: 'monthly',
+      serialize(item) {
+        const path = new URL(item.url).pathname;
+        let priority = 0.7;
+        if (path === '/') priority = 1.0;
+        else if (path.startsWith('/pulido-de-suelos-en-')) priority = 0.9; // location pages
+        else if (path === '/servicios/' || path.startsWith('/servicios/')) priority = 0.8;
+        else if (path === '/precio-pulido-hormigon/' || path === '/calculadora-precio/') priority = 0.8;
+        else if (path === '/contacto/' || path === '/sobre-nosotros/') priority = 0.7;
+        else if (path.startsWith('/proyectos')) priority = 0.6;
+        else if (path === '/aviso-legal/' || path === '/privacidad/' || path.startsWith('/blog')) priority = 0.3;
+        item.priority = priority;
+        item.changefreq = 'monthly';
+        return item;
+      },
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],

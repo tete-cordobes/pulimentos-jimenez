@@ -8,6 +8,7 @@ import {
   surfaceFilters,
   type Project,
 } from "../../data/projects";
+import { gallery } from "../../data/gallery";
 
 export const prerender = true;
 
@@ -47,7 +48,7 @@ try {
 
 <Layout
   title="Proyectos y trabajos realizados — Pulimentos Jiménez"
-  description="Galería de trabajos de pulido y tratamiento de pavimentos: hormigón, mármol, terrazo y epoxi. Antes y después de nuestros suelos."
+  description="Galería de trabajos reales de pulido y tratamiento de pavimentos: hormigón, mármol, terrazo, barro y epoxi. Fotos reales, sin retoques."
   canonical="/proyectos"
 >
   <!-- HERO -->
@@ -57,8 +58,8 @@ try {
         Nuestros proyectos
       </h1>
       <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-100">
-        El antes y el después de nuestros trabajos de pulido y tratamiento de
-        suelos. El resultado habla por nosotros.
+        Trabajos reales de pulido y tratamiento de suelos, con fotos sin
+        retoques. El resultado habla por nosotros.
       </p>
     </div>
   </section>
@@ -88,6 +89,37 @@ try {
     <!-- Tarjetas -->
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" id="project-grid">
       {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+
+  <!-- GALERÍA VISUAL (mosaico de trabajos reales) -->
+  <section class="border-t border-slate-200 bg-slate-50 py-16">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">
+          Galería de trabajos
+        </h2>
+        <p class="mt-4 text-slate-600">
+          Una muestra de suelos que hemos pulido, cristalizado y tratado.
+          Hormigón, mármol, terrazo, barro, epoxi, parkings y pistas: fotos
+          reales, sin retoques.
+        </p>
+      </div>
+      <div class="mt-12 gap-4 [column-fill:_balance] columns-2 md:columns-3 lg:columns-4">
+        {
+          gallery.map((photo) => (
+            <figure class="mb-4 break-inside-avoid overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                decoding="async"
+                class="w-full object-cover transition duration-300 hover:scale-[1.03]"
+              />
+            </figure>
+          ))
+        }
+      </div>
     </div>
   </section>
 

@@ -24,14 +24,27 @@ interface Props {
 const { city } = Astro.props;
 const canonical = `/pulido-de-suelos-en-${city.slug}`;
 
+// Una sola identidad estable (misma NAP en todas las páginas). La zona de
+// cada location page se expresa con areaServed, no cambiando el name.
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: `${site.name} — Pulido de suelos en ${city.name}`,
+  "@id": `${site.url}/#business`,
+  name: site.name,
   description: city.metaDescription,
   url: new URL(canonical, site.url).href,
   telephone: site.phone,
   email: site.email,
+  image: new URL("/og.jpg", site.url).href,
+  priceRange: "€€",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.addressStreet,
+    postalCode: site.addressPostal,
+    addressLocality: site.addressLocality,
+    addressRegion: site.addressRegion,
+    addressCountry: "ES",
+  },
   areaServed: [
     { "@type": "City", name: city.name },
     ...city.nearby.map((n) => ({ "@type": "Place", name: n })),

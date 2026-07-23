@@ -26,14 +26,14 @@ export const citiesContent: CityContent[] = [
     name: "Córdoba",
     hq: true,
     h1: "Pulido de suelos en Córdoba",
-    metaTitle: "Pulido de suelos en Córdoba | Hormigón, mármol, terrazo — Pulimentos Jiménez",
+    metaTitle: "Hormigón pulido en Córdoba | Pulimentos Jiménez",
     metaDescription:
-      "Empresa de pulido y tratamiento de suelos en Córdoba: hormigón pulido, cristalizado de mármol, terrazo y epoxi. Maquinaria diamantada profesional. Presupuesto sin compromiso.",
+      "Hormigón pulido y tratamiento de suelos en Córdoba: cristalizado de mármol, terrazo y epoxi. Base en La Carlota, cercanía y respuesta rápida. Presupuesto sin compromiso.",
     intro: [
-      "Pulimentos y Aplicaciones Jiménez tiene su base en La Carlota (Córdoba), desde donde nos desplazamos a toda la provincia y a Andalucía para dar servicio de pulido y tratamiento de pavimentos a viviendas, locales, naves y comunidades.",
-      "Pulimos y recuperamos hormigón, mármol, terrazo, granito y todo tipo de suelos con maquinaria diamantada de última generación, con acabados de alta resistencia y larga duración.",
+      "Pulimentos y Aplicaciones Jiménez tiene su base en La Carlota, en plena provincia de Córdoba, así que hacemos hormigón pulido en Córdoba y toda la campiña con la ventaja de la cercanía: respondemos rápido y valoramos tu suelo sin que el desplazamiento dispare el presupuesto.",
+      "Pulimos naves y garajes de los polígonos cordobeses, soleras de bodegas y cooperativas de la zona de Montilla-Moriles, y recuperamos el mármol y el barro cocido de patios y zaguanes del casco histórico. Hormigón pulido, cristalizado de mármol, terrazo y epoxi, con maquinaria propia y acabados de larga duración.",
     ],
-    nearby: ["La Carlota", "Córdoba capital", "Posadas", "Palma del Río", "Fuente Palmera", "La Victoria", "Écija", "Almodóvar del Río"],
+    nearby: ["Córdoba capital", "La Carlota", "Lucena", "Montilla", "Puente Genil", "Baena", "Fuente Palmera", "Posadas", "Palma del Río", "Almodóvar del Río"],
     faqs: [
       {
         q: "¿Trabajáis en toda la provincia de Córdoba?",
@@ -49,14 +49,14 @@ export const citiesContent: CityContent[] = [
     slug: "malaga",
     name: "Málaga",
     h1: "Pulido de suelos en Málaga",
-    metaTitle: "Pulido de suelos en Málaga | Hormigón, mármol, terrazo — Pulimentos Jiménez",
+    metaTitle: "Hormigón pulido en Málaga | Pulimentos Jiménez",
     metaDescription:
-      "Pulido y tratamiento de suelos en Málaga: hormigón pulido, epoxi, cristalizado de mármol y terrazo. Acabados duraderos. Pida presupuesto sin compromiso.",
+      "Hormigón pulido y tratamiento de suelos en Málaga y la Costa del Sol: cristalizado de mármol para hoteles, epoxi y terrazo. Acabados duraderos. Presupuesto sin compromiso.",
     intro: [
-      "Damos servicio de pulido y tratamiento de pavimentos en Málaga y su provincia, tanto para particulares como para empresas, naves industriales y locales comerciales.",
-      "Recuperamos suelos antiguos y tratamos pavimentos nuevos con hormigón pulido, epoxi, cristalizado de mármol y pulido de terrazo.",
+      "Damos servicio de hormigón pulido en Málaga y toda la Costa del Sol, tanto a particulares como al sector turístico: hoteles, restaurantes, comercios y urbanizaciones de Marbella, Torremolinos o Fuengirola que necesitan suelos preparados para el alto tránsito.",
+      "Cristalizamos el mármol de halls y zonas nobles, pulimos el hormigón de naves del Polígono Guadalhorce y aplicamos epoxi en locales e industria. En una zona de clima costero y salinidad, un suelo bien tratado y sellado es la mejor inversión en mantenimiento.",
     ],
-    nearby: ["Málaga capital", "Marbella", "Vélez-Málaga", "Fuengirola", "Antequera", "Estepona"],
+    nearby: ["Málaga capital", "Antequera", "Marbella", "Fuengirola", "Benalmádena", "Estepona", "Vélez-Málaga"],
     faqs: [
       {
         q: "¿Os desplazáis a Málaga desde Córdoba?",
@@ -68,17 +68,17 @@ export const citiesContent: CityContent[] = [
     slug: "sevilla",
     name: "Sevilla",
     h1: "Pulido de suelos en Sevilla",
-    metaTitle: "Pulido de suelos en Sevilla | Hormigón, mármol, terrazo — Pulimentos Jiménez",
+    metaTitle: "Hormigón pulido en Sevilla | Pulimentos Jiménez",
     metaDescription:
-      "Pulido y tratamiento de suelos en Sevilla: hormigón pulido, epoxi, cristalizado de mármol y terrazo. Acabados de alta resistencia y larga duración. Pida presupuesto.",
+      "Hormigón pulido en Sevilla para naves y logística: soleras resistentes sin polvo. También epoxi, cristalizado de mármol y terrazo. Presupuesto sin compromiso.",
     intro: [
-      "Realizamos trabajos de pulido y tratamiento de pavimentos en Sevilla y provincia, con soluciones de alta calidad para suelos antiguos y nuevos.",
-      "Desde el hormigón pulido para naves hasta el cristalizado de mármol en viviendas, conseguimos acabados resistentes, brillantes y antideslizantes.",
+      "Realizamos hormigón pulido en Sevilla y su área metropolitana, con un fuerte enfoque industrial y logístico: soleras para naves de los grandes polígonos (Carretera Amarilla, Store, PISA-Mairena, Alcalá de Guadaíra) que aguantan carretillas y tránsito pesado sin soltar polvo.",
+      "También pulimos garajes de comunidades del área metropolitana y recuperamos el mármol de viviendas del Aljarafe con pulido y cristalizado. Hormigón pulido, epoxi, mármol y terrazo, con acabados de alta resistencia y larga duración.",
     ],
-    nearby: ["Sevilla capital", "Dos Hermanas", "Alcalá de Guadaíra", "Utrera", "Écija", "Mairena del Aljarafe"],
+    nearby: ["Sevilla capital", "Écija", "Dos Hermanas", "Alcalá de Guadaíra", "Utrera", "La Rinconada", "Mairena del Aljarafe"],
     faqs: [
       {
-        q: "¿Qué tipos de suelo puláis en Sevilla?",
+        q: "¿Qué tipos de suelo pulís en Sevilla?",
         a: "Hormigón, mármol, terrazo, granito, barro cocido y más. Valoramos cada suelo para recomendar el mejor tratamiento.",
       },
     ],
@@ -87,18 +87,41 @@ export const citiesContent: CityContent[] = [
     slug: "jaen",
     name: "Jaén",
     h1: "Pulido de suelos en Jaén",
-    metaTitle: "Pulido de suelos en Jaén | Hormigón, mármol, terrazo — Pulimentos Jiménez",
+    metaTitle: "Hormigón pulido en Jaén | Pulimentos Jiménez",
     metaDescription:
-      "Pulido y tratamiento de suelos en Jaén: hormigón pulido, epoxi, cristalizado de mármol y terrazo. Acabados de alta resistencia. Pida presupuesto sin compromiso.",
+      "Hormigón pulido en Jaén para almazaras, cooperativas y naves: soleras resistentes al tránsito de carga. También mármol, epoxi y terrazo. Presupuesto sin compromiso.",
     intro: [
-      "Ofrecemos servicios de pulido y tratamiento de pavimentos en Jaén y su provincia para particulares, empresas y naves industriales.",
-      "Pulimos y recuperamos todo tipo de suelos con maquinaria diamantada, garantizando durabilidad, calidad y un acabado profesional.",
+      "Ofrecemos hormigón pulido en Jaén y su provincia, con especial experiencia en la agroindustria oleícola: soleras para almazaras y cooperativas de aceite que exigen resistencia al tránsito de carga y una limpieza intensiva sin que el suelo suelte polvo.",
+      "Trabajamos también naves industriales del entorno de Linares y recuperamos suelos nobles de mármol en el turismo renacentista de Úbeda y Baeza. Hormigón pulido, epoxi, cristalizado de mármol y terrazo, con maquinaria propia y acabados duraderos.",
     ],
-    nearby: ["Jaén capital", "Linares", "Úbeda", "Baeza", "Andújar", "Martos"],
+    nearby: ["Jaén capital", "Linares", "Andújar", "Úbeda", "Alcalá la Real", "Alcaudete", "Bailén", "La Carolina", "Baeza", "Martos"],
     faqs: [
       {
         q: "¿Trabajáis para naves industriales en Jaén?",
         a: "Sí, somos especialistas en pavimentos industriales (hormigón pulido y epoxi). Para naves ofrecemos prueba gratuita in situ.",
+      },
+    ],
+  },
+  {
+    slug: "granada",
+    name: "Granada",
+    h1: "Pulido de suelos en Granada",
+    metaTitle: "Hormigón pulido en Granada | Pulimentos Jiménez",
+    metaDescription:
+      "Hormigón pulido en Granada y provincia: naves de la Vega y polígonos, epoxi, y cristalizado de mármol para hoteles del entorno de la Alhambra. Presupuesto sin compromiso.",
+    intro: [
+      "Damos servicio de hormigón pulido en Granada y su provincia, un mercado mixto: suelo industrial para la agroindustria de la Vega y los polígonos de Juncaril y Asegra (Atarfe, Peligros), naves de la Costa Tropical en Motril y cristalizado de mármol para el sector hotelero del entorno de la Alhambra.",
+      "Adaptamos el tratamiento al uso y al clima, con los contrastes de la sierra y la vega. Hormigón pulido, epoxi, cristalizado de mármol y pulido de terrazo, con acabados brillantes, resistentes y de larga duración.",
+    ],
+    nearby: ["Granada capital", "Motril", "Armilla", "Maracena", "Loja", "Baza", "Guadix"],
+    faqs: [
+      {
+        q: "¿Trabajáis en la Costa Tropical y en el interior de Granada?",
+        a: "Sí, damos servicio tanto en Granada capital y su área metropolitana (Armilla, Maracena) como en la Costa Tropical (Motril) y las comarcas del interior (Loja, Baza, Guadix). Cuéntanos dónde está el suelo y te presupuestamos sin compromiso.",
+      },
+      {
+        q: "¿Qué suelos soléis tratar en Granada?",
+        a: "En viviendas y comunidades sobre todo mármol y terrazo; en locales, naves y garajes, hormigón pulido y resina epoxi. Valoramos cada suelo para recomendar el mejor tratamiento.",
       },
     ],
   },

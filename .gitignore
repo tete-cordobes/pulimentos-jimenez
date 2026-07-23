@@ -28,3 +28,6 @@ _media-inbox/
 
 # jetbrains setting folder
 .idea/
+
+# carpeta ajena (imágenes de cumpleaños coladas), no va al repo
+generated/

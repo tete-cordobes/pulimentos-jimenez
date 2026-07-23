@@ -14,19 +14,35 @@ export const site = {
   url: "https://www.pulimentosjimenez.es",
   description:
     "Especialistas en pulido, cristalizado y tratamiento de suelos. Pida presupuesto sin compromiso.",
-  // Contacto. Teléfono real confirmado (logo de la camiseta de la empresa).
-  phone: import.meta.env.PUBLIC_PHONE || "+34 609 24 58 50",
-  whatsapp: import.meta.env.PUBLIC_WHATSAPP || "34609245850",
+  // Contacto. Carlos pidió (WhatsApp 6-jul) su número PRIMERO y el de su
+  // padre debajo. El 609 (padre) es el de la camiseta/furgoneta antigua.
+  phone: import.meta.env.PUBLIC_PHONE || "+34 622 13 52 93", // Carlos (principal)
+  phoneSecondary: "+34 609 24 58 50", // padre (secundario)
+  whatsapp: import.meta.env.PUBLIC_WHATSAPP || "34622135293", // Carlos gestiona los leads
   // TODO: confirmar email real con el cliente
   email: "info@pulimentosjimenez.es",
   // Sede real: La Carlota (Córdoba). Se desplaza por toda Andalucía.
   baseCity: "La Carlota",
-  // Zonas de servicio (para el local pack + schema areaServed)
+  // Datos fiscales (aviso legal + schema). Titular autónomo (persona física).
+  // El cliente pidió NO destacar la localidad en marketing; en el aviso legal
+  // va por obligación legal (LSSI), de forma sobria.
+  legalOwner: "Carlos Jiménez Pelayo",
+  nif: "24497456H",
+  addressStreet: "Calle Ancha 10",
+  addressPostal: "14111",
+  addressLocality: "La Carlota",
+  addressRegion: "Córdoba",
+  addressCountry: "España",
+  // Zonas de servicio (para el local pack + schema areaServed).
+  // Solo capitales con volumen de búsqueda real (DataForSEO jul-2026):
+  // Sevilla 40, Málaga 20, Córdoba/Jaén/Granada 10/mes. Los pueblos van
+  // como "zonas cercanas" DENTRO de cada capital (volumen 0), no como URL.
   cities: [
     { name: "Córdoba", slug: "cordoba" },
     { name: "Málaga", slug: "malaga" },
     { name: "Sevilla", slug: "sevilla" },
     { name: "Jaén", slug: "jaen" },
+    { name: "Granada", slug: "granada" },
   ],
 } as const;
 
@@ -73,9 +89,39 @@ export const services = [
     volume: 0,
   },
   {
-    slug: "abujardado-hormigon",
-    name: "Abujardado de hormigón",
-    short: "Tratamiento antideslizante para exteriores y rampas.",
+    slug: "abujardado-de-suelos",
+    name: "Abujardado de suelos",
+    short: "Acabado antideslizante y rústico para mármol y piedra.",
+    volume: 0,
+  },
+  {
+    slug: "pulido-de-escaleras",
+    name: "Pulido de escaleras",
+    short: "Recuperamos el brillo de escaleras de mármol, terrazo y granito.",
+    volume: 0,
+  },
+  {
+    slug: "suelos-vinilicos-termoplasticos",
+    name: "Suelos vinílicos y termoplásticos",
+    short: "Decapado, sellado y abrillantado de suelos vinílicos y termoplásticos.",
+    volume: 0,
+  },
+  {
+    slug: "barro-cocido-terracota",
+    name: "Barro cocido y terracota",
+    short: "Recuperamos el color del barro cocido y la terracota con acabado protector.",
+    volume: 0,
+  },
+  {
+    slug: "pintado-parkings-naves",
+    name: "Pintado de parkings y naves",
+    short: "Marcado y pintado de plazas, líneas y suelos de parkings y naves.",
+    volume: 0,
+  },
+  {
+    slug: "pavimentos-deportivos",
+    name: "Pavimentos deportivos",
+    short: "Pistas y pavimentos deportivos resistentes para colegios y clubes.",
     volume: 0,
   },
 ] as const;
@@ -130,3 +176,6 @@ export const whatsappHref = `https://wa.me/${site.whatsapp}?text=${encodeURIComp
 
 /** Teléfono normalizado para el atributo href="tel:". */
 export const telHref = `tel:${site.phone.replace(/\s+/g, "")}`;
+
+/** Segundo teléfono (padre) normalizado para href="tel:". */
+export const telHrefSecondary = `tel:${site.phoneSecondary.replace(/\s+/g, "")}`;

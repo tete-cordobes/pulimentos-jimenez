@@ -1,5 +1,5 @@
 ---
-import { site, services, surfaces, telHref, whatsappHref } from "../config/site";
+import { site, services, surfaces, telHref, telHrefSecondary, whatsappHref } from "../config/site";
 
 const year = new Date().getFullYear();
 ---
@@ -20,6 +20,7 @@ const year = new Date().getFullYear();
       </p>
       <div class="mt-4 flex flex-col gap-1 text-sm">
         <a href={telHref} class="hover:text-white">📞 {site.phone}</a>
+        <a href={telHrefSecondary} class="hover:text-white">📞 {site.phoneSecondary}</a>
         <a href={`mailto:${site.email}`} class="hover:text-white">✉️ {site.email}</a>
         <a href={whatsappHref} class="hover:text-white" target="_blank" rel="noopener">
           💬 WhatsApp

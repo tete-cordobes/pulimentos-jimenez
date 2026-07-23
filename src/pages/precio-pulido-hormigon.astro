@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import FAQ from "../components/FAQ.astro";
+import CTASection from "../components/CTASection.astro";
+import { telHref } from "../config/site";
+
+export const prerender = true;
+
+// Guía SEO para "hormigón pulido precio" (320 búsq/mes, competencia BAJA).
+const h1 = "Precio del pulido de hormigón por m²: guía honesta";
+const sections = [
+  {
+    heading: "¿Cuánto cuesta pulir hormigón por metro cuadrado?",
+    body: "Vamos a ser claros desde el principio: el pulido de hormigón cuesta, de forma orientativa, entre 10 y 16 €/m². Ese es el rango real con el que trabajamos, no un número inflado para captar la llamada ni uno tan bajo que luego se dispara con «extras» en la factura.\n\nAhora bien, dentro de ese rango hay mucho recorrido, y aquí es donde la mayoría de las webs te dejan tirado. Un pavimento de hormigón nuevo, bien nivelado y en buen estado no cuesta lo mismo que uno viejo, con grietas, manchas de aceite o restos de pintura. Por eso, más que un precio cerrado, en esta guía te explicamos QUÉ hace que un pulido de hormigón esté en la parte baja o alta de ese rango. Así, cuando pidas presupuesto (a nosotros o a quien sea), sabrás si te están cobrando lo justo.",
+  },
+  {
+    heading: "Rango orientativo por m² (hormigón y otros suelos)",
+    body: "Estos son los rangos orientativos con los que trabajamos en Pulimentos y Aplicaciones Jiménez. Son precios reales, no de escaparate, pero NO son vinculantes: el importe final depende siempre de la dificultad del trabajo, la superficie y el estado del suelo.\n\n- Pulido de hormigón: 10-16 €/m²\n- Pulido y cristalizado de mármol: 10-15 €/m²\n- Pulido de terrazo: 10-15 €/m²\n- Suelos vinílicos y termoplásticos: 5-7 €/m²\n- Barro cocido y terracota: 12-16 €/m²\n- Preparación del soporte (cuando hace falta): 3-6 €/m²\n\nOtros servicios los valoramos siempre a medida porque cambian mucho de un proyecto a otro: aplicación de resina epoxi, pulido de escaleras y abujardado de suelos. En esos casos el mejor precio es el que sale de ver el trabajo, no de una tabla.\n\nUn apunte importante sobre la preparación del soporte: en muchos hormigones viejos es un paso obligatorio antes de pulir (rebajar, sanear, tapar poros o grietas). Cuando se necesita, se suma al precio del pulido. Por eso un mismo m² de hormigón puede irse de 10 a 16 € según lo que haya debajo.",
+  },
+  {
+    heading: "Qué factores influyen en el precio del pulido de hormigón",
+    body: "El precio por m² no es un capricho: responde a variables muy concretas. Estas son las cuatro que más lo mueven:\n\n1. Estado del soporte. Es el factor número uno. Un hormigón sano y limpio se pule directo; uno con grietas, coqueras, manchas de grasa, restos de cola o pintura antigua necesita saneado y preparación previa. Cuanto peor esté, más sube.\n\n2. Superficie total (m²). Como en casi todo, el volumen ayuda. Pulir 500 m² de una nave sale más económico por metro que pulir 30 m² de un local pequeño, porque el coste de desplazar maquinaria, montar y desmontar se reparte entre más metros.\n\n3. Dificultad y accesos. No es lo mismo una superficie diáfana y despejada que un espacio con muchas esquinas, columnas, rodapiés delicados, escaleras o zonas de difícil acceso para la pulidora. El trabajo manual de remate encarece.\n\n4. Nivel de acabado. No es igual un pulido mate funcional para una nave o un parking que un acabado brillante tipo espejo para un local comercial o una vivienda. A más brillo y más pasos de grano de diamante, más horas y más coste.",
+  },
+  {
+    heading: "Por qué no te damos un precio cerrado (y desconfía de quien lo hace)",
+    body: "Podríamos ponerte aquí un «pulido de hormigón: 12 €/m²» a lo grande y quedarnos tan anchos. No lo hacemos, y te explicamos por qué, porque es por tu interés.\n\nDar un precio cerrado sin ver el suelo solo tiene dos caminos: o te clavan un número alto «por si acaso» (pagas de más), o te enganchan con uno bajo y luego aparecen los sobrecostes cuando la máquina ya está en tu obra y no puedes echarte atrás. Ninguno de los dos es honesto.\n\nEl pulido de hormigón depende demasiado de lo que hay debajo. Hasta que no vemos el estado real del pavimento —o al menos unas buenas fotos y unos metros aproximados— cualquier cifra exacta es humo. Lo serio es darte un rango orientativo (esos 10-16 €/m²), explicarte de qué depende, y luego cerrar un presupuesto exacto y sin sorpresas cuando conocemos tu caso. Un buen profesional te da certidumbre, no un número mágico.",
+  },
+  {
+    heading: "Cómo pedirnos un presupuesto exacto (rápido y sin compromiso)",
+    body: "Para afinar el precio de verdad solo necesitamos tres cosas: los metros cuadrados aproximados, el estado del suelo (nuevo, usado, con manchas o grietas...) y una idea del acabado que buscas. Con eso te damos una cifra ajustada, sin compromiso y sin letra pequeña.\n\nSi quieres una primera orientación tú mismo antes de llamar, tienes nuestra calculadora de precio por m²: eliges el tipo de tratamiento y los metros, y te da una estimación al momento. No sustituye al presupuesto real, pero te sitúa.\n\nY cuando quieras el número exacto, hablamos. Atendemos en toda Andalucía, presupuestamos gratis y sin ningún compromiso. Envíanos unas fotos por WhatsApp y te decimos por dónde va el tiro el mismo día.",
+  },
+];
+
+const faqs = [
+  {
+    q: "¿Cuánto cuesta pulir hormigón por m²?",
+    a: "De forma orientativa, entre 10 y 16 €/m². El precio final depende del estado del suelo, de los metros totales y del acabado que busques. Para una cifra exacta lo mejor es que veamos el pavimento o unas fotos: te presupuestamos gratis y sin compromiso.",
+  },
+  {
+    q: "¿Por qué el precio del pulido de hormigón varía tanto?",
+    a: "Porque no todos los hormigones están igual. Uno nuevo y sano se pule directo; uno viejo, con grietas, manchas de aceite o restos de pintura necesita una preparación previa del soporte (entre 3 y 6 €/m²) que se suma al pulido. El estado del suelo es lo que más mueve el precio.",
+  },
+  {
+    q: "¿El precio incluye la preparación del soporte?",
+    a: "Depende del estado del hormigón. Si está en buen estado, no hace falta. Si está deteriorado, la preparación (saneado, tapado de poros y grietas) es un paso obligatorio antes de pulir y se añade al presupuesto. Siempre te lo detallamos por separado para que sepas exactamente qué pagas.",
+  },
+  {
+    q: "¿Sale más barato pulir muchos metros?",
+    a: "Sí. A más superficie, menor precio por m², porque el coste de desplazar y montar la maquinaria se reparte entre más metros. Pulir una nave grande sale más económico por m² que pulir un local pequeño.",
+  },
+  {
+    q: "¿Me dais un precio cerrado por teléfono?",
+    a: "Preferimos no darte una cifra exacta a ciegas, porque sería o inflada o engañosa. Te damos el rango orientativo (10-16 €/m²) y, en cuanto vemos el suelo o unas fotos con los metros aproximados, te cerramos un presupuesto exacto y sin sorpresas. Es la forma honesta de trabajar.",
+  },
+  {
+    q: "¿En qué zona trabajáis?",
+    a: "Damos servicio en toda Andalucía. Presupuestamos gratis y sin compromiso; puedes mandarnos fotos del suelo por WhatsApp y te orientamos el mismo día.",
+  },
+];
+---
+
+<Layout
+  title="Precio del pulido de hormigón por m² | Pulimentos Jiménez"
+  description="¿Cuánto cuesta pulir hormigón por m²? Rango orientativo 10-16 €/m² y los factores que mueven el precio: estado del suelo, superficie y acabado. Presupuesto sin compromiso."
+  canonical="/precio-pulido-hormigon"
+>
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-4xl px-6 py-16">
+      <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        {h1}
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-brand-100">
+        Te contamos sin rodeos cuánto cuesta el pulido de hormigón por metro
+        cuadrado y, sobre todo, de qué depende. Sin números mágicos.
+      </p>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-3xl px-6 py-16">
+    {
+      sections.map((s) => (
+        <section class="mb-10">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">{s.heading}</h2>
+          <div class="mt-4 space-y-4 text-pretty text-lg leading-relaxed text-slate-600">
+            {s.body.split("\n\n").map((block) =>
+              block.trim().startsWith("- ") ? (
+                <ul class="list-disc space-y-1 pl-6">
+                  {block.split("\n").map((li) => (
+                    <li>{li.replace(/^- /, "")}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{block}</p>
+              )
+            )}
+          </div>
+        </section>
+      ))
+    }
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <Button href="/contacto" variant="secondary">Pedir presupuesto gratis</Button>
+      <Button href="/calculadora-precio">Calcular precio por m²</Button>
+    </div>
+    <p class="mt-4 text-sm text-slate-500">
+      ¿Prefieres llamar?{" "}
+      <a href={telHref} class="font-semibold text-brand-700">Llámanos</a> y te orientamos al momento.
+    </p>
+  </article>
+
+  <FAQ faqs={faqs} title="Preguntas frecuentes sobre el precio del hormigón pulido" />
+
+  <CTASection title="¿Quieres el precio exacto de tu suelo?" />
+</Layout>

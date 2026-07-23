@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ServiceCard from "../components/ServiceCard.astro";
-import { telHref, whatsappHref } from "../config/site";
+import { site, telHref, whatsappHref } from "../config/site";
 import { servicesContent } from "../data/services";
 import LogoCarousel from "../components/LogoCarousel.astro";
 
@@ -27,17 +27,17 @@ export const prerender = true;
     <div class="mx-auto w-full max-w-4xl px-6 py-20 text-center">
       <!-- Caja "cristal esmerilado" (estilo E3): translúcida, deja ver la foto -->
       <div class="rounded-3xl bg-white/10 p-8 text-white shadow-2xl ring-1 ring-white/25 backdrop-blur-xl sm:p-12">
-        <p class="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-100 ring-1 ring-white/15 backdrop-blur">
-          Especialistas en pulidos y tratamientos de suelos
+        <p class="mb-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand-100 ring-1 ring-white/15 backdrop-blur sm:tracking-widest">
+          Especialistas en tratamiento de suelos
         </p>
         <h1 class="text-balance text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-6xl">
-          Innovación en cada acabado,
-          <span class="block">un brillo para siempre</span>
+          Soluciones integrales para
+          <span class="block">todo tipo de pavimentos</span>
         </h1>
         <p class="mx-auto mt-6 max-w-2xl text-pretty text-lg text-brand-100 sm:text-xl">
           Devolvemos la vida a tus suelos: pulido, cristalizado y tratamiento
-          de pavimentos con maquinaria diamantada en La Carlota y toda
-          Andalucía.
+          de pavimentos. Disponemos de todo tipo de maquinaria, adaptándonos a
+          tus necesidades, en toda Andalucía.
         </p>
         <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
           <Button href="/contacto" variant="secondary">Pide presupuesto gratis</Button>
@@ -52,7 +52,7 @@ export const prerender = true;
         <p class="mt-6 text-sm text-brand-100/90">
           ¿Prefieres llamar?{" "}
           <a href={telHref} class="font-semibold text-white underline underline-offset-4">
-            609 24 58 50
+            {site.phone}
           </a>
         </p>
       </div>
@@ -70,8 +70,8 @@ export const prerender = true;
         <p class="text-sm text-slate-600">presupuesto sin compromiso</p>
       </div>
       <div>
-        <p class="text-3xl font-bold text-brand-900">4</p>
-        <p class="text-sm text-slate-600">provincias de trabajo</p>
+        <p class="text-3xl font-bold text-brand-900">+30</p>
+        <p class="text-sm text-slate-600">años de experiencia</p>
       </div>
       <div>
         <p class="text-3xl font-bold text-brand-900">8+</p>
@@ -84,8 +84,34 @@ export const prerender = true;
     </div>
   </section>
 
+  <!-- QUIÉNES SOMOS: la "leyenda" de la empresa (texto del cliente) -->
+  <section class="mx-auto max-w-4xl px-6 py-20">
+    <div class="text-center">
+      <p class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-700">
+        Más de 30 años de experiencia
+      </p>
+      <h2 class="mt-5 text-balance text-3xl font-bold tracking-tight text-slate-900">
+        Especialistas en el cuidado y tratamiento de tus suelos
+      </h2>
+    </div>
+    <div class="mx-auto mt-8 max-w-3xl text-pretty text-lg leading-relaxed text-slate-600">
+      <p>
+        Somos especialistas en el desbastado, pulido diamantado, abrillantado,
+        cristalizado, vitrificado y abujardado de todo tipo de pavimentos —
+        además de la recuperación con nano-litio para hormigón y las
+        aplicaciones de epoxi. Más de tres décadas dando soluciones de alta
+        calidad, tanto a suelos antiguos como nuevos, con acabados resistentes
+        pensados para perdurar. Disponemos de maquinaria propia, monofásica y
+        trifásica, para adaptarnos a cada trabajo.
+      </p>
+    </div>
+    <div class="mt-8 text-center">
+      <Button href="/sobre-nosotros">Conócenos</Button>
+    </div>
+  </section>
+
   <!-- SERVICIOS -->
-  <section class="mx-auto max-w-7xl px-6 py-20">
+  <section class="mx-auto max-w-7xl px-6 pb-20">
     <div class="mx-auto max-w-2xl text-center">
       <h2 class="text-3xl font-bold tracking-tight text-slate-900">Nuestros servicios</h2>
       <p class="mt-4 text-slate-600">
@@ -113,14 +139,15 @@ export const prerender = true;
       <div class="mt-12 grid gap-6 lg:grid-cols-2">
         <figure class="overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">
           <img
-            src="/proyectos/barro-hotel-mitad.webp"
-            alt="Hall de hotel con suelo de barro cocido: la mitad tratada con brillo junto a la mitad sin tratar"
+            src="/proyectos/barro-prueba-antes-despues.webp"
+            alt="Prueba demostrativa sobre suelo de terracota: las losas del centro ya tratadas, brillantes y con el color recuperado, rodeadas del barro crudo y apagado tal y como estaba"
             loading="lazy"
             class="aspect-[4/3] w-full object-cover"
           />
           <figcaption class="p-5 text-sm text-slate-600">
-            A la izquierda, el barro ya tratado; a la derecha, tal y como
-            estaba. La misma solería, el mismo día.
+            Prueba demostrativa hecha in situ para el cliente: las losas del
+            centro, ya tratadas, brillan con su color recuperado; alrededor, la
+            terracota cruda tal y como estaba. Sin retoques.
           </figcaption>
         </figure>
         <figure class="overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-slate-200">

@@ -16,7 +16,7 @@ export interface Project {
   /** Localidad del trabajo (opcional: solo cuando esté confirmada) */
   city?: string;
   /** Tipo de suelo tratado (sirve para filtrar la galería) */
-  surface: "Hormigón" | "Mármol" | "Terrazo" | "Epoxi" | "Otros";
+  surface: "Hormigón" | "Mármol" | "Terrazo" | "Epoxi" | "Barro/Terracota" | "Otros";
   /** URL foto ANTES (vacío => placeholder hasta tener foto real) */
   before?: string;
   /** URL foto DESPUÉS */
@@ -38,6 +38,7 @@ export const surfaceFilters = [
   "Mármol",
   "Terrazo",
   "Epoxi",
+  "Barro/Terracota",
 ] as const;
 
 /**
@@ -98,7 +99,7 @@ export const projects: Project[] = [
   {
     slug: "tratamiento-barro-cocido-hotel",
     title: "Tratamiento de barro cocido en hotel",
-    surface: "Otros",
+    surface: "Barro/Terracota",
     after: "/proyectos/barro-hotel-mitad.webp",
     description:
       "Decapado y tratamiento de suelo de barro cocido en el hall de un hotel. En la foto, la zona ya tratada junto a la zona sin tratar: el antes y el después en una sola imagen.",
@@ -172,7 +173,7 @@ export const projects: Project[] = [
   {
     slug: "tratamiento-barro-dormitorio",
     title: "Tratamiento de barro cocido en dormitorio",
-    surface: "Otros",
+    surface: "Barro/Terracota",
     after: "/proyectos/barro-dormitorio.webp",
     description:
       "Suelo de barro cocido tratado con acabado satinado: protegido, uniforme y fácil de mantener.",
@@ -184,5 +185,37 @@ export const projects: Project[] = [
     after: "/proyectos/epoxi-hospital.webp",
     description:
       "Abrillantado del pavimento del hall de un hospital: acabado brillante, higiénico y antideslizante.",
+  },
+  {
+    slug: "pintado-parking-comunidad",
+    title: "Pintado y marcado de parking",
+    surface: "Epoxi",
+    after: "/proyectos/parking-marcado.webp",
+    description:
+      "Parking pintado y señalizado: plazas y líneas blancas nuevas sobre acabado gris. Espacio limpio, ordenado y resistente al tránsito.",
+  },
+  {
+    slug: "pista-deportiva-club",
+    title: "Pista deportiva de pádel/tenis",
+    surface: "Epoxi",
+    after: "/proyectos/pista-deportiva.webp",
+    description:
+      "Pavimento deportivo azul con líneas de juego blancas, recién ejecutado. Superficie resistente, segura y de larga duración.",
+  },
+  {
+    slug: "epoxi-pasillo-edificio",
+    title: "Pavimento de resina en edificio",
+    surface: "Epoxi",
+    after: "/proyectos/epoxi-pasillo.webp",
+    description:
+      "Pavimento continuo de resina epoxi en un pasillo: superficie sin juntas, brillante, higiénica y muy fácil de limpiar.",
+  },
+  {
+    slug: "cristalizado-marmol-hotel",
+    title: "Cristalizado de mármol en hotel",
+    surface: "Mármol",
+    after: "/proyectos/vitrificado-marmol-hotel.webp",
+    description:
+      "Cristalizado y vitrificado del suelo de mármol blanco con cenefa negra del hall de un hotel: brillo espejo que refleja toda la estancia.",
   },
 ];

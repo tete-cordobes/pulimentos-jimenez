@@ -1,5 +1,5 @@
 ---
-import { site, services, telHref } from "../config/site";
+import { site, services, telHref, telHrefSecondary } from "../config/site";
 import Button from "./Button.astro";
 
 const nav = [
@@ -16,10 +16,11 @@ const nav = [
   <!-- Barra superior con teléfono (click-to-call) -->
   <div class="hidden border-b border-brand-800 bg-brand-900 text-white md:block">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-1.5 text-xs">
-      <span class="text-brand-100">Pulido y tratamiento de pavimentos · Córdoba · Málaga · Sevilla · Jaén</span>
-      <a href={telHref} class="font-semibold hover:text-brand-200">
-        📞 {site.phone}
-      </a>
+      <span class="text-brand-100">Pulido y tratamiento de pavimentos · Córdoba · Málaga · Sevilla · Jaén · Granada</span>
+      <span class="flex items-center gap-3 font-semibold">
+        <a href={telHref} class="hover:text-brand-200">📞 {site.phone}</a>
+        <a href={telHrefSecondary} class="text-brand-100 hover:text-brand-200">{site.phoneSecondary}</a>
+      </span>
     </div>
   </div>
 
