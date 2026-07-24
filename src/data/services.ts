@@ -43,8 +43,8 @@ export const servicesContent: ServiceContent[] = [
     volume: 6600,
     short:
       "Suelos de resina epoxi resistentes para naves, garajes e industria.",
-    image: "/proyectos/epoxi-pasillo.webp",
-    imageAlt: "Pavimento continuo de resina epoxi en el pasillo de un edificio, con acabado brillante y sin juntas — trabajo real de Pulimentos Jiménez",
+    image: "/proyectos/resina-suelo.webp",
+    imageAlt: "Pavimento continuo de resina aplicado en vivienda, sin juntas y fácil de limpiar — trabajo real de Pulimentos Jiménez",
     intro: [
       "Los pavimentos de resina epoxi son la solución ideal para naves industriales, locales comerciales, garajes y zonas de alto tránsito. Crean una superficie continua, sin juntas, impermeable y de altísima resistencia mecánica y química.",
       "En Pulimentos Jiménez aplicamos sistemas epoxi adaptados a cada uso: desde acabados autonivelantes decorativos hasta multicapa antideslizante para zonas húmedas o de paso de maquinaria.",
@@ -99,8 +99,8 @@ export const servicesContent: ServiceContent[] = [
     volume: 1900,
     short:
       "Hormigón pulido con nano-litio: más resistencia, brillo y cero polvo.",
-    image: "/proyectos/hormigon-nave.webp",
-    imageAlt: "Hormigón pulido con acabado espejo en nave industrial — trabajo real de Pulimentos Jiménez",
+    image: "/proyectos/hormigon-nave-brillo.webp",
+    imageAlt: "Pasillo de nave con hormigón pulido a espejo que refleja la cristalera — trabajo real de Pulimentos Jiménez",
     intro: [
       "El hormigón pulido se ha convertido en el pavimento más demandado para naves industriales, garajes, locales comerciales y viviendas, y hay una razón de peso: es de los acabados más resistentes y rentables del mercado. Partimos del propio hormigón de tu suelo, así que te ahorras material nuevo y obtienes un pavimento continuo, sin juntas donde se acumule la suciedad, que aguanta el paso constante de carretillas, coches y maquinaria durante años.",
       "El secreto está en el tratamiento con nano-partículas de litio. Con el pulido diamantado abrimos el poro del hormigón y lo densificamos con litio: la superficie se endurece por dentro, gana resistencia al desgaste, la abrasión y el impacto, y deja de soltar polvo por completo. El resultado es un suelo de hormigón pulido más limpio, más luminoso (la superficie refleja la luz y reduce el gasto en iluminación) y con un mantenimiento mínimo: agua y poco más.",
@@ -243,8 +243,8 @@ export const servicesContent: ServiceContent[] = [
     keyword: "abrillantado de suelos",
     volume: 480,
     short: "Acabado brillante y antideslizante de larga duración.",
-    image: "/proyectos/hospital-brillo.webp",
-    imageAlt: "Suelo de un hospital abrillantado, con acabado brillante y uniforme — trabajo real de Pulimentos Jiménez",
+    image: "/proyectos/abrillantado-marmol.webp",
+    imageAlt: "Suelo de mármol crema abrillantado con brillo espejo, reflejando la ventana de la estancia — trabajo real de Pulimentos Jiménez",
     intro: [
       "El abrillantado devuelve el brillo a tus suelos y facilita su mantenimiento, prolongando la vida del pavimento.",
       "Usamos los mejores productos para conseguir acabados de calidad, de larga duración y antideslizantes.",
