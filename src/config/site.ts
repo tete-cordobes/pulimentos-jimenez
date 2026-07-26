@@ -53,12 +53,6 @@ export const site = {
  */
 export const services = [
   {
-    slug: "pavimentos-epoxi",
-    name: "Pavimentos de resina epoxi",
-    short: "Suelos de resina epoxi resistentes para naves, garajes e industria.",
-    volume: 6600,
-  },
-  {
     slug: "pulido-de-hormigon",
     name: "Pulido de hormigón",
     short:
@@ -76,6 +70,12 @@ export const services = [
     name: "Pulido de terrazo",
     short: "Devolvemos vida a suelos de terrazo desgastados y rayados.",
     volume: 590,
+  },
+  {
+    slug: "pavimentos-epoxi",
+    name: "Pavimentos de resina epoxi",
+    short: "Suelos de resina epoxi resistentes para naves, garajes e industria.",
+    volume: 6600,
   },
   {
     slug: "abrillantado-de-suelos",

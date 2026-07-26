@@ -5,7 +5,7 @@ import ServiceCard from "../components/ServiceCard.astro";
 import FAQ from "../components/FAQ.astro";
 import CTASection from "../components/CTASection.astro";
 import { citiesContent, type CityContent } from "../data/cities";
-import { servicesContent } from "../data/services";
+import { orderedServices } from "../data/services";
 import { site, whatsappHref } from "../config/site";
 
 export const prerender = true;
@@ -87,7 +87,7 @@ const breadcrumbSchema = {
     </h2>
     <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {
-        servicesContent.map((s) => (
+        orderedServices.map((s) => (
           <ServiceCard slug={s.slug} name={s.name} short={s.short} />
         ))
       }

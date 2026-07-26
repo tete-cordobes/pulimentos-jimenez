@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 import ServiceCard from "../components/ServiceCard.astro";
 import { site, telHref, whatsappHref } from "../config/site";
-import { servicesContent } from "../data/services";
+import { orderedServices } from "../data/services";
 import LogoCarousel from "../components/LogoCarousel.astro";
 
 // Home estática provisional (design system). En la Fase 4/5 puede pasar a Storyblok.
@@ -120,7 +120,7 @@ export const prerender = true;
       </p>
     </div>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {servicesContent.map((s) => <ServiceCard slug={s.slug} name={s.name} short={s.short} image={s.image} imageAlt={s.imageAlt} />)}
+      {orderedServices.map((s) => <ServiceCard slug={s.slug} name={s.name} short={s.short} image={s.image} imageAlt={s.imageAlt} />)}
     </div>
   </section>
 

@@ -43,8 +43,8 @@ export const servicesContent: ServiceContent[] = [
     volume: 6600,
     short:
       "Suelos de resina epoxi resistentes para naves, garajes e industria.",
-    image: "/proyectos/resina-suelo.webp",
-    imageAlt: "Pavimento continuo de resina aplicado en vivienda, sin juntas y fácil de limpiar — trabajo real de Pulimentos Jiménez",
+    image: "/proyectos/epoxi-garaje.webp",
+    imageAlt: "Pavimento de resina epoxi en un garaje: superficie continua, brillante y muy resistente al tránsito de vehículos — trabajo real de Pulimentos Jiménez",
     intro: [
       "Los pavimentos de resina epoxi son la solución ideal para naves industriales, locales comerciales, garajes y zonas de alto tránsito. Crean una superficie continua, sin juntas, impermeable y de altísima resistencia mecánica y química.",
       "En Pulimentos Jiménez aplicamos sistemas epoxi adaptados a cada uso: desde acabados autonivelantes decorativos hasta multicapa antideslizante para zonas húmedas o de paso de maquinaria.",
@@ -524,3 +524,27 @@ export const servicesContent: ServiceContent[] = [
 export function getService(slug: string): ServiceContent | undefined {
   return servicesContent.find((s) => s.slug === slug);
 }
+
+/**
+ * Orden de PRESENTACIÓN en la home y el listado (comercial/SEO): el pulido de
+ * hormigón va primero (es el pilar, 1.900 búsq/mes); la resina epoxi baja a
+ * mitad de lista, como pidió el cliente. No afecta a las URLs ni al contenido.
+ */
+const DISPLAY_ORDER = [
+  "pulido-de-hormigon",
+  "pulir-marmol",
+  "pulido-de-terrazo",
+  "pavimentos-epoxi",
+  "abrillantado-de-suelos",
+  "vitrificado",
+  "pulido-de-escaleras",
+  "barro-cocido-terracota",
+  "suelos-vinilicos-termoplasticos",
+  "abujardado-de-suelos",
+  "pintado-parkings-naves",
+  "pavimentos-deportivos",
+];
+
+export const orderedServices: ServiceContent[] = DISPLAY_ORDER.map(
+  (slug) => servicesContent.find((s) => s.slug === slug),
+).filter((s): s is ServiceContent => Boolean(s));
