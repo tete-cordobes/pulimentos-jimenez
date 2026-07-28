@@ -18,6 +18,11 @@ export interface CityContent {
   /** Zonas/poblaciones cercanas donde también se trabaja */
   nearby: string[];
   faqs: FAQ[];
+  /** Solo para páginas de MUNICIPIO (no capital): provincia y capital madre,
+   *  para el enlazado interno capital <-> pueblo. */
+  province?: string;
+  parentSlug?: string;
+  parentName?: string;
 }
 
 export const citiesContent: CityContent[] = [

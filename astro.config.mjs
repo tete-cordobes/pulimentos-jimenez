@@ -43,8 +43,12 @@ export default defineConfig({
       serialize(item) {
         const path = new URL(item.url).pathname;
         let priority = 0.7;
+        const capitales = ['cordoba', 'malaga', 'sevilla', 'jaen', 'granada'];
         if (path === '/') priority = 1.0;
-        else if (path.startsWith('/pulido-de-suelos-en-')) priority = 0.9; // location pages
+        else if (path.startsWith('/pulido-de-suelos-en-')) {
+          const slug = path.replace('/pulido-de-suelos-en-', '').replace(/\/$/, '');
+          priority = capitales.includes(slug) ? 0.9 : 0.6; // capital vs municipio
+        }
         else if (path === '/servicios/' || path.startsWith('/servicios/')) priority = 0.8;
         else if (path === '/precio-pulido-hormigon/' || path === '/calculadora-precio/') priority = 0.8;
         else if (path === '/contacto/' || path === '/sobre-nosotros/') priority = 0.7;

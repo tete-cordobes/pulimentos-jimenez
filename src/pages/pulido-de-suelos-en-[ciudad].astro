@@ -5,13 +5,15 @@ import ServiceCard from "../components/ServiceCard.astro";
 import FAQ from "../components/FAQ.astro";
 import CTASection from "../components/CTASection.astro";
 import { citiesContent, type CityContent } from "../data/cities";
+import { townsContent } from "../data/towns";
 import { orderedServices } from "../data/services";
 import { site, whatsappHref } from "../config/site";
 
 export const prerender = true;
 
 export function getStaticPaths() {
-  return citiesContent.map((city) => ({
+  // Capitales (cities.ts) + municipios (towns.ts) generan /pulido-de-suelos-en-[slug]
+  return [...citiesContent, ...townsContent].map((city) => ({
     params: { ciudad: city.slug },
     props: { city },
   }));
@@ -23,6 +25,9 @@ interface Props {
 
 const { city } = Astro.props;
 const canonical = `/pulido-de-suelos-en-${city.slug}`;
+// Enlazado interno: municipios hijos si es capital; enlace a la capital si es municipio.
+const childTowns = townsContent.filter((t) => t.parentSlug === city.slug);
+const isTown = Boolean(city.parentSlug);
 
 // Una sola identidad estable (misma NAP en todas las páginas). La zona de
 // cada location page se expresa con areaServed, no cambiando el name.
@@ -111,6 +116,53 @@ const breadcrumbSchema = {
       </div>
     </div>
   </section>
+
+  {/* ENLAZADO INTERNO: capital → sus municipios */}
+  {
+    childTowns.length > 0 && (
+      <section class="mx-auto max-w-4xl px-6 py-16">
+        <h2 class="text-2xl font-bold tracking-tight text-slate-900">
+          Municipios donde trabajamos en la provincia de {city.name}
+        </h2>
+        <p class="mt-3 text-slate-600">
+          Además de {city.name} capital, damos servicio de pulido y tratamiento de suelos en:
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          {childTowns.map((t) => (
+            <a
+              href={`/pulido-de-suelos-en-${t.slug}`}
+              class="rounded-full bg-brand-50 px-4 py-2 text-sm font-medium text-brand-700 ring-1 ring-brand-100 transition hover:bg-brand-100"
+            >
+              {t.name}
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {/* ENLAZADO INTERNO: municipio → su capital */}
+  {
+    isTown && (
+      <section class="mx-auto max-w-4xl px-6 py-16">
+        <div class="rounded-2xl bg-slate-50 p-8 ring-1 ring-slate-200">
+          <h2 class="text-xl font-bold tracking-tight text-slate-900">
+            Trabajamos en toda la provincia de {city.parentName}
+          </h2>
+          <p class="mt-3 text-slate-600">
+            {city.name} forma parte de nuestra zona de {city.parentName}. Consulta también nuestra página de
+            <a
+              href={`/pulido-de-suelos-en-${city.parentSlug}`}
+              class="font-semibold text-brand-700 underline underline-offset-2"
+            >
+              {" "}pulido de suelos en {city.parentName}
+            </a>{" "}
+            para ver todos los servicios y zonas.
+          </p>
+        </div>
+      </section>
+    )
+  }
 
   <FAQ faqs={city.faqs} title={`Preguntas frecuentes — ${city.name}`} />
 
