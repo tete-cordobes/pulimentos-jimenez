@@ -28,6 +28,11 @@ const canonical = `/pulido-de-suelos-en-${city.slug}`;
 // Enlazado interno: municipios hijos si es capital; enlace a la capital si es municipio.
 const childTowns = townsContent.filter((t) => t.parentSlug === city.slug);
 const isTown = Boolean(city.parentSlug);
+// Mapa nombre -> slug de TODAS las páginas de zona, para enlazar los "nearby"
+// que tengan página propia (enlazado interno horizontal).
+const slugByName = new Map(
+  [...citiesContent, ...townsContent].map((c) => [c.name, c.slug]),
+);
 
 // Una sola identidad estable (misma NAP en todas las páginas). La zona de
 // cada location page se expresa con areaServed, no cambiando el name.
@@ -107,11 +112,21 @@ const breadcrumbSchema = {
       </h2>
       <div class="mt-6 flex flex-wrap gap-3">
         {
-          city.nearby.map((n) => (
-            <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 ring-1 ring-slate-200">
-              {n}
-            </span>
-          ))
+          city.nearby.map((n) => {
+            const slug = slugByName.get(n);
+            return slug ? (
+              <a
+                href={`/pulido-de-suelos-en-${slug}`}
+                class="rounded-full bg-white px-4 py-2 text-sm font-medium text-brand-700 ring-1 ring-brand-200 transition hover:bg-brand-50"
+              >
+                {n}
+              </a>
+            ) : (
+              <span class="rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 ring-1 ring-slate-200">
+                {n}
+              </span>
+            );
+          })
         }
       </div>
     </div>

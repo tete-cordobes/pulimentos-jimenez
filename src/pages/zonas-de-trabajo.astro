@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CTASection from "../components/CTASection.astro";
+import { citiesContent } from "../data/cities";
+import { townsContent } from "../data/towns";
+
+export const prerender = true;
+
+// Agrupa capital + municipios por provincia (hub de enlazado interno).
+const provinces = [
+  { name: "Córdoba", capitalSlug: "cordoba" },
+  { name: "Málaga", capitalSlug: "malaga" },
+  { name: "Sevilla", capitalSlug: "sevilla" },
+  { name: "Jaén", capitalSlug: "jaen" },
+  { name: "Granada", capitalSlug: "granada" },
+].map((p) => ({
+  ...p,
+  capital: citiesContent.find((c) => c.slug === p.capitalSlug),
+  towns: townsContent.filter((t) => t.province === p.name),
+}));
+---
+
+<Layout
+  title="Zonas de trabajo: dónde pulimos suelos en Andalucía — Pulimentos Jiménez"
+  description="Pulido y tratamiento de suelos en toda Andalucía: Córdoba, Málaga, Sevilla, Jaén, Granada y sus municipios. Encuentra tu localidad y pide presupuesto."
+  canonical="/zonas-de-trabajo"
+>
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-4xl px-6 py-16 text-center">
+      <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        Dónde trabajamos
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-brand-100">
+        Pulimos y tratamos suelos en toda Andalucía. Desde nuestra base en La
+        Carlota (Córdoba) nos desplazamos a estas provincias y municipios.
+        Elige tu zona:
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-5xl px-6 py-16">
+    <div class="space-y-12">
+      {
+        provinces.map((p) => (
+          <div>
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900">
+              <a href={`/pulido-de-suelos-en-${p.capitalSlug}`} class="hover:text-brand-700">
+                Pulido de suelos en {p.name}
+              </a>
+            </h2>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a
+                href={`/pulido-de-suelos-en-${p.capitalSlug}`}
+                class="rounded-full bg-brand-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-800"
+              >
+                {p.name} capital
+              </a>
+              {p.towns.map((t) => (
+                <a
+                  href={`/pulido-de-suelos-en-${t.slug}`}
+                  class="rounded-full bg-brand-50 px-4 py-2 text-sm font-medium text-brand-700 ring-1 ring-brand-100 transition hover:bg-brand-100"
+                >
+                  {t.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <CTASection title="¿No ves tu localidad?" />
+</Layout>
