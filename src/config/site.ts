@@ -7,9 +7,8 @@
 export const site = {
   name: "Pulimentos y Aplicaciones Jiménez",
   legalName: "Pulimentos y Aplicaciones Jiménez",
-  // ⚠️ INDEXACIÓN: false = la web NO sale en Google (meta noindex en todas las
-  // páginas). Mientras se prepara el contenido. Cambiar a TRUE para lanzar.
-  indexable: false,
+  // ⚠️ INDEXACIÓN: true = la web SALE en Google (sin meta noindex). LANZADA.
+  indexable: true,
   // Dominio canónico: la web se sirve en NO-WWW (www no tiene DNS). Todo
   // (canonical, og, sitemap, JSON-LD) sale de aquí, así que debe resolver.
   url: "https://pulimentosjimenez.es",
