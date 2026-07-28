@@ -9,7 +9,7 @@
  */
 
 // ---- Configuración -------------------------------------------------------
-$to           = 'info@pulimentosjimenez.es';        // destinatario de los leads
+$to           = 'pulidoscarlosjimenez@gmail.com';    // Gmail de Carlos (recibe los leads)
 $from         = 'web@pulimentosjimenez.es';          // remitente (cuenta del dominio)
 $redirect     = '/contacto/';                        // página del formulario
 
