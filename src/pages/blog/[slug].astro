@@ -1,0 +1,134 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import CTASection from "../../components/CTASection.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import { site } from "../../config/site";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const canonical = `/blog/${post.id}`;
+
+const fecha = post.data.pubDate.toLocaleDateString("es-ES", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+
+const postSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  url: new URL(canonical, site.url).href,
+  publisher: { "@type": "Organization", name: site.name, url: site.url },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: site.url },
+    { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", site.url).href },
+    { "@type": "ListItem", position: 3, name: post.data.title, item: new URL(canonical, site.url).href },
+  ],
+};
+---
+
+{/* noindex mientras el blog está en pruebas: el sitemap también excluye /blog
+    (ver astro.config.mjs). Para publicarlo de verdad hay que quitar el noindex
+    aquí y en el listado, y levantar el filtro del sitemap. */}
+<Layout
+  noindex
+  title={`${post.data.title} | ${site.name}`}
+  description={post.data.description}
+  canonical={canonical}
+>
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-3xl px-6 py-16">
+      <nav class="mb-4 text-sm text-brand-200">
+        <a href="/" class="hover:text-white">Inicio</a> ·
+        <a href="/blog" class="hover:text-white">Blog</a>
+      </nav>
+      <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        {post.data.title}
+      </h1>
+      <p class="mt-4 text-sm text-brand-200">
+        <time datetime={post.data.pubDate.toISOString()}>{fecha}</time>
+      </p>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-3xl px-6 py-16">
+    <div
+      class="prose-jimenez space-y-5 text-lg leading-relaxed text-slate-700"
+    >
+      <Content />
+    </div>
+  </article>
+
+  <CTASection />
+
+  <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+</Layout>
+
+<style>
+  /* El Markdown se renderiza sin clases, así que los elementos se estilan desde
+     el contenedor. El proyecto no usa @tailwindcss/typography. Se escribe en CSS
+     plano con los tokens de @theme (global.css) en vez de @apply, que en
+     Tailwind 4 requiere una directiva @reference dentro de cada <style>. */
+  .prose-jimenez :global(h2) {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-slate-900);
+  }
+  .prose-jimenez :global(h3) {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: var(--color-slate-900);
+  }
+  .prose-jimenez :global(strong) {
+    font-weight: 600;
+    color: var(--color-slate-900);
+  }
+  .prose-jimenez :global(a) {
+    color: var(--color-brand-700);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+  }
+  .prose-jimenez :global(a:hover) {
+    color: var(--color-brand-800);
+  }
+  .prose-jimenez :global(ul),
+  .prose-jimenez :global(ol) {
+    padding-left: 1.5rem;
+  }
+  .prose-jimenez :global(ul) {
+    list-style-type: disc;
+  }
+  .prose-jimenez :global(ol) {
+    list-style-type: decimal;
+  }
+  .prose-jimenez :global(hr) {
+    margin-block: 2.5rem;
+    border-color: var(--color-slate-200);
+  }
+</style>
