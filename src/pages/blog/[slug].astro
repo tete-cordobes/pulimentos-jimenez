@@ -127,4 +127,25 @@ const breadcrumbSchema = {
     margin-block: 2.5rem;
     border-color: var(--color-slate-200);
   }
+  /* display:block + overflow-x para que una tabla ancha scrolle dentro de su
+     caja en móvil, en vez de desbordar la página. */
+  .prose-jimenez :global(table) {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+  .prose-jimenez :global(th),
+  .prose-jimenez :global(td) {
+    border: 1px solid var(--color-slate-200);
+    padding: 0.625rem 0.875rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose-jimenez :global(th) {
+    background-color: var(--color-slate-50);
+    font-weight: 600;
+    color: var(--color-slate-900);
+  }
 </style>
