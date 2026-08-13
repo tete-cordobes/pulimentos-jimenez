@@ -47,11 +47,7 @@ const breadcrumbSchema = {
 };
 ---
 
-{/* noindex mientras el blog está en pruebas: el sitemap también excluye /blog
-    (ver astro.config.mjs). Para publicarlo de verdad hay que quitar el noindex
-    aquí y en el listado, y levantar el filtro del sitemap. */}
 <Layout
-  noindex
   title={`${post.data.title} | ${site.name}`}
   description={post.data.description}
   canonical={canonical}

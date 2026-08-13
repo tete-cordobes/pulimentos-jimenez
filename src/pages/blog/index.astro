@@ -18,11 +18,7 @@ const formatoFecha = new Intl.DateTimeFormat("es-ES", {
 });
 ---
 
-{/* noindex mientras el blog está en pruebas: el sitemap también excluye /blog
-    (ver astro.config.mjs). Para publicarlo de verdad hay que quitar el noindex
-    aquí y en [slug].astro, y levantar el filtro del sitemap. */}
 <Layout
-  noindex
   title="Blog — consejos sobre suelos y pavimentos | Pulimentos Jiménez"
   description="Consejos y guías sobre pulido, cristalizado y tratamiento de suelos: hormigón, mármol, terrazo y más."
   canonical="/blog"

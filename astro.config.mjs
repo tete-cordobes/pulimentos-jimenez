@@ -37,9 +37,9 @@ export default defineConfig({
     // los proyectos o las páginas legales.
     sitemap({
       changefreq: 'monthly',
-      // El blog es un placeholder (noindex): fuera del sitemap hasta que tenga
-      // contenido real.
-      filter: (page) => !page.includes('/blog'),
+      // /borradores es una vista interna para revisar artículos sin publicar
+      // (noindex): nunca entra en el sitemap.
+      filter: (page) => !page.includes('/borradores'),
       serialize(item) {
         const path = new URL(item.url).pathname;
         let priority = 0.7;
@@ -53,7 +53,11 @@ export default defineConfig({
         else if (path === '/precio-pulido-hormigon/' || path === '/calculadora-precio/') priority = 0.8;
         else if (path === '/contacto/' || path === '/sobre-nosotros/') priority = 0.7;
         else if (path.startsWith('/proyectos')) priority = 0.6;
-        else if (path === '/aviso-legal/' || path === '/privacidad/' || path.startsWith('/blog')) priority = 0.3;
+        // El blog ya no es placeholder: pesa por encima de las legales, pero
+        // por debajo de las páginas de captación.
+        else if (path === '/blog/') priority = 0.6;
+        else if (path.startsWith('/blog/')) priority = 0.5;
+        else if (path === '/aviso-legal/' || path === '/privacidad/') priority = 0.3;
         item.priority = priority;
         item.changefreq = 'monthly';
         return item;
