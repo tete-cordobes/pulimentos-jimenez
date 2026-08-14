@@ -1,0 +1,135 @@
+---
+/**
+ * Vista previa de borradores. SOLO EN DESARROLLO.
+ *
+ * /blog/[slug] filtra los posts con draft: true, así que un borrador no tiene
+ * ruta ni siquiera en `astro dev`. Esta página los muestra para poder revisarlos
+ * sin tener que tocar el frontmatter (y arriesgarse a commitear un draft: false).
+ *
+ * En el build de producción getStaticPaths() devuelve [], así que no genera
+ * ninguna página: es imposible que un borrador acabe publicado por esta vía.
+ */
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import { site } from "../../config/site";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  if (!import.meta.env.DEV) return [];
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const fecha = post.data.pubDate.toLocaleDateString("es-ES", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+
+const palabras = post.body?.split(/\s+/).filter(Boolean).length ?? 0;
+const pendientes = post.body?.match(/<!--\s*PENDIENTE/g)?.length ?? 0;
+---
+
+<Layout
+  noindex
+  title={`[BORRADOR] ${post.data.title}`}
+  description={post.data.description}
+  canonical={`/borradores/${post.id}`}
+>
+  <div class="bg-amber-400 px-6 py-3 text-center text-sm font-semibold text-amber-950">
+    VISTA PREVIA DE BORRADOR · no se publica · {palabras} palabras ·
+    {pendientes} huecos PENDIENTE
+  </div>
+
+  <section class="bg-brand-900 text-white">
+    <div class="mx-auto max-w-3xl px-6 py-16">
+      <nav class="mb-4 text-sm text-brand-200">
+        <a href="/" class="hover:text-white">Inicio</a> ·
+        <a href="/blog" class="hover:text-white">Blog</a>
+      </nav>
+      <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+        {post.data.title}
+      </h1>
+      <p class="mt-4 text-sm text-brand-200">
+        <time datetime={post.data.pubDate.toISOString()}>{fecha}</time>
+      </p>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-3xl px-6 py-16">
+    <div class="prose-jimenez space-y-5 text-lg leading-relaxed text-slate-700">
+      <Content />
+    </div>
+  </article>
+</Layout>
+
+<style>
+  /* Mismos estilos que blog/[slug].astro (tablas incluidas desde el 13-ago-2026).
+     Si se toca uno, tocar el otro: la vista previa debe verse igual que el
+     artículo publicado. */
+  .prose-jimenez :global(h2) {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-slate-900);
+  }
+  .prose-jimenez :global(h3) {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: var(--color-slate-900);
+  }
+  .prose-jimenez :global(strong) {
+    font-weight: 600;
+    color: var(--color-slate-900);
+  }
+  .prose-jimenez :global(a) {
+    color: var(--color-brand-700);
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+  }
+  .prose-jimenez :global(ul),
+  .prose-jimenez :global(ol) {
+    padding-left: 1.5rem;
+  }
+  .prose-jimenez :global(ul) {
+    list-style-type: disc;
+  }
+  .prose-jimenez :global(ol) {
+    list-style-type: decimal;
+  }
+  .prose-jimenez :global(hr) {
+    margin-block: 2.5rem;
+    border-color: var(--color-slate-200);
+  }
+  .prose-jimenez :global(table) {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+  .prose-jimenez :global(th),
+  .prose-jimenez :global(td) {
+    border: 1px solid var(--color-slate-200);
+    padding: 0.625rem 0.875rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose-jimenez :global(th) {
+    background-color: var(--color-slate-50);
+    font-weight: 600;
+    color: var(--color-slate-900);
+  }
+</style>
