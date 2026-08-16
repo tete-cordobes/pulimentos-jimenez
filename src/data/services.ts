@@ -29,6 +29,8 @@ export interface ServiceContent {
   process: { title: string; desc: string }[];
   surfaces?: string[];
   faqs: FAQ[];
+  /** Bloques H2 extra (cola: litio, garaje, diferencias…). El HTML es nuestro. */
+  sections?: { heading: string; paragraphs: string[] }[];
 }
 
 export const servicesContent: ServiceContent[] = [
@@ -155,6 +157,33 @@ export const servicesContent: ServiceContent[] = [
         q: "¿Cuánto dura el hormigón pulido?",
         a: "Es un acabado de larga duración. Con el sellado de litio aumenta su resistencia y solo requiere un mantenimiento mínimo de limpieza.",
       },
+      {
+        q: "¿Qué es el tratamiento de litio en un pavimento?",
+        a: "Es el densificado del hormigón con nano-partículas de litio: el producto entra en el poro, lo endurece por dentro y deja de soltar polvo. No es una capa que se pinte encima; forma parte del propio suelo. Lo aplicamos siempre al pulir hormigón.",
+      },
+      {
+        q: "¿Cuánto cuesta el tratamiento de litio en pavimentos?",
+        a: "Va incluido en el pulido de hormigón. El rango orientativo es 10-16 €/m², según el estado del soporte, los metros y el acabado. El desglose está en la guía de precio del pulido de hormigón por m².",
+      },
+    ],
+    sections: [
+      {
+        heading: "Tratamiento de litio en pavimentos: precio",
+        paragraphs: [
+          "El tratamiento de litio en un pavimento cuesta, de forma orientativa, entre 10 y 16 €/m². Va incluido en el pulido de hormigón: no es un extra ni un suelo distinto.",
+          "El rango se mueve según el estado del soporte, los metros y el acabado. Un hormigón sano se queda en la parte baja; si hay que sanear grietas, aceite o pintura vieja, sube. A más superficie, mejor precio por metro.",
+          "El litio no se coloca como una losa. Entra en el poro, endurece el suelo por dentro y deja de soltar polvo. En naves y garajes es la diferencia entre un hormigón que se deshace y uno que trabaja años.",
+          'El desglose de qué mueve el €/m² está en la <a href="/precio-pulido-hormigon/">guía del precio del pulido de hormigón</a>. Qué es el densificado, en <a href="/blog/tratamiento-de-litio-en-pavimentos/">tratamiento de litio en pavimentos</a>.',
+        ],
+      },
+      {
+        heading: "Hormigón pulido para garaje",
+        paragraphs: [
+          "El garaje castiga el suelo: peso del coche, giro de ruedas, aceite y suciedad de la calle. El hormigón pulido con litio aguanta eso sin levantar polvo y sin mancharse como un hormigón en bruto.",
+          "Además gana luz. Un garaje oscuro parece otro cuando el suelo refleja la iluminación. Lo hacemos en garajes de vivienda y de comunidad, con el grado de brillo que pidas.",
+          'Un ejemplo real: <a href="/proyectos/hormigon-pulido-garaje-privado/">hormigón pulido en un garaje particular</a>, con acabado espejo. Si tu caso es una nave, mira el <a href="/proyectos/pulido-hormigon-nave-industrial/">pulido de hormigón en nave industrial</a>.',
+        ],
+      },
     ],
   },
   {
@@ -172,6 +201,7 @@ export const servicesContent: ServiceContent[] = [
     intro: [
       "Con el paso del tiempo el mármol pierde brillo y se llena de rayas y manchas. Con nuestro servicio de pulido y cristalizado devolvemos a tus suelos su brillo y color originales.",
       "El pulido elimina cualquier imperfección (rayaduras, desgaste, manchas) y el cristalizado crea una capa protectora que realza el brillo y facilita el mantenimiento.",
+      'Si no tienes claro si te conviene pulir, cristalizar o vitrificar, <a href="/blog/pulido-cristalizado-vitrificado/">aquí está la diferencia según el tipo de suelo</a>.',
     ],
     benefits: [
       { title: "Brillo original", desc: "Recuperamos el brillo y el color natural del mármol." },
@@ -271,36 +301,59 @@ export const servicesContent: ServiceContent[] = [
     slug: "vitrificado",
     name: "Vitrificado de suelos",
     h1: "Vitrificado de suelos",
-    metaTitle: "Vitrificado de suelos: máxima protección — Pulimentos Jiménez",
+    metaTitle: "Vitrificado de suelos: sellado y protección — Pulimentos Jiménez",
     metaDescription:
-      "Vitrificado de suelos para un sellado de máxima protección y durabilidad. Ideal para suelos sometidos a desgaste. Pida presupuesto sin compromiso.",
+      "Vitrificado de suelos para sellar y proteger pavimentos de mucho tránsito. Qué es, en qué suelos sirve y en qué se diferencia del cristalizado. Presupuesto sin compromiso.",
     keyword: "vitrificado de suelos",
-    volume: 0,
+    volume: 110,
     short: "Sellado vitrificado para máxima protección y durabilidad.",
     image: "/proyectos/vitrificado-marmol-hotel.webp",
     imageAlt: "Cristalizado y vitrificado de un suelo de mármol blanco con cenefa negra en el hall de un hotel, con acabado brillo espejo — trabajo real de Pulimentos Jiménez",
     intro: [
-      "El vitrificado crea una capa protectora de alta resistencia sobre el suelo, ideal para pavimentos sometidos a un uso intenso.",
-      "Es un tratamiento que aporta durabilidad, protege frente al desgaste y mantiene el aspecto del pavimento durante más tiempo.",
+      "El vitrificado de un suelo es un sellado de alta resistencia: deja una capa protectora que aguanta el tránsito, las rozaduras y la suciedad. No es lo mismo que pulir ni que cristalizar. Se usa cuando el pavimento vive un uso intenso y necesita protección, no solo brillo.",
+      "Lo aplicamos en suelos que ya están sanos y preparados. Si el mármol o el terrazo están rayados, primero se pulen; el vitrificado viene después, para cerrar y proteger el acabado. En un hotel, un local o una zona de paso diario marca la diferencia entre un brillo de una semana y un suelo que se mantiene.",
     ],
     benefits: [
-      { title: "Máxima protección", desc: "Capa resistente frente a rozaduras y desgaste." },
-      { title: "Durabilidad", desc: "Prolonga la vida útil del pavimento." },
-      { title: "Fácil limpieza", desc: "Superficie sellada que se mantiene mejor." },
+      { title: "Capa que se nota", desc: "Sella la superficie frente a rozaduras, suciedad y desgaste diario." },
+      { title: "Pensado para mucho tránsito", desc: "Hoteles, locales, comunidades y zonas que no paran." },
+      { title: "Fácil de limpiar", desc: "La suciedad no entra en el poro: fregado y listo." },
+      { title: "No sustituye al pulido", desc: "Si el suelo está rayado, primero se recupera; luego se vitrifica." },
     ],
     process: [
-      { title: "Preparación", desc: "Limpieza y acondicionamiento del soporte." },
-      { title: "Vitrificado", desc: "Aplicación del sellado vitrificado." },
-      { title: "Acabado", desc: "Protección uniforme y resistente." },
+      { title: "Diagnóstico", desc: "Vemos el material, el tránsito y si hace falta pulir antes." },
+      { title: "Preparación", desc: "Limpieza a fondo y, si toca, pulido para dejar el soporte sano." },
+      { title: "Vitrificado", desc: "Aplicamos el sellado de alta resistencia de forma uniforme." },
+      { title: "Acabado", desc: "Superficie protegida, homogénea y lista para el uso diario." },
     ],
     faqs: [
       {
         q: "¿En qué se diferencia el vitrificado del cristalizado?",
-        a: "El cristalizado actúa sobre todo en mármol y terrazo, creando una capa de brillo mediante reacción química. El vitrificado sella la superficie con una capa protectora de alta resistencia, pensada para pavimentos sometidos a un uso intenso. Valoramos tu suelo para recomendar el tratamiento adecuado.",
+        a: "El cristalizado reacciona con el mármol o el terrazo y levanta el brillo de la propia piedra. El vitrificado es un sellado que se aplica encima para proteger. En muchos trabajos se combinan: se pule, se cristaliza y, si el tránsito lo pide, se vitrifica.",
+      },
+      {
+        q: "¿El vitrificado sirve para parquet o madera?",
+        a: "No es nuestro caso. Vitrificamos pavimentos de piedra, mármol, terrazo y suelos de tránsito intenso que ya tratamos. El vitrificado de parquet es otro oficio.",
+      },
+      {
+        q: "¿En qué suelos tiene sentido vitrificar?",
+        a: "En mármol, terrazo y pavimentos de mucho paso cuando quieres que el acabado aguante. No sustituye al hormigón pulido con litio ni a la resina epoxi: cada suelo pide su tratamiento.",
       },
       {
         q: "¿Cuánto dura el vitrificado de un suelo?",
-        a: "Es un tratamiento de larga duración. La capa protectora resiste el desgaste diario y mantiene el aspecto del pavimento durante años, con un mantenimiento sencillo de limpieza.",
+        a: "Años, si el soporte estaba bien y el tránsito es el que se valoró. No es eterno: en zonas de muchísimo paso se renueva. El mantenimiento diario es limpieza, no productos caseros agresivos.",
+      },
+      {
+        q: "¿Cuánto cuesta vitrificar un suelo?",
+        a: "Se presupuesta viendo el suelo. Cambia si hay que pulir antes, los metros y el tipo de tránsito. Te lo cerramos sin compromiso cuando vemos el pavimento o unas fotos.",
+      },
+    ],
+    sections: [
+      {
+        heading: "Vitrificado, cristalizado y pulido: no son lo mismo",
+        paragraphs: [
+          "Se buscan juntos y no son intercambiables. El pulido quita raya y desgaste. El cristalizado da brillo químico a mármol y terrazo. El vitrificado sella y protege. Elegir mal es pagar dos veces.",
+          'La comparativa completa está en <a href="/blog/pulido-cristalizado-vitrificado/">pulido, cristalizado y vitrificado: qué diferencia hay</a>. Si tu suelo es mármol, el servicio de partida es el <a href="/servicios/pulir-marmol/">pulido y cristalizado de mármol</a>.',
+        ],
       },
     ],
   },
@@ -376,17 +429,17 @@ export const servicesContent: ServiceContent[] = [
     slug: "pavimentos-deportivos",
     name: "Pavimentos deportivos",
     h1: "Pavimentos y pistas deportivas",
-    metaTitle: "Pavimentos deportivos y pistas — Pulimentos Jiménez",
+    metaTitle: "Pavimentos deportivos en Andalucía — Pulimentos Jiménez",
     metaDescription:
-      "Ejecución y tratamiento de pavimentos deportivos: pistas polideportivas, colegios y clubes. Superficies resistentes, seguras y de larga duración. Pida presupuesto.",
+      "Pavimentos deportivos en Andalucía: pistas de colegios, clubes y comunidades en Córdoba, Málaga, Sevilla, Jaén y Granada. Presupuesto sin compromiso.",
     keyword: "pavimentos deportivos",
     volume: 0,
     short: "Pistas y pavimentos deportivos resistentes para colegios y clubes.",
     image: "/proyectos/pista-deportiva.webp",
     imageAlt: "Pista deportiva azul con líneas blancas recién pintada al aire libre — trabajo real de Pulimentos Jiménez",
     intro: [
-      "Ejecutamos y tratamos pavimentos deportivos para pistas polideportivas, colegios, clubes y comunidades. Superficies pensadas para el juego: resistentes al desgaste, seguras y de larga duración.",
-      "Trabajamos pistas de gran superficie, adaptando el acabado al deporte y al uso, con materiales preparados para aguantar el tránsito intenso y la intemperie.",
+      "Ejecutamos y tratamos pavimentos deportivos en Andalucía: pistas polideportivas, colegios, clubes y comunidades de Córdoba, Málaga, Sevilla, Jaén, Granada y su entorno. Superficies pensadas para el juego: resistentes, seguras y de larga duración.",
+      "Trabajamos pistas de gran superficie desde nuestra base en La Carlota (Córdoba). Adaptamos el acabado al deporte y al uso, con materiales que aguantan el tránsito intenso y la intemperie. No cubrimos el resto de España: si la pista no está en Andalucía, no somos tu empresa.",
     ],
     benefits: [
       { title: "Alta resistencia", desc: "Pavimentos que aguantan el uso deportivo intenso y la intemperie." },
@@ -407,7 +460,11 @@ export const servicesContent: ServiceContent[] = [
       },
       {
         q: "¿Trabajáis pistas deportivas en exterior?",
-        a: "Sí. Preparamos el pavimento para que aguante la intemperie y el uso intensivo al aire libre, con acabados resistentes, seguros y antideslizantes. Valoramos cada pista en una visita.",
+        a: "Sí, en Andalucía. Preparamos el pavimento para que aguante la intemperie y el uso intensivo al aire libre, con acabados resistentes, seguros y antideslizantes. Valoramos cada pista en una visita.",
+      },
+      {
+        q: "¿Hacéis pistas en Madrid, Barcelona o el norte?",
+        a: "No. Damos servicio en Andalucía. Si la pista está fuera, te ahorramos el desplazamiento: busca una empresa de tu zona.",
       },
     ],
   },

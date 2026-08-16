@@ -50,11 +50,10 @@ export default defineConfig({
           priority = capitales.includes(slug) ? 0.9 : 0.6; // capital vs municipio
         }
         else if (path === '/servicios/' || path.startsWith('/servicios/')) priority = 0.8;
-        else if (path === '/precio-pulido-hormigon/' || path === '/calculadora-precio/') priority = 0.8;
+        else if (path === '/precio-pulido-hormigon/') priority = 0.85;
+        else if (path === '/calculadora-precio/') priority = 0.5;
         else if (path === '/contacto/' || path === '/sobre-nosotros/') priority = 0.7;
         else if (path.startsWith('/proyectos')) priority = 0.6;
-        // El blog ya no es placeholder: pesa por encima de las legales, pero
-        // por debajo de las páginas de captación.
         else if (path === '/blog/') priority = 0.6;
         else if (path.startsWith('/blog/')) priority = 0.5;
         else if (path === '/aviso-legal/' || path === '/privacidad/') priority = 0.3;

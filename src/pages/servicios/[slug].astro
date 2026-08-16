@@ -63,8 +63,8 @@ const surfaces = service.surfaces ?? allSurfaces;
         <h1 class="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           {service.h1}
         </h1>
-        <div class="mt-6 space-y-4 text-lg text-brand-100">
-          {service.intro.map((p) => <p>{p}</p>)}
+        <div class="mt-6 space-y-4 text-lg text-brand-100 [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-white">
+          {service.intro.map((p) => <p set:html={p} />)}
         </div>
         <div class="mt-8 flex flex-wrap gap-3">
           <Button href="/contacto" variant="secondary">Pide presupuesto</Button>
@@ -120,6 +120,21 @@ const surfaces = service.surfaces ?? allSurfaces;
       </ol>
     </div>
   </section>
+
+  {
+    service.sections && service.sections.length > 0 && (
+      <section class="mx-auto max-w-3xl px-6 py-16">
+        {service.sections.map((block) => (
+          <article class="mb-12 last:mb-0">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-900">{block.heading}</h2>
+            <div class="mt-4 space-y-4 text-pretty text-lg leading-relaxed text-slate-600 [&_a]:font-semibold [&_a]:text-brand-700 [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-brand-900">
+              {block.paragraphs.map((p) => <p set:html={p} />)}
+            </div>
+          </article>
+        ))}
+      </section>
+    )
+  }
 
   <!-- SUPERFICIES -->
   <section class="mx-auto max-w-7xl px-6 py-16">

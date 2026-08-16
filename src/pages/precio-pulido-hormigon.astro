@@ -28,7 +28,11 @@ const sections = [
   },
   {
     heading: "Cómo pedirnos un presupuesto exacto (rápido y sin compromiso)",
-    body: "Para afinar el precio de verdad solo necesitamos tres cosas: los metros cuadrados aproximados, el estado del suelo (nuevo, usado, con manchas o grietas...) y una idea del acabado que buscas. Con eso te damos una cifra ajustada, sin compromiso y sin letra pequeña.\n\nSi quieres una primera orientación tú mismo antes de llamar, tienes nuestra calculadora de precio por m²: eliges el tipo de tratamiento y los metros, y te da una estimación al momento. No sustituye al presupuesto real, pero te sitúa.\n\nY cuando quieras el número exacto, hablamos. Atendemos en toda Andalucía, presupuestamos gratis y sin ningún compromiso. Envíanos unas fotos por WhatsApp y te decimos por dónde va el tiro el mismo día.",
+    body: "Para afinar el precio de verdad solo necesitamos tres cosas: los metros cuadrados aproximados, el estado del suelo (nuevo, usado, con manchas o grietas...) y una idea del acabado que buscas. Con eso te damos una cifra ajustada, sin compromiso y sin letra pequeña.\n\nSi quieres una primera orientación tú mismo antes de llamar, la calculadora estima un rango. No sustituye a esta guía ni al presupuesto real: solo multiplica metros por tarifa.\n\nY cuando quieras el número exacto, hablamos. Atendemos en toda Andalucía, presupuestamos gratis y sin ningún compromiso. Envíanos unas fotos por WhatsApp y te decimos por dónde va el tiro el mismo día.",
+  },
+  {
+    heading: "¿El tratamiento de litio se cobra aparte?",
+    body: "No. El densificado con nano-litio va dentro del pulido de hormigón. Quien busca «tratamiento de litio en pavimentos precio» o «pavimentos de litio» está pidiendo este mismo trabajo, no un extra. El rango sigue siendo 10-16 €/m².\n\n«Cemento pulido» es la misma familia: en obra se dice cemento, en ficha técnica hormigón. El precio por m² es el de esta guía.",
   },
 ];
 
@@ -57,12 +61,16 @@ const faqs = [
     q: "¿En qué zona trabajáis?",
     a: "Damos servicio en toda Andalucía. Presupuestamos gratis y sin compromiso; puedes mandarnos fotos del suelo por WhatsApp y te orientamos el mismo día.",
   },
+  {
+    q: "¿El tratamiento de litio tiene un precio distinto?",
+    a: "No. El litio va incluido en el pulido de hormigón. El rango 10-16 €/m² ya contempla el densificado. No hay una tarifa paralela de «pavimentos de litio».",
+  },
 ];
 ---
 
 <Layout
-  title="Precio del pulido de hormigón por m² | Pulimentos Jiménez"
-  description="¿Cuánto cuesta pulir hormigón por m²? Rango orientativo 10-16 €/m² y los factores que mueven el precio: estado del suelo, superficie y acabado. Presupuesto sin compromiso."
+  title="Hormigón pulido precio m²: 10-16 € | Pulimentos Jiménez"
+  description="Hormigón pulido precio m²: rango real 10-16 €. Qué mueve el precio (estado, metros, acabado) y por qué el litio no se cobra aparte. Presupuesto sin compromiso."
   canonical="/precio-pulido-hormigon"
 >
   <section class="bg-brand-900 text-white">
@@ -99,9 +107,16 @@ const faqs = [
       ))
     }
 
+    <div class="mt-10 space-y-3 text-lg text-slate-600 [&_a]:font-semibold [&_a]:text-brand-700 [&_a]:underline [&_a]:underline-offset-2">
+      <p>
+        El servicio completo está en <a href="/servicios/pulido-de-hormigon/">pulido de hormigón</a>.
+        Qué es el densificado, en <a href="/blog/tratamiento-de-litio-en-pavimentos/">tratamiento de litio en pavimentos</a>.
+      </p>
+    </div>
+
     <div class="mt-8 flex flex-wrap gap-3">
       <Button href="/contacto" variant="secondary">Pedir presupuesto gratis</Button>
-      <Button href="/calculadora-precio">Calcular precio por m²</Button>
+      <Button href="/calculadora-precio/">Estimar presupuesto</Button>
     </div>
     <p class="mt-4 text-sm text-slate-500">
       ¿Prefieres llamar?{" "}
