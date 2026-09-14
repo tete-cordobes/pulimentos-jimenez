@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import CTASection from "../../components/CTASection.astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
 import { site } from "../../config/site";
+import type { FAQ } from "../../data/services";
 
 export const prerender = true;
 
@@ -35,6 +36,67 @@ const postSchema = {
   url: new URL(canonical, site.url).href,
   publisher: { "@type": "Organization", name: site.name, url: site.url },
 };
+
+/**
+ * FAQPage a partir del bloque "## Preguntas frecuentes" del propio Markdown.
+ *
+ * Las FAQ se escriben en el cuerpo del artículo y no en el frontmatter, por dos
+ * razones: publicar sigue siendo "crear el .md", y el texto marcado queda
+ * visible en la página, que es lo que exige Google para aceptar el marcado.
+ *
+ * El convenio es el que ya siguen los artículos: un H2 "Preguntas frecuentes"
+ * y, debajo, cada pregunta en negrita al principio de línea con su respuesta
+ * justo después (en la misma línea o en la siguiente).
+ *
+ *   **¿Pregunta?**
+ *   Respuesta, que puede ocupar varias líneas.
+ *
+ * Un artículo que no lo siga no emite schema, y el build avisa por consola.
+ */
+function extraerFaqs(body: string): FAQ[] {
+  const trasEncabezado = body.split(/^##\s+Preguntas frecuentes\s*$/m)[1];
+  if (trasEncabezado === undefined) return [];
+
+  // El bloque termina en el siguiente H2, o en el --- que precede al cierre.
+  const bloque = trasEncabezado.split(/^(?:##\s|---\s*$)/m)[0];
+
+  return bloque
+    .split(/\n(?=\*\*)/)
+    .map((trozo) => trozo.match(/^\*\*(.+?)\*\*\s*([\s\S]*)$/))
+    .filter((m): m is RegExpMatchArray => m !== null)
+    .map((m) => ({
+      q: m[1].trim(),
+      // El Markdown va cortado a 80 columnas, así que los saltos de línea son
+      // de formato y no de contenido. Los enlaces se reducen a su texto: en el
+      // schema va texto plano.
+      a: m[2]
+        .replace(/\[(.+?)\]\((.+?)\)/g, "$1")
+        .replace(/\s+/g, " ")
+        .trim(),
+    }))
+    .filter((f) => f.q !== "" && f.a !== "");
+}
+
+const faqs = extraerFaqs(post.body ?? "");
+
+if (faqs.length === 0 && post.body?.includes("## Preguntas frecuentes")) {
+  console.warn(
+    `[blog] ${post.id}: el bloque de FAQ no sigue el convenio, no se emite FAQPage.`,
+  );
+}
+
+const faqSchema =
+  faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      }
+    : null;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -79,6 +141,11 @@ const breadcrumbSchema = {
 
   <script type="application/ld+json" set:html={JSON.stringify(postSchema)} />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {
+    faqSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )
+  }
 </Layout>
 
 <style>
