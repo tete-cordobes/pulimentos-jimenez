@@ -1,7 +1,31 @@
+# Reglas del hosting (cPanel/LiteSpeed en LucusHost).
+#
+# OJO: este fichero se sube en cada despliegue y SOBRESCRIBE el del servidor,
+# así que es la única fuente. Cualquier regla que haga falta va aquí.
+#
+# Objetivo: que cada página exista en una sola URL. Sin esto, Google indexa
+# hasta cuatro variantes de la misma página (http/https × con/sin barra final)
+# y se reparten las impresiones entre ellas.
+#
+# El orden de las reglas importa. La de la barra final va primero y redirige
+# directamente a https, de modo que una URL sin barra en http se resuelve en un
+# solo salto en vez de encadenar dos 301.
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Una sola URL canónica: barra final. Sin esto GSC indexa /ruta y /ruta/.
+
+  # 1) Barra final, saltando directo a https.
+  #    http://dominio/blog  ->  https://dominio/blog/   (un solo 301)
+  #    Los ficheros reales (imágenes, css, js) se excluyen con !-f y caen a la
+  #    regla 2, que solo les cambia el protocolo.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !/$
-  RewriteRule ^(.*)$ /$1/ [R=301,L]
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+  # 2) Todo lo demás que siga en http: se fuerza https conservando la ruta.
+  #    La segunda condición evita un bucle infinito si algún día el hosting
+  #    pone un proxy delante que termine el TLS y reenvíe en claro.
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 </IfModule>
