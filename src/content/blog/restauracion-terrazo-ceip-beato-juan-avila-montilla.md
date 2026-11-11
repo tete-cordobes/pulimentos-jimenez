@@ -2,7 +2,7 @@
 title: "Comenzamos la restauración de 2.400 m² de terrazo en el CEIP Beato Juan de Ávila de Montilla"
 description: "Pulimentos Jiménez inicia el pulido, restauración y abrillantado de 2.400 m² de terrazo con más de 40 años en el CEIP Beato Juan de Ávila de Montilla, para Serrot Construcciones."
 pubDate: 2026-11-11
-draft: true
+draft: false
 ---
 
 En **Pulimentos Jiménez** hemos comenzado un nuevo proyecto de **pulido, restauración y abrillantado de suelos de terrazo en Montilla (Córdoba)**, en el **CEIP Beato Juan de Ávila**, para la empresa constructora **Serrot Construcciones**.
@@ -33,4 +33,4 @@ En **Pulimentos Jiménez** realizamos trabajos de **pulido y abrillantado de ter
 
 Si necesitas restaurar un suelo de terrazo, puedes consultar nuestros servicios en [pulimentosjimenez.es](https://pulimentosjimenez.es) o solicitar presupuesto en el **622 135 293**.
 
-<!-- PENDIENTE: subir e insertar las dos fotografías originales del inicio de los trabajos. Publicar solo cuando estén incorporadas. Actualizar al finalizar la obra con fotografías y resultados reales. -->
+
