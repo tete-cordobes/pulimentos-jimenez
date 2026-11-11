@@ -93,14 +93,14 @@ export const servicesContent: ServiceContent[] = [
   {
     slug: "pulido-de-hormigon",
     name: "Pulido de hormigón",
-    h1: "Pulido de hormigón",
-    metaTitle: "Hormigón pulido: precio y acabado con nano-litio — Pulimentos Jiménez",
+    h1: "Pulido de hormigón industrial en Córdoba",
+    metaTitle: "Pulido de hormigón industrial en Córdoba | Pulimentos Jiménez",
     metaDescription:
-      "Hormigón pulido para naves, garajes, locales y exterior. Tratamiento con nano-litio: más resistencia, brillo y cero polvo. Pide presupuesto sin compromiso.",
-    keyword: "hormigón pulido",
+      "Pulido de hormigón industrial en Córdoba. Recuperación de suelos de naves, tratamiento con silicatos de litio y sellado. Solicita presupuesto.",
+    keyword: "pulido de hormigón industrial en Córdoba",
     volume: 1900,
     short:
-      "Hormigón pulido con nano-litio: más resistencia, brillo y cero polvo.",
+      "Pulido y recuperación de hormigón industrial con densificación de litio.",
     image: "/proyectos/hormigon-nave-brillo.webp",
     imageAlt: "Pasillo de nave con hormigón pulido a espejo que refleja la cristalera — trabajo real de Pulimentos Jiménez",
     intro: [
@@ -133,6 +133,14 @@ export const servicesContent: ServiceContent[] = [
       { title: "Abrillantado final", desc: "Acabado satinado o alto brillo según tus necesidades." },
     ],
     faqs: [
+      {
+        q: "¿Se puede recuperar el hormigón de una nave industrial antigua sin levantar el suelo?",
+        a: "En muchos casos sí. Evaluamos el estado del hormigón, las juntas, las grietas y la contaminación por aceites para decidir si conviene desbastar, pulir, densificar y sellar la solera existente.",
+      },
+      {
+        q: "¿Qué tratamiento se aplica a un suelo de hormigón con grasa y desgaste?",
+        a: "Podemos retirar mecánicamente la capa superficial deteriorada con herramienta diamantada y, tras preparar el soporte, aplicar un densificador de silicato de litio y un sellado final compatible. La solución depende de la profundidad de la contaminación y del uso del suelo.",
+      },
       {
         q: "¿Cuánto cuesta el hormigón pulido por metro cuadrado?",
         a: "El precio del hormigón pulido depende del estado del soporte, los metros totales, el nivel de brillo y el uso que le vayas a dar (no es lo mismo un garaje que una nave con tránsito de maquinaria). Por eso no damos una tarifa cerrada por teléfono: vamos a ver el suelo, lo medimos y te pasamos un presupuesto cerrado y sin compromiso. A más superficie, mejor precio por metro.",
@@ -167,6 +175,22 @@ export const servicesContent: ServiceContent[] = [
       },
     ],
     sections: [
+      {
+        heading: "Pulido de naves industriales y recuperación de hormigón en Córdoba",
+        paragraphs: [
+          "Recuperamos suelos de naves industriales, talleres mecánicos, almacenes y zonas logísticas con pulido diamantado. Según el estado del pavimento, retiramos capas superficiales deterioradas, restos de grasa y suciedad incrustada antes de densificar y sellar.",
+          "Un ejemplo real es la recuperación en Córdoba de un antiguo taller de vehículos industriales con más de 30 años de actividad: eliminamos la capa de rodadura dañada mediante maquinaria diamantada, aplicamos silicatos de litio y terminamos con un sellado con nanopartículas de litio. El resultado fue un pavimento más luminoso y fácil de mantener.",
+          "El pulido permite aprovechar el hormigón existente cuando su estado lo hace viable. Estudiamos grietas, juntas, contaminación por aceites y el uso previsto antes de recomendar el tratamiento.",
+        ],
+      },
+      {
+        heading: "Tratamientos para suelos de hormigón: silicatos de litio y sellado",
+        paragraphs: [
+          "El densificador a base de silicato de litio reacciona con componentes del cemento y contribuye a mejorar la dureza superficial y reducir la formación de polvo. No sustituye la reparación de daños estructurales ni convierte el hormigón en impermeable.",
+          "El sellado final con formulaciones de litio ayuda a limitar la absorción superficial y facilita la limpieza, según el producto y las condiciones de uso. El brillo se consigue principalmente con el pulido mecánico y el nivel de acabado elegido.",
+          'Puedes ampliar información en nuestra <a href="/blog/tratamiento-de-litio-en-pavimentos/">guía sobre tratamientos de litio</a> y consultar <a href="/precio-pulido-hormigon/">qué influye en el precio del pulido de hormigón</a>.',
+        ],
+      },
       {
         heading: "Tratamiento de litio en pavimentos: precio",
         paragraphs: [
