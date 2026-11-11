@@ -20,7 +20,7 @@ export const site = {
   phoneSecondary: "+34 609 24 58 50", // padre (secundario)
   whatsapp: import.meta.env.PUBLIC_WHATSAPP || "34622135293", // Carlos gestiona los leads
   // TODO: confirmar email real con el cliente
-  email: "info@pulimentosjimenez.es",
+  email: "pulidoscarlosjimenez@gmail.com",
   // Sede real: La Carlota (Córdoba). Se desplaza por toda Andalucía.
   baseCity: "La Carlota",
   // Datos fiscales (aviso legal + schema). Titular autónomo (persona física).
