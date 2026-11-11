@@ -157,6 +157,9 @@ export const clients: ClientRef[] = [
   { name: "Tonelería del Sur", logo: "/clientes/toneleria-del-sur.png" },
   { name: "Innoauto", logo: "/clientes/innoauto.png" },
   { name: "Revestimientos Ruiz", logo: "/clientes/revestimientos-ruiz.png" },
+  { name: "Serrot Construcciones" },
+  { name: "Globalzia" },
+  { name: "Ibérica del Sur Construcciones" },
   { name: "Hospes Hotels", logo: "/clientes/hospes-hotels.png" },
   { name: "Probisa", logo: "/clientes/probisa.png" },
   // TODO: confirmar con Carlos que es Servimar Pintura y Limpieza (Córdoba)
