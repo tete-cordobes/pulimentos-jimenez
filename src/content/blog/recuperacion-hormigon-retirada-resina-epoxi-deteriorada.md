@@ -2,7 +2,7 @@
 title: "Pulido de hormigón en Fuente Palmera: retirada de resina epoxi deteriorada"
 description: "Trabajo de pulido de hormigón en Fuente Palmera (Córdoba) con resina epoxi deteriorada: eliminación con diamante, pulido, densificación con sodio y sellado con nanopartículas de litio."
 pubDate: 2026-11-11
-draft: true
+draft: false
 ---
 
 En **Pulimentos Jiménez** hemos realizado en **Fuente Palmera (Córdoba)** la **recuperación de un pavimento de hormigón** que presentaba una antigua capa de **resina epoxi muy deteriorada**. En lugar de cubrir de nuevo el suelo, trabajamos sobre el soporte existente para retirar el revestimiento dañado y conseguir un acabado pulido de alto brillo.
@@ -37,4 +37,4 @@ Si necesitas **retirar resina epoxi deteriorada**, **pulir el suelo de una nave 
 
 **Pulimentos Jiménez** · Presupuestos: **622 135 293** · [pulimentosjimenez.es](https://pulimentosjimenez.es)
 
-<!-- PENDIENTE: subir las 10 fotografías originales y colocar galería antes de publicar. -->
+
