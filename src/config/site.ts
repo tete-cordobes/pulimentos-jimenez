@@ -157,7 +157,7 @@ export const clients: ClientRef[] = [
   { name: "Tonelería del Sur", logo: "/clientes/toneleria-del-sur.png" },
   { name: "Innoauto", logo: "/clientes/innoauto.png" },
   { name: "Revestimientos Ruiz", logo: "/clientes/revestimientos-ruiz.png" },
-  { name: "Serrot Construcciones" },
+  { name: "Serrot Construcciones", logo: "/clientes/serrot-construcciones.svg" },
   { name: "Globalzia", logo: "/clientes/globalzia.svg" },
   { name: "Ibérica del Sur Construcciones" },
   { name: "Hospes Hotels", logo: "/clientes/hospes-hotels.png" },
