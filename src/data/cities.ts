@@ -31,12 +31,12 @@ export const citiesContent: CityContent[] = [
     name: "Córdoba",
     hq: true,
     h1: "Pulido de suelos en Córdoba",
-    metaTitle: "Hormigón pulido en Córdoba | Pulimentos Jiménez",
+    metaTitle: "Pulido de suelos en Córdoba | Pulimentos Jiménez",
     metaDescription:
-      "Hormigón pulido y tratamiento de suelos en Córdoba: cristalizado de mármol, terrazo y epoxi. Base en La Carlota, cercanía y respuesta rápida. Presupuesto sin compromiso.",
+      "Pulidor de suelos en Córdoba y provincia. Pulido y abrillantado de terrazo, mármol y hormigón, restauración y resina epoxi. Solicita presupuesto.",
     intro: [
-      "Pulimentos y Aplicaciones Jiménez tiene su base en La Carlota, en plena provincia de Córdoba, así que hacemos hormigón pulido en Córdoba y toda la campiña con la ventaja de la cercanía: respondemos rápido y valoramos tu suelo sin que el desplazamiento dispare el presupuesto.",
-      "Pulimos naves y garajes de los polígonos cordobeses, soleras de bodegas y cooperativas de la zona de Montilla-Moriles, y recuperamos el mármol y el barro cocido de patios y zaguanes del casco histórico. Hormigón pulido, cristalizado de mármol, terrazo y epoxi, con maquinaria propia y acabados de larga duración.",
+      "¿Buscas un pulidor de suelos en Córdoba? En Pulimentos y Aplicaciones Jiménez realizamos pulido, restauración y abrillantado de pavimentos de terrazo, mármol y hormigón para viviendas, comunidades, comercios, colegios y naves industriales. Tenemos nuestra base en La Carlota y trabajamos en Córdoba capital y toda la provincia. Valoramos el estado del suelo y proponemos el tratamiento más adecuado.",
+      "Entre nuestros trabajos en la provincia están la restauración y abrillantado de terrazo antiguo en el CEIP Beato Juan de Ávila de Montilla, con una superficie prevista de 2.400 m², y la recuperación de un pavimento de hormigón en una nave de Fuente Palmera: retirada diamantada de una antigua resina epoxi deteriorada, pulido, densificación y sellado. También realizamos pulido de escaleras, tratamiento de barro cocido y aplicaciones de resina epoxi. Pide presupuesto sin compromiso en el 622 13 52 93.",
     ],
     nearby: ["Córdoba capital", "La Carlota", "Lucena", "Montilla", "Puente Genil", "Baena", "Fuente Palmera", "Posadas", "Palma del Río", "Almodóvar del Río"],
     faqs: [
