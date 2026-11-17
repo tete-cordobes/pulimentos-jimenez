@@ -203,6 +203,6 @@ const breadcrumbSchema = {
 
   <CTASection title={`¿Necesitas pulir un suelo en ${city.name}?`} />
 
-  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <!-- La identidad LocalBusiness se declara una sola vez en Layout.astro. -->
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </Layout>
