@@ -37,4 +37,18 @@ Si necesitas **retirar resina epoxi deteriorada**, **pulir el suelo de una nave 
 
 **Pulimentos Jiménez** · Presupuestos: **622 135 293** · [pulimentosjimenez.es](https://pulimentosjimenez.es)
 
+## Fotografías del trabajo
 
+![Suelo de la nave de Fuente Palmera antes del tratamiento](/images/blog/fuente-palmera-01.webp)
+
+![Maquinaria de pulido en la nave de Fuente Palmera](/images/blog/fuente-palmera-02.webp)
+
+![Detalle de la máquina y el pavimento de hormigón](/images/blog/fuente-palmera-03.webp)
+
+![Reflejo de la entrada en el hormigón pulido](/images/blog/fuente-palmera-04.webp)
+
+![Vista del acceso a la nave sobre el pavimento pulido](/images/blog/fuente-palmera-05.webp)
+
+![Acabado del hormigón en el interior de la nave](/images/blog/fuente-palmera-06.webp)
+
+![Vista general del pavimento de hormigón pulido](/images/blog/fuente-palmera-07.webp)

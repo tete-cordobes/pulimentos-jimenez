@@ -33,4 +33,8 @@ En **Pulimentos Jiménez** realizamos trabajos de **pulido y abrillantado de ter
 
 Si necesitas restaurar un suelo de terrazo, puedes consultar nuestros servicios en [pulimentosjimenez.es](https://pulimentosjimenez.es) o solicitar presupuesto en el **622 135 293**.
 
+## Fotografías del trabajo
 
+![Maquinaria de pulido en un pasillo del CEIP Beato Juan de Ávila](/images/blog/montilla-01.webp)
+
+![Detalle del suelo de terrazo del colegio de Montilla](/images/blog/montilla-02.webp)
