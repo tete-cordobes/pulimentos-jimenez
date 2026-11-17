@@ -54,7 +54,7 @@ export const citiesContent: CityContent[] = [
     slug: "malaga",
     name: "Málaga",
     h1: "Pulido de suelos en Málaga",
-    metaTitle: "Hormigón pulido en Málaga | Pulimentos Jiménez",
+    metaTitle: "Pulido de suelos en Málaga | Pulimentos Jiménez",
     metaDescription:
       "Hormigón pulido y tratamiento de suelos en Málaga y la Costa del Sol: cristalizado de mármol para hoteles, epoxi y terrazo. Acabados duraderos. Presupuesto sin compromiso.",
     intro: [
