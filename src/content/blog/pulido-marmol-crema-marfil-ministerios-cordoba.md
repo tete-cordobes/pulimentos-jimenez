@@ -7,6 +7,10 @@ draft: false
 
 En **Pulimentos Jiménez** hemos llevado a cabo la **restauración, el pulido y el abrillantado de 500 m² de mármol** en el edificio de los Ministerios de Córdoba, en una actuación realizada para la empresa constructora **Globalzia**.
 
+![Mármol restaurado y abrillantado en el edificio de los Ministerios de Córdoba](/images/blog/ministerios.jpeg)
+
+*Resultado del pulido y abrillantado del mármol en los Ministerios de Córdoba.*
+
 El proyecto forma parte de la reforma integral de una de las plantas del edificio, donde se ha decidido **conservar la solería original de los años 70** en lugar de sustituirla.
 
 ## Restauración de un suelo de mármol con décadas de antigüedad
@@ -29,4 +33,23 @@ En **Pulimentos Jiménez** realizamos trabajos de [pulido y cristalizado de már
 
 **¿Necesitas restaurar un suelo de mármol deteriorado?** [Solicita presupuesto](/contacto/).
 
-<!-- Las siete fotografías originales del proyecto deben incorporarse al repositorio para mostrar portada y galería. -->
+
+
+## Galería de fotografías del trabajo
+
+Las siguientes imágenes muestran el estado y el acabado del pavimento durante el proyecto de restauración.
+
+<div class="galeria-ministerios">
+  <a href="/images/blog/ministerios%201.jpeg" target="_blank" rel="noopener noreferrer"><img src="/images/blog/ministerios%201.jpeg" alt="Restauración y abrillantado de mármol en los Ministerios de Córdoba, fotografía 1" loading="lazy" decoding="async" /></a>
+  <a href="/images/blog/ministerios%202.jpeg" target="_blank" rel="noopener noreferrer"><img src="/images/blog/ministerios%202.jpeg" alt="Restauración y abrillantado de mármol en los Ministerios de Córdoba, fotografía 2" loading="lazy" decoding="async" /></a>
+  <a href="/images/blog/ministerios%203.jpeg" target="_blank" rel="noopener noreferrer"><img src="/images/blog/ministerios%203.jpeg" alt="Restauración y abrillantado de mármol en los Ministerios de Córdoba, fotografía 3" loading="lazy" decoding="async" /></a>
+  <a href="/images/blog/ministerios%204.jpeg" target="_blank" rel="noopener noreferrer"><img src="/images/blog/ministerios%204.jpeg" alt="Restauración y abrillantado de mármol en los Ministerios de Córdoba, fotografía 4" loading="lazy" decoding="async" /></a>
+  <a href="/images/blog/ministerios%205.jpeg" target="_blank" rel="noopener noreferrer"><img src="/images/blog/ministerios%205.jpeg" alt="Restauración y abrillantado de mármol en los Ministerios de Córdoba, fotografía 5" loading="lazy" decoding="async" /></a>
+  <a href="/images/blog/ministerios%206.jpeg" target="_blank" rel="noopener noreferrer"><img src="/images/blog/ministerios%206.jpeg" alt="Restauración y abrillantado de mármol en los Ministerios de Córdoba, fotografía 6" loading="lazy" decoding="async" /></a>
+</div>
+
+<style>
+  .galeria-ministerios { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem 0; }
+  .galeria-ministerios img { width: 100%; height: 230px; object-fit: cover; border-radius: .75rem; }
+  @media (max-width: 640px) { .galeria-ministerios { grid-template-columns: 1fr; } .galeria-ministerios img { height: auto; } }
+</style>
