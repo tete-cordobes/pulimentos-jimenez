@@ -1,32 +1,32 @@
 ---
-title: "Pulido y abrillantado de mármol Crema Marfil en el Edificio de los Ministerios de Córdoba"
-description: "Trabajo real de Pulimentos Jiménez: pulido, abrillantado y reparación de coqueras en solería de mármol Crema Marfil en Córdoba, para la constructora Globalcia."
-pubDate: 2026-11-11
-draft: true
+title: "Restauración y abrillantado de 500 m² de mármol en los Ministerios de Córdoba"
+description: "Restauración de 500 m² de mármol de los años 70 en el edificio de los Ministerios de Córdoba: reparación de coqueras con resina epoxi, pulido y abrillantado cristalizado para Globalzia."
+pubDate: 2026-11-17
+draft: false
 ---
 
-En **Pulimentos Jiménez** hemos realizado un trabajo de **pulido y abrillantado de suelos de mármol Crema Marfil** en el conocido **Edificio de los Ministerios de Córdoba**, para la empresa constructora **Globalcia**.
+En **Pulimentos Jiménez** hemos llevado a cabo la **restauración, el pulido y el abrillantado de 500 m² de mármol** en el edificio de los Ministerios de Córdoba, en una actuación realizada para la empresa constructora **Globalzia**.
 
-La intervención ha incluido también la **reparación de coqueras** presentes en la solería, con el objetivo de mejorar el aspecto del pavimento y recuperar un acabado uniforme y brillante.
+El proyecto forma parte de la reforma integral de una de las plantas del edificio, donde se ha decidido **conservar la solería original de los años 70** en lugar de sustituirla.
 
-## Reparación de coqueras en mármol Crema Marfil
+## Restauración de un suelo de mármol con décadas de antigüedad
 
-Las coqueras son pequeñas cavidades o imperfecciones que pueden aparecer en la superficie de la piedra natural. Su reparación forma parte de los trabajos de recuperación del pavimento, ya que permite mejorar la continuidad visual de las piezas antes de completar el acabado.
+El pavimento presentaba numerosas **coqueras, fisuras e imperfecciones**, además del desgaste propio de décadas de uso. Nuestro objetivo fue recuperar el aspecto de la piedra natural y devolverle un acabado uniforme y brillante.
 
-En esta actuación hemos trabajado sobre la solería de **mármol Crema Marfil**, una piedra natural de tonalidad clara y vetas características.
+## Reparación de coqueras y fisuras con resina epoxi bicomponente
 
-## Pulido y abrillantado de la solería
+Realizamos el **resanado de los desperfectos mediante resina epoxi bicomponente**, tratando las zonas dañadas antes de continuar con las siguientes fases de restauración.
 
-Tras las labores de reparación, hemos llevado a cabo el pulido y abrillantado del pavimento. El resultado se aprecia en el brillo de la superficie y en los reflejos de las ventanas y la iluminación de las distintas estancias.
+## Afinado y abrillantado cristalizado del mármol
 
-Las imágenes del trabajo muestran salas amplias, despachos y zonas de paso donde el acabado del mármol aporta luminosidad al interior.
+Después de reparar la superficie, llevamos a cabo el **afinado del mármol** y su posterior **abrillantado cristalizado**. El resultado es un pavimento con brillo recuperado, en el que destacan las vetas naturales de la piedra y los reflejos de las ventanas.
 
-## Un trabajo realizado en Córdoba para Globalcia
+## 500 m² de solería original recuperada en Córdoba
 
-Este proyecto se suma a los trabajos que realizamos para empresas constructoras, tanto en obras de reforma como en actuaciones de recuperación y tratamiento de pavimentos.
+La actuación demuestra cómo una restauración profesional puede devolver el protagonismo a una solería antigua, evitando su sustitución durante una reforma.
 
-En **Pulimentos Jiménez** estamos especializados en el [pulido y cristalizado de mármol](/servicios/pulir-marmol/), el [pulido de terrazo](/servicios/pulido-de-terrazo/) y otros tratamientos de suelos en Córdoba y Andalucía.
+En **Pulimentos Jiménez** realizamos trabajos de [pulido y cristalizado de mármol](/servicios/pulir-marmol/), restauración de pavimentos y [pulido de suelos en Córdoba](/pulido-de-suelos-en-cordoba/).
 
-**¿Necesitas recuperar el brillo de un suelo de mármol o reparar imperfecciones en una solería?** [Contacta con nosotros](/contacto/) y cuéntanos tu proyecto.
+**¿Necesitas restaurar un suelo de mármol deteriorado?** [Solicita presupuesto](/contacto/).
 
-<!-- PENDIENTE: incorporar las diez fotografías originales del trabajo antes de publicar este borrador. -->
+<!-- Las siete fotografías originales del proyecto deben incorporarse al repositorio para mostrar portada y galería. -->
