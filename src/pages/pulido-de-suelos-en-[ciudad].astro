@@ -107,6 +107,26 @@ const breadcrumbSchema = {
     </section>
   )}
 
+  {city.slug === "malaga" && (
+    <section class="mx-auto max-w-7xl px-6 pb-16">
+      <h2 class="text-2xl font-bold text-slate-900">Especialidades de pulido de suelos en Málaga</h2>
+      <p class="mt-3 text-slate-600">Soluciones para constructoras, naves industriales, particulares y comunidades de propietarios.</p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        {[
+          { href: "/pulido-de-hormigon-en-malaga", title: "Pulido de hormigón industrial en Málaga", text: "Naves, almacenes y locales comerciales." },
+          { href: "/pulido-de-marmol-en-malaga", title: "Pulido de mármol en Málaga", text: "Viviendas, hoteles y portales de comunidades." },
+          { href: "/pulido-de-terrazo-en-malaga", title: "Pulido de terrazo en Málaga", text: "Restauración de pavimentos antiguos y zonas comunes." },
+          { href: "/abrillantado-de-suelos-en-malaga", title: "Abrillantado de suelos en Málaga", text: "Tratamientos de brillo y mantenimiento." },
+        ].map((item) => (
+          <a href={item.href} class="block rounded-xl border border-slate-200 p-6 transition hover:border-brand-500 hover:bg-brand-50">
+            <h3 class="font-semibold text-brand-800">{item.title}</h3>
+            <p class="mt-2 text-sm text-slate-600">{item.text}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
   <!-- ZONAS -->
   <section class="border-y border-slate-200 bg-slate-50 py-16">
     <div class="mx-auto max-w-4xl px-6">
