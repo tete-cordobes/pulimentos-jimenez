@@ -63,3 +63,5 @@ Estas fotografías muestran acabados de mármol de trabajos realizados por nuest
 ![Pavimento de mármol pulido con reflejos en vivienda de la Costa del Sol](/images/blog/marbella-marmol-abrillantado-vivienda.webp)
 
 ![Detalle del brillo y reflejo en mármol tratado en la Costa del Sol](/images/blog/marbella-marmol-brillo-reflejo.webp)
+
+<!-- NOTA EDITORIAL: Fotografías pendientes de carga: seleccionar dos imágenes de mármol de trabajos reales en la Costa del Sol; no afirmar que la foto se tomó en Marbella. No publicar imágenes hasta que sus archivos existan en public/ y las rutas estén verificadas. -->
