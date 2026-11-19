@@ -55,3 +55,5 @@ Estas imágenes muestran un trabajo de pulido de pavimento de piedra en la Costa
 ![Proceso de pulido de pavimento de mármol en la Costa del Sol](/images/blog/malaga-marmol-pulido-proceso.webp)
 
 ![Acabado brillante de pavimento de mármol en la Costa del Sol](/images/blog/malaga-marmol-pulido-resultado.webp)
+
+<!-- NOTA EDITORIAL: Fotografías pendientes de carga: seleccionar dos imágenes de mármol de trabajos reales en la Costa del Sol; no asignar localidad concreta a la imagen. No publicar imágenes hasta que sus archivos existan en public/ y las rutas estén verificadas. -->
