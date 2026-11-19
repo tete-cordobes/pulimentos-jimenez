@@ -2,7 +2,7 @@
 title: "Pulido y abrillantado de mármol en Marbella: cómo recuperar el brillo"
 description: "Consejos para recuperar suelos de mármol desgastados en Marbella: cuándo pulir, cuándo abrillantar y cómo solicitar presupuesto."
 pubDate: 2026-11-19
-draft: true
+draft: false
 ---
 
 Los suelos de mármol son habituales en viviendas, portales y espacios comerciales, pero el uso diario puede dejar zonas apagadas, rayas y diferencias de brillo. Si buscas **pulido y abrillantado de mármol en Marbella**, el primer paso es identificar qué le ocurre realmente a la piedra.
