@@ -39,7 +39,7 @@ Cuando procede, aplicamos tratamientos densificadores y selladores compatibles c
 
 Hemos realizado un trabajo de pulido de pavimento de hormigón en una **nave industrial de Málaga**. Las fotografías facilitadas del proyecto muestran el acabado uniforme y brillante, con reflejos de la estructura y de la iluminación sobre la superficie.
 
-Este caso real nos permite mostrar el resultado visual del trabajo a constructoras y empresas de Málaga. La descripción técnica exacta de las fases y productos empleados en esta nave se añadirá cuando esté confirmada.
+Este caso real nos permite mostrar el resultado visual del trabajo a constructoras y empresas de Málaga. En esta nave realizamos el **pulido con herramienta diamantada**, seguido de un **tratamiento endurecedor con sodio** y un **sellado con silicatos de litio**. El proceso permitió obtener el acabado que se aprecia en las fotografías del trabajo.
 
 ## Otro ejemplo de recuperación: nave en Fuente Palmera
 
