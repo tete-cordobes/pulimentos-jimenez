@@ -47,3 +47,11 @@ No. El pulido puede corregir desgaste y rayas superficiales mediante abrasión c
 
 **¿Trabajáis en comunidades de propietarios de Málaga?**
 Sí, valoramos proyectos en portales, escaleras y zonas comunes de comunidades, según la superficie y las necesidades del edificio.
+
+## Fotografías de trabajos reales en la Costa del Sol
+
+Estas imágenes muestran un trabajo de pulido de pavimento de piedra en la Costa del Sol: una fase de intervención y el acabado brillante. Son ejemplos de trabajos realizados por nuestro equipo, no una tarifa ni una garantía de resultado idéntico para todos los suelos.
+
+![Proceso de pulido de pavimento de mármol en la Costa del Sol](/images/blog/malaga-marmol-pulido-proceso.webp)
+
+![Acabado brillante de pavimento de mármol en la Costa del Sol](/images/blog/malaga-marmol-pulido-resultado.webp)
