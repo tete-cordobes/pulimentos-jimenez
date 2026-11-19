@@ -55,3 +55,11 @@ Depende del tránsito, la limpieza, el mantenimiento y el tipo de acabado; no ex
 
 **¿Atendéis viviendas y comunidades en Marbella?**
 Sí, valoramos solicitudes de particulares y comunidades en Marbella y otras localidades de la Costa del Sol.
+
+## Fotografías de acabados reales en la Costa del Sol
+
+Estas fotografías muestran acabados de mármol de trabajos realizados por nuestro equipo en la Costa del Sol. Se incluyen como ejemplos de brillo y recuperación visual, sin atribuir una localidad concreta a cada imagen.
+
+![Pavimento de mármol pulido con reflejos en vivienda de la Costa del Sol](/images/blog/marbella-marmol-abrillantado-vivienda.webp)
+
+![Detalle del brillo y reflejo en mármol tratado en la Costa del Sol](/images/blog/marbella-marmol-brillo-reflejo.webp)
