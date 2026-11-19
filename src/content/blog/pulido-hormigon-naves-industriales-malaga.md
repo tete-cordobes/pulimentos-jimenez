@@ -61,3 +61,11 @@ Un tratamiento adecuado puede reducir la formación de polvo superficial, pero e
 
 **¿Trabajáis para constructoras en Málaga?**
 Sí, valoramos proyectos de constructoras y empresas para naves, almacenes y otras superficies industriales en Málaga y su provincia.
+
+## Fotografías de un trabajo real de hormigón industrial
+
+Las siguientes fotografías corresponden al trabajo de recuperación de hormigón en **Fuente Palmera (Córdoba)** mencionado arriba. Ilustran el tratamiento industrial que ofrecemos también a empresas de Málaga; **no son imágenes de una obra ejecutada en Málaga**.
+
+![Desbaste y pulido de hormigón en nave industrial de Fuente Palmera Córdoba](/images/blog/fuente-palmera-03.webp)
+
+![Acabado de hormigón pulido en nave industrial de Fuente Palmera Córdoba](/images/blog/fuente-palmera-07.webp)
