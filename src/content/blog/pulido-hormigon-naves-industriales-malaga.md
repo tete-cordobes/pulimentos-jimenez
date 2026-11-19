@@ -75,3 +75,5 @@ Las siguientes fotografías corresponden al trabajo de recuperación de hormigó
 ![Desbaste y pulido de hormigón en nave industrial de Fuente Palmera Córdoba](/images/blog/fuente-palmera-03.webp)
 
 ![Acabado de hormigón pulido en nave industrial de Fuente Palmera Córdoba](/images/blog/fuente-palmera-07.webp)
+
+<!-- NOTA EDITORIAL: Fotografías pendientes de carga: IMG_3312(2).jpeg e IMG_3294.jpeg, nave industrial confirmada en Málaga. No publicar imágenes hasta que sus archivos existan en public/ y las rutas estén verificadas. -->
