@@ -35,7 +35,13 @@ Seleccionamos la herramienta diamantada y la secuencia de trabajo según la dure
 
 Cuando procede, aplicamos tratamientos densificadores y selladores compatibles con el soporte. El producto se elige según el estado del pavimento y las necesidades de mantenimiento.
 
-## Ejemplo real: recuperación de hormigón en Fuente Palmera
+## Trabajo real: pulido de hormigón en una nave industrial de Málaga
+
+Hemos realizado un trabajo de pulido de pavimento de hormigón en una **nave industrial de Málaga**. Las fotografías facilitadas del proyecto muestran el acabado uniforme y brillante, con reflejos de la estructura y de la iluminación sobre la superficie.
+
+Este caso real nos permite mostrar el resultado visual del trabajo a constructoras y empresas de Málaga. La descripción técnica exacta de las fases y productos empleados en esta nave se añadirá cuando esté confirmada.
+
+## Otro ejemplo de recuperación: nave en Fuente Palmera
 
 En una nave de **Fuente Palmera (Córdoba)** realizamos la retirada de una antigua resina epoxi deteriorada mediante herramienta diamantada. Después trabajamos el hormigón con pulido, densificación a base de sodio y sellado con nanopartículas de litio.
 
