@@ -2,7 +2,7 @@
 title: "¿Cuánto cuesta pulir un suelo de mármol en Málaga?"
 description: "Qué influye en el precio de pulir mármol en Málaga: metros cuadrados, desgaste, brillo, accesos y tipo de tratamiento. Pide una valoración."
 pubDate: 2026-11-19
-draft: true
+draft: false
 ---
 
 ¿Tienes un suelo de mármol sin brillo, con rayas o con zonas desgastadas y quieres saber **cuánto cuesta pulirlo en Málaga**? No existe una tarifa única válida para todas las viviendas o comunidades. El presupuesto depende de la superficie, del estado del material y del tratamiento necesario.
