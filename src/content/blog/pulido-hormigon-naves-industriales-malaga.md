@@ -2,7 +2,7 @@
 title: "Pulido de hormigón en naves industriales de Málaga: ventajas y tratamientos"
 description: "Cómo se recupera y trata el hormigón de una nave industrial en Málaga: desbaste, pulido, densificación y mantenimiento."
 pubDate: 2026-11-19
-draft: true
+draft: false
 ---
 
 El pavimento de una nave industrial soporta tránsito de personas, maquinaria y mercancías. Cuando el hormigón está desgastado, genera polvo o conserva un revestimiento antiguo deteriorado, conviene estudiar si puede **recuperarse mediante pulido y tratamiento superficial**.
