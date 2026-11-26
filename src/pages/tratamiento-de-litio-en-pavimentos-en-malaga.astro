@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import { whatsappHref, telHref } from "../config/site";
+export const prerender = true;
+---
+<Layout title="Tratamiento de litio en pavimentos de hormigón en Málaga | Pulimentos Jiménez" description="Tratamiento de litio en pavimentos de hormigón en Málaga y provincia. Valoración profesional del pavimento y presupuesto sin compromiso." canonical="/tratamiento-de-litio-en-pavimentos-en-malaga/">
+<section class="bg-brand-900 text-white"><div class="mx-auto max-w-4xl px-6 py-20"><h1 class="text-4xl font-bold sm:text-5xl">Tratamiento de litio en pavimentos de hormigón en Málaga</h1><p class="mt-6 text-lg text-brand-100">La densificación con silicatos puede reducir polvo superficial y mejorar resistencia a la abrasión. Seleccionamos tratamiento según absorción y estado de la solera.</p><div class="mt-8 flex flex-wrap gap-3"><Button href="/contacto" variant="secondary">Solicitar presupuesto</Button><Button href={whatsappHref} variant="ghost" class="text-white">WhatsApp</Button><a href={telHref} class="self-center underline">Llámanos</a></div></div></section>
+<section class="mx-auto max-w-4xl px-6 py-16"><h2 class="text-2xl font-bold">Valoración del proyecto</h2><p class="mt-4 leading-8">Nos desplazamos desde Córdoba a Málaga capital y provincia según el proyecto. Indícanos superficie, localidad, estado del suelo y uso previsto para seleccionar el tratamiento y planificar los trabajos.</p><h2 class="mt-10 text-2xl font-bold">Información y trabajos realizados</h2><div class="mt-6 flex flex-wrap gap-4"><a class="font-semibold text-brand-700 underline" href="/servicios/pulido-de-hormigon/">Detalles del servicio</a><a class="font-semibold text-brand-700 underline" href="/pulido-de-suelos-en-malaga/">Todos los servicios en Málaga</a><a class="font-semibold text-brand-700 underline" href="/blog/pulido-hormigon-naves-industriales-malaga/">Conoce nuestra experiencia</a></div></section>
+</Layout>
