@@ -36,10 +36,23 @@ export const citiesContent: CityContent[] = [
       "Pulidor de suelos en Córdoba y provincia. Pulido y abrillantado de terrazo, mármol y hormigón, restauración y resina epoxi. Solicita presupuesto.",
     intro: [
       "¿Buscas un pulidor de suelos en Córdoba? En Pulimentos y Aplicaciones Jiménez realizamos pulido, restauración y abrillantado de pavimentos de terrazo, mármol y hormigón para viviendas, comunidades, comercios, colegios y naves industriales. Tenemos nuestra base en La Carlota y trabajamos en Córdoba capital y toda la provincia. Valoramos el estado del suelo y proponemos el tratamiento más adecuado.",
+      "En Córdoba capital hemos restaurado aproximadamente 500 m² de mármol crema marfil en el edificio de los Ministerios: reparación de coqueras con resina epoxi bicomponente, afinado, pulido y cristalizado. Para viviendas y comunidades realizamos abrillantado de suelos de mármol y terrazo, y para talleres y naves industriales recuperamos soleras de hormigón mediante pulido diamantado, densificación y sellado según su estado y uso.",
       "Entre nuestros trabajos en la provincia están la restauración y abrillantado de terrazo antiguo en el CEIP Beato Juan de Ávila de Montilla, con una superficie prevista de 2.400 m², y la recuperación de un pavimento de hormigón en una nave de Fuente Palmera: retirada diamantada de una antigua resina epoxi deteriorada, pulido, densificación y sellado. También realizamos pulido de escaleras, tratamiento de barro cocido y aplicaciones de resina epoxi. Pide presupuesto sin compromiso en el 622 13 52 93.",
     ],
     nearby: ["Córdoba capital", "La Carlota", "Lucena", "Montilla", "Puente Genil", "Baena", "Fuente Palmera", "Posadas", "Palma del Río", "Almodóvar del Río"],
     faqs: [
+      {
+        q: "¿Cuánto cuesta pulir un suelo en Córdoba?",
+        a: "El precio depende del material, los metros cuadrados, el estado del pavimento y el tratamiento necesario. Valoramos cada trabajo antes de presupuestar.",
+      },
+      {
+        q: "¿Qué diferencia hay entre pulir y abrillantar un suelo?",
+        a: "El pulido elimina desgaste superficial y marcas mediante abrasivos; el abrillantado recupera el brillo con un tratamiento adecuado al material. En mármol y terrazo podemos combinar ambos procesos cuando el estado del suelo lo requiere.",
+      },
+      {
+        q: "¿Trabajáis para comunidades y constructoras en Córdoba capital?",
+        a: "Sí, realizamos trabajos en viviendas, portales, escaleras, edificios y pavimentos industriales, adaptando la maquinaria y el tratamiento a cada obra.",
+      },
       {
         q: "¿Trabajáis en toda la provincia de Córdoba?",
         a: "Sí. Tenemos la base en La Carlota y nos desplazamos por toda la provincia de Córdoba (y el resto de Andalucía). Cuéntanos dónde está el suelo y te damos presupuesto sin compromiso.",
