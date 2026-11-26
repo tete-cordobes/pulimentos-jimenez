@@ -68,7 +68,7 @@ export const townsContent: CityContent[] = [
       "Hormigón pulido y epoxi en Puente Genil para la agroindustria del dulce y las cooperativas: suelos higiénicos y sin polvo. También mármol y terrazo. Presupuesto gratis.",
     intro: [
       "Puente Genil vive de su agroindustria alimentaria: es tierra del dulce de membrillo, con fábricas y obradores de renombre, además de cooperativas del aceite y de la campiña del Genil. En la industria de la alimentación el suelo es una pieza más de la higiene: tiene que ser continuo, fácil de limpiar y no soltar partículas sobre el producto. Por eso la resina epoxi y el hormigón pulido y sellado son los acabados que mejor responden en obradores, almacenes y salas de producción.",
-      "Damos servicio en Puente Genil y su entorno desde La Carlota, cerca y sin desplazamientos que disparen el presupuesto. Aplicamos epoxi en zonas de elaboración y envasado, pulimos soleras de nave y cooperativa para que aguanten carga y limpiezas intensivas, y en viviendas, locales y comunidades recuperamos el mármol y el terrazo con pulido y cristalizado.",
+      "Ofrecemos pulido y abrillantado de suelos en Puente Genil para viviendas, comunidades, comercios y empresas de la localidad y su entorno, desde nuestra base en La Carlota. Aplicamos epoxi en zonas de elaboración y envasado, pulimos soleras de nave y cooperativa para que aguanten carga y limpiezas intensivas, y en viviendas, locales y comunidades recuperamos el mármol y el terrazo con pulido y cristalizado.",
     ],
     nearby: ["Aguilar de la Frontera", "Santaella", "La Rambla", "Herrera", "Estepa", "Montilla"],
     faqs: [
