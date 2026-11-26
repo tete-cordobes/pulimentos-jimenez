@@ -154,6 +154,22 @@ const breadcrumbSchema = {
     </section>
   )}
 
+  {city.slug === "cordoba" && (
+    <section class="mx-auto max-w-7xl px-6 pb-16">
+      <h2 class="text-2xl font-bold text-slate-900">Especialidades de pulido en Córdoba</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        {[
+          ["pulido-de-marmol", "Pulido de mármol en Córdoba"],
+          ["pulido-de-terrazo", "Pulido de terrazo en Córdoba"],
+          ["abrillantado-de-suelos", "Abrillantado de suelos en Córdoba"],
+          ["pulido-de-hormigon", "Pulido de hormigón en Córdoba"],
+        ].map(([slug, title]) => (
+          <a href={`/${slug}-en-cordoba/`} class="rounded-xl border border-slate-200 p-5 font-semibold text-brand-700 underline">{title}</a>
+        ))}
+      </div>
+    </section>
+  )}
+
   <!-- ZONAS -->
   <section class="border-y border-slate-200 bg-slate-50 py-16">
     <div class="mx-auto max-w-4xl px-6">
