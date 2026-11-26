@@ -63,6 +63,28 @@ const breadcrumbSchema = {
     </div>
   </section>
 
+  {(city.slug === "malaga" || city.parentSlug === "malaga") && (
+    <section class="mx-auto max-w-7xl px-6 py-12">
+      <h2 class="text-3xl font-bold text-slate-900">Pulido de mármol y terrazo en {city.name} para particulares</h2>
+      <p class="mt-4 max-w-3xl text-slate-700">¿Buscas un pulidor de mármol o de suelos en {city.name}? Valoramos la restauración, el pulido y el abrillantado de pavimentos en pisos, chalets, apartamentos y comunidades. Nos desplazamos desde Córdoba según el proyecto.</p>
+      <div class="mt-6 grid gap-5 sm:grid-cols-3">
+        {[
+          ["/proyectos/marmol-salon.webp", "Mármol pulido y cristalizado en vivienda", "/pulido-de-marmol-en-malaga/"],
+          ["/proyectos/terrazo-chinitas.webp", "Terrazo recuperado mediante pulido y cristalizado", "/pulido-de-terrazo-en-malaga/"],
+          ["/proyectos/marmol-dormitorio.webp", "Abrillantado de mármol blanco en dormitorio", "/abrillantado-de-suelos-en-malaga/"],
+        ].map(([src, alt, href]) => (
+          <a href={href} class="overflow-hidden rounded-xl border border-slate-200">
+            <img src={src} alt={alt} loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover" />
+            <p class="p-4 font-semibold text-brand-700">{alt}</p>
+          </a>
+        ))}
+      </div>
+      <p class="mt-3 text-sm text-slate-600">Ejemplos de trabajos reales de nuestro equipo; localidad de las fotografías no especificada.</p>
+      <p class="mt-5">Para conocer el precio, envíanos fotos, localidad y metros cuadrados. <a href="/blog/cuanto-cuesta-pulir-suelo-marmol-malaga/" class="underline">Consulta qué influye en el precio del pulido de mármol.</a></p>
+      <div class="mt-5"><Button href={whatsappHref} variant="secondary">Enviar fotos por WhatsApp</Button></div>
+    </section>
+  )}
+
   <!-- SERVICIOS EN LA CIUDAD -->
   <section class="mx-auto max-w-7xl px-6 py-16">
     <h2 class="text-2xl font-bold tracking-tight text-slate-900">
