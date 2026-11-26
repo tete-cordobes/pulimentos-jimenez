@@ -124,6 +124,56 @@ export const townsContent: CityContent[] = [
   },
   // ---- MÁLAGA ----
   {
+  "slug": "mijas",
+  "name": "Mijas",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulido de suelos en Mijas",
+  "metaTitle": "Pulidor de suelos en Mijas | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Mijas. Solicita valoración.",
+  "intro": [
+    "Realizamos pulido y abrillantado de mármol y terrazo en viviendas y comunidades de Mijas, Mijas Costa y La Cala. Valoramos el desgaste de zonas comunes y los accesos antes de organizar el tratamiento.",
+    "Hemos realizado trabajos de pavimentos en la Costa del Sol, incluidos Mijas y Marbella. Nos desplazamos desde Córdoba según el proyecto; envíanos fotografías y superficie para preparar una valoración."
+  ],
+  "nearby": [
+    "La Cala de Mijas",
+    "Mijas Costa",
+    "Fuengirola"
+  ],
+  "faqs": [
+    {
+      "q": "¿Trabajáis en comunidades de Mijas?",
+      "a": "Sí, valoramos portales, descansillos y viviendas, coordinando accesos con los responsables."
+    }
+  ]
+},
+  {
+  "slug": "torremolinos",
+  "name": "Torremolinos",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulido de suelos en Torremolinos",
+  "metaTitle": "Pulidor de suelos en Torremolinos | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Torremolinos. Solicita valoración.",
+  "intro": [
+    "Ofrecemos recuperación de suelos de mármol y terrazo para apartamentos, comunidades, hoteles y comercios de Torremolinos. El tránsito y la arena pueden deteriorar el acabado, por lo que distinguimos entre pulido y mantenimiento del brillo.",
+    "Para locales y garajes también valoramos tratamientos de hormigón y resina epoxi. Planificamos los trabajos según la actividad del inmueble y nos desplazamos desde Córdoba."
+  ],
+  "nearby": [
+    "Benalmádena",
+    "Málaga",
+    "La Carihuela"
+  ],
+  "faqs": [
+    {
+      "q": "¿Podéis trabajar por zonas en un hotel?",
+      "a": "Valoramos la superficie, los accesos y los horarios para organizar el trabajo por fases cuando sea viable."
+    }
+  ]
+},
+  {
     slug: "antequera",
     name: "Antequera",
     province: "Málaga",
