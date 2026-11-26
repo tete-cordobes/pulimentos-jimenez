@@ -66,15 +66,15 @@ export const citiesContent: CityContent[] = [
   {
     slug: "malaga",
     name: "Málaga",
-    h1: "Pulido de suelos en Málaga",
-    metaTitle: "Pulido de suelos en Málaga | Pulimentos Jiménez",
+    h1: "Pulidor de suelos en Málaga",
+    metaTitle: "Pulidor de suelos en Málaga | Pulimentos Jiménez",
     metaDescription:
       "Pulido de suelos en Málaga para constructoras, naves industriales, viviendas y comunidades. Hormigón, mármol, terrazo y abrillantado. Pide presupuesto.",
     intro: [
       "En Pulimentos y Aplicaciones Jiménez ofrecemos pulido y tratamiento de suelos en Málaga para constructoras, naves industriales, locales comerciales, viviendas y comunidades de propietarios. Trabajamos con hormigón, mármol y terrazo y nos desplazamos a Málaga capital, Marbella y otras localidades de la Costa del Sol.",
       "Realizamos pulido diamantado y densificación de hormigón para soleras industriales, restauración y cristalizado de mármol, pulido de terrazo y aplicaciones de resina epoxi. Valoramos cada pavimento según su estado, superficie y uso para proponer un tratamiento adecuado. Solicita presupuesto sin compromiso.",
     ],
-    nearby: ["Málaga capital", "Antequera", "Marbella", "Fuengirola", "Benalmádena", "Estepona", "Vélez-Málaga"],
+    nearby: ["Málaga capital", "Antequera", "Marbella", "Mijas", "Fuengirola", "Benalmádena", "Estepona", "Torremolinos", "Vélez-Málaga"],
     faqs: [
       {
         q: "¿Os desplazáis a Málaga desde Córdoba?",
