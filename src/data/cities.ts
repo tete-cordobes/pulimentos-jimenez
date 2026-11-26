@@ -30,8 +30,8 @@ export const citiesContent: CityContent[] = [
     slug: "cordoba",
     name: "Córdoba",
     hq: true,
-    h1: "Pulido de suelos en Córdoba",
-    metaTitle: "Pulido de suelos en Córdoba | Pulimentos Jiménez",
+    h1: "Pulidor de suelos en Córdoba",
+    metaTitle: "Pulidor de suelos en Córdoba | Pulimentos Jiménez",
     metaDescription:
       "Pulidor de suelos en Córdoba y provincia. Pulido y abrillantado de terrazo, mármol y hormigón, restauración y resina epoxi. Solicita presupuesto.",
     intro: [
