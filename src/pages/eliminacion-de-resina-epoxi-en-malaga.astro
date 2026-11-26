@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import { whatsappHref, telHref } from "../config/site";
+export const prerender = true;
+---
+<Layout title="Eliminación de resina epoxi en Málaga | Pulimentos Jiménez" description="Eliminación de resina epoxi en Málaga y provincia. Valoración profesional del pavimento y presupuesto sin compromiso." canonical="/eliminacion-de-resina-epoxi-en-malaga/">
+<section class="bg-brand-900 text-white"><div class="mx-auto max-w-4xl px-6 py-20"><h1 class="text-4xl font-bold sm:text-5xl">Eliminación de resina epoxi en Málaga</h1><p class="mt-6 text-lg text-brand-100">Retiramos revestimientos deteriorados mediante preparación mecánica. En Fuente Palmera, Córdoba, recuperamos una solera tras retirar epoxi antiguo; ofrecemos este tratamiento también en Málaga.</p><div class="mt-8 flex flex-wrap gap-3"><Button href="/contacto" variant="secondary">Solicitar presupuesto</Button><Button href={whatsappHref} variant="ghost" class="text-white">WhatsApp</Button><a href={telHref} class="self-center underline">Llámanos</a></div></div></section>
+<section class="mx-auto max-w-4xl px-6 py-16"><h2 class="text-2xl font-bold">Valoración del proyecto</h2><p class="mt-4 leading-8">Nos desplazamos desde Córdoba a Málaga capital y provincia según el proyecto. Indícanos superficie, localidad, estado del suelo y uso previsto para seleccionar el tratamiento y planificar los trabajos.</p><h2 class="mt-10 text-2xl font-bold">Información y trabajos realizados</h2><div class="mt-6 flex flex-wrap gap-4"><a class="font-semibold text-brand-700 underline" href="/servicios/pavimentos-epoxi/">Detalles del servicio</a><a class="font-semibold text-brand-700 underline" href="/pulido-de-suelos-en-malaga/">Todos los servicios en Málaga</a><a class="font-semibold text-brand-700 underline" href="/blog/pulido-hormigon-naves-industriales-malaga/">Conoce nuestra experiencia</a></div></section>
+</Layout>
