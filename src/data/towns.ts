@@ -174,6 +174,305 @@ export const townsContent: CityContent[] = [
   ]
 },
   {
+  "slug": "rincon-de-la-victoria",
+  "name": "Rincón de la Victoria",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Rincón de la Victoria",
+  "metaTitle": "Pulido de suelos en Rincón de la Victoria | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Rincón de la Victoria para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En pisos y viviendas próximas a la costa, la arena de las entradas puede provocar desgaste y pérdida de brillo.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Rincón, La Cala del Moral y Torre de Benagalbón. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Rincón, La Cala del Moral y Torre de Benagalbón"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Rincón de la Victoria?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "san-pedro-de-alcantara",
+  "name": "San Pedro de Alcántara",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en San Pedro de Alcántara",
+  "metaTitle": "Pulido de suelos en San Pedro de Alcántara | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en San Pedro de Alcántara para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En villas, apartamentos y portales valoramos el acabado del mármol y la protección de zonas de paso.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en San Pedro de Alcántara y Guadalmina. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "San Pedro de Alcántara y Guadalmina"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en San Pedro de Alcántara?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "alhaurin-de-la-torre",
+  "name": "Alhaurín de la Torre",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Alhaurín de la Torre",
+  "metaTitle": "Pulido de suelos en Alhaurín de la Torre | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Alhaurín de la Torre para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En chalets y viviendas unifamiliares estudiamos el estado de salones, pasillos y escaleras antes de pulir.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Alhaurín de la Torre y su entorno. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Alhaurín de la Torre y su entorno"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Alhaurín de la Torre?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "alhaurin-el-grande",
+  "name": "Alhaurín el Grande",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Alhaurín el Grande",
+  "metaTitle": "Pulido de suelos en Alhaurín el Grande | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Alhaurín el Grande para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En casas con pavimentos antiguos distinguimos entre desgaste, juntas deterioradas y pérdida de brillo.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Alhaurín el Grande y su entorno. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Alhaurín el Grande y su entorno"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Alhaurín el Grande?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "manilva",
+  "name": "Manilva",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Manilva",
+  "metaTitle": "Pulido de suelos en Manilva | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Manilva para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En apartamentos y urbanizaciones valoramos el mantenimiento del mármol entre periodos de ocupación.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Manilva, Sabinillas y La Duquesa. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Manilva, Sabinillas y La Duquesa"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Manilva?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "casares",
+  "name": "Casares",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Casares",
+  "metaTitle": "Pulido de suelos en Casares | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Casares para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En viviendas y urbanizaciones estudiamos los accesos y el tipo de piedra para elegir el acabado.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Casares y Casares Costa. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Casares y Casares Costa"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Casares?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "nerja",
+  "name": "Nerja",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Nerja",
+  "metaTitle": "Pulido de suelos en Nerja | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Nerja para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En viviendas y apartamentos turísticos planificamos el pulido según disponibilidad y estado de las estancias.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Nerja y Maro. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Nerja y Maro"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Nerja?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "torrox",
+  "name": "Torrox",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Torrox",
+  "metaTitle": "Pulido de suelos en Torrox | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Torrox para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En apartamentos de costa valoramos el desgaste de entradas y salones por el tránsito habitual.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Torrox y Torrox Costa. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Torrox y Torrox Costa"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Torrox?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "velez-malaga",
+  "name": "Vélez-Málaga",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Vélez-Málaga",
+  "metaTitle": "Pulido de suelos en Vélez-Málaga | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Vélez-Málaga para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En pisos y casas con terrazo antiguo valoramos si es posible conservar el pavimento original.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Vélez-Málaga y Caleta de Vélez. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Vélez-Málaga y Caleta de Vélez"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Vélez-Málaga?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "torre-del-mar",
+  "name": "Torre del Mar",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Torre del Mar",
+  "metaTitle": "Pulido de suelos en Torre del Mar | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Torre del Mar para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En comunidades y apartamentos de playa estudiamos el desgaste de portales y zonas comunes.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Torre del Mar y su entorno. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Torre del Mar y su entorno"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Torre del Mar?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "cartama",
+  "name": "Cártama",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Cártama",
+  "metaTitle": "Pulido de suelos en Cártama | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Cártama para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En viviendas familiares y casas de campo revisamos rayas, juntas y diferencias de brillo.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Cártama y Estación de Cártama. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Cártama y Estación de Cártama"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Cártama?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "coin",
+  "name": "Coín",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Coín",
+  "metaTitle": "Pulido de suelos en Coín | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Coín para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En viviendas con mármol o terrazo antiguo estudiamos la recuperación del acabado sin sustituir la solería.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Coín y su entorno. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Coín y su entorno"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Coín?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
+  "slug": "ronda",
+  "name": "Ronda",
+  "province": "Málaga",
+  "parentSlug": "malaga",
+  "parentName": "Málaga",
+  "h1": "Pulidor de suelos en Ronda",
+  "metaTitle": "Pulido de suelos en Ronda | Mármol y terrazo | Pulimentos Jiménez",
+  "metaDescription": "Pulido de mármol, terrazo y abrillantado de suelos en Ronda para particulares y comunidades. Envía fotos para solicitar presupuesto.",
+  "intro": [
+    "En casas y edificios antiguos valoramos la conservación de la piedra y el terrazo existentes.",
+    "Ofrecemos pulido de mármol, restauración de terrazo y cristalizado de suelos para particulares y comunidades en Ronda y su entorno. Nos desplazamos desde Córdoba según el proyecto. Envía fotografías y metros cuadrados para una valoración."
+  ],
+  "nearby": [
+    "Ronda y su entorno"
+  ],
+  "faqs": [
+    {
+      "q": "¿Cómo solicitar presupuesto de pulido en Ronda?",
+      "a": "Indícanos localidad, superficie aproximada, tipo de suelo y fotografías. Valoramos el tratamiento y desplazamiento antes de confirmar el presupuesto."
+    }
+  ]
+},
+  {
     slug: "antequera",
     name: "Antequera",
     province: "Málaga",
