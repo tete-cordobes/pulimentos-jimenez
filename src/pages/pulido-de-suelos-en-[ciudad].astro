@@ -77,6 +77,33 @@ const breadcrumbSchema = {
     </div>
   </section>
 
+  {city.slug === "cordoba" && (
+    <section class="mx-auto max-w-7xl px-6 pb-16">
+      <h2 class="text-2xl font-bold text-slate-900">Pulido y abrillantado de suelos en Córdoba capital</h2>
+      <div class="mt-6 grid gap-6 sm:grid-cols-2">
+        {[
+          ["Pulido de mármol en Córdoba", "Restauración de piedra natural, reparación de coqueras, afinado y cristalizado en viviendas y edificios."],
+          ["Pulido de terrazo en Córdoba", "Recuperación de pavimentos antiguos y desgastados en colegios, portales y comunidades."],
+          ["Pulido de hormigón en Córdoba", "Pulido diamantado, densificación con silicatos y sellado de soleras industriales según su uso."],
+          ["Abrillantado de suelos en Córdoba", "Valoramos si basta un abrillantado o si es necesario pulir primero para eliminar marcas y desgaste."],
+        ].map(([heading, description]) => (
+          <div class="rounded-xl border border-slate-200 p-6">
+            <h3 class="text-xl font-semibold text-slate-900">{heading}</h3>
+            <p class="mt-3 text-slate-600">{description}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 grid items-center gap-6 sm:grid-cols-2">
+        <img src="/images/blog/ministerios.jpeg" alt="Mármol restaurado y abrillantado en el edificio de los Ministerios de Córdoba" loading="lazy" class="w-full rounded-xl object-cover" />
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Trabajo realizado: edificio de los Ministerios de Córdoba</h2>
+          <p class="mt-3 text-slate-600">Recuperación de 500 m² de mármol crema marfil de los años 70, conservando la solería original mediante reparación, afinado y cristalizado.</p>
+          <a href="/blog/" class="mt-4 inline-block font-semibold text-brand-700 underline">Consulta nuestros trabajos en el blog</a>
+        </div>
+      </div>
+    </section>
+  )}
+
   {city.slug === "malaga" && (
     <section class="mx-auto max-w-7xl px-6 pb-16">
       <div class="grid gap-8 sm:grid-cols-2">
